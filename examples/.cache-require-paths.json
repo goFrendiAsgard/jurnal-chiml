@@ -1,0 +1,169 @@
+{
+  "/home/gofrendi/Projects/chimera-framework/tools/run.js": {
+    "../lib/core.js": "/home/gofrendi/Projects/chimera-framework/lib/core.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/core.js": {
+    "neo-async": "/home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js",
+    "fs": "fs",
+    "path": "path",
+    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
+    "./core-preprocessor.js": "/home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js",
+    "./core-chiml-parser.js": "/home/gofrendi/Projects/chimera-framework/lib/core-chiml-parser.js",
+    "./core-dollar.js": "/home/gofrendi/Projects/chimera-framework/lib/core-dollar.js",
+    "safe-eval": "/home/gofrendi/Projects/chimera-framework/node_modules/safe-eval/index.js",
+    "json-stringify-safe": "/home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/util.js": {
+    "util": "util",
+    "fs": "fs",
+    "clone": "/home/gofrendi/Projects/chimera-framework/node_modules/clone/clone.js",
+    "json-stringify-safe": "/home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js": {
+    "./cmd.js": "/home/gofrendi/Projects/chimera-framework/lib/cmd.js",
+    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
+    "json-stringify-safe": "/home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js",
+    "safe-eval": "/home/gofrendi/Projects/chimera-framework/node_modules/safe-eval/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/cmd.js": {
+    "child_process": "child_process"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/core-chiml-parser.js": {
+    "js-yaml": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/index.js",
+    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/index.js": {
+    "./lib/js-yaml.js": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml.js": {
+    "./js-yaml/loader": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/loader.js",
+    "./js-yaml/dumper": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/dumper.js",
+    "./js-yaml/type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js",
+    "./js-yaml/schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "./js-yaml/schema/failsafe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/failsafe.js",
+    "./js-yaml/schema/json": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/json.js",
+    "./js-yaml/schema/core": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/core.js",
+    "./js-yaml/schema/default_safe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js",
+    "./js-yaml/schema/default_full": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_full.js",
+    "./js-yaml/exception": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/exception.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/loader.js": {
+    "./common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js",
+    "./exception": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/exception.js",
+    "./mark": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/mark.js",
+    "./schema/default_safe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js",
+    "./schema/default_full": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_full.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/mark.js": {
+    "./common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js": {
+    "../schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "./core": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/core.js",
+    "../type/timestamp": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/timestamp.js",
+    "../type/merge": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/merge.js",
+    "../type/binary": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/binary.js",
+    "../type/omap": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/omap.js",
+    "../type/pairs": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/pairs.js",
+    "../type/set": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/set.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js": {
+    "./common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js",
+    "./exception": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/exception.js",
+    "./type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js": {
+    "./exception": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/exception.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/core.js": {
+    "../schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "./json": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/json.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/json.js": {
+    "../schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "./failsafe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/failsafe.js",
+    "../type/null": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/null.js",
+    "../type/bool": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/bool.js",
+    "../type/int": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/int.js",
+    "../type/float": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/float.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/failsafe.js": {
+    "../schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "../type/str": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/str.js",
+    "../type/seq": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/seq.js",
+    "../type/map": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/map.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/str.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/seq.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/map.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/null.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/bool.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/int.js": {
+    "../common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js",
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/float.js": {
+    "../common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js",
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/timestamp.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/merge.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/binary.js": {
+    "buffer": "buffer",
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/omap.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/pairs.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/set.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_full.js": {
+    "../schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "./default_safe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js",
+    "../type/js/undefined": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/undefined.js",
+    "../type/js/regexp": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/regexp.js",
+    "../type/js/function": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/function.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/undefined.js": {
+    "../../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/regexp.js": {
+    "../../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/function.js": {
+    "esprima": "/home/gofrendi/Projects/chimera-framework/node_modules/esprima/dist/esprima.js",
+    "../../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/dumper.js": {
+    "./common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js",
+    "./exception": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/exception.js",
+    "./schema/default_full": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_full.js",
+    "./schema/default_safe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/core-dollar.js": {
+    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
+    "./core.js": "/home/gofrendi/Projects/chimera-framework/lib/core.js",
+    "readline": "readline"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/safe-eval/index.js": {
+    "vm": "vm"
+  }
+}

@@ -1,0 +1,13 @@
+verbose: 0
+out: persons
+do:
+  - |('persons', {}) -> node components/program.js -> persons
+  - |index <-- 0
+  - if: persons.length > 0
+    do:
+      - |(persons[index]) --> person
+      - |('pokemons', {id_person: person.id}) -> node components/program.js -> pokemons
+      - |(pokemons) --> person.pokemons
+      - |(person) --> persons[index]
+      - |index <-- index + 1
+    while: index < persons.length
