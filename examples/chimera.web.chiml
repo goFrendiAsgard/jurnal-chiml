@@ -1,0 +1,40 @@
+out: result
+do:
+
+  - |('http://localhost:3010/genres') --> urlGenre
+  - |('http://localhost:3010/albums') --> urlAlbum
+  - |('http://localhost:3010/tracks') --> urlTrack
+
+  - |([]) --> result
+  - |({}) --> albumDictionary
+
+  - |(urlGenre) -> curl -> genres
+
+  - |i <-- 0
+  - if: genres.length > 0
+    do:
+      - |(genres[i].GenreId) --> GenreId
+      - |(genres[i].Name) --> GenreName
+      - |({GenreName, Tracks: []}) --> result[i]
+      - |(urlTrack + '?GenreId=' + GenreId) -> curl -> tracks
+
+      - |j <-- 0
+      - if: tracks.length > 0
+        do:
+          - |(tracks[j].Name) --> TrackName
+          - |(tracks[j].AlbumId) --> AlbumId
+
+          - if: AlbumId in albumDictionary
+            do: |(albumDictionary[AlbumId]) --> AlbumTitle
+            else:
+              - |(urlAlbum + '?AlbumId=' + AlbumId) -> curl -> albums 
+              - |(albums[0].Title) --> AlbumTitle
+              - |(AlbumTitle) --> albumDictionary[AlbumId]
+
+          - |({TrackName, AlbumTitle}) --> result[i].Tracks[j]
+          - |j <-- j + 1
+        while: j < tracks.length
+
+      - |i <-- i + 1
+    while: i < genres.length
+

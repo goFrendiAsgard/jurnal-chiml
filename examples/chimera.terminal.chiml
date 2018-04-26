@@ -1,0 +1,36 @@
+out: result
+do:
+
+  - |([]) --> result
+  - |({}) --> albumDictionary
+
+  - |('genres', {}) -> node components/terminal-interface.js -> genres
+
+  - |i <-- 0
+  - if: genres.length > 0
+    do:
+      - |(genres[i].GenreId) --> GenreId
+      - |(genres[i].Name) --> GenreName
+      - |({GenreName, Tracks: []}) --> result[i]
+      - |('tracks', {GenreId}) -> node components/terminal-interface.js -> tracks
+
+      - |j <-- 0
+      - if: tracks.length > 0
+        do:
+          - |(tracks[j].Name) --> TrackName
+          - |(tracks[j].AlbumId) --> AlbumId
+
+          - if: AlbumId in albumDictionary
+            do: |(albumDictionary[AlbumId]) --> AlbumTitle
+            else:
+              - |('albums', {AlbumId}) -> node components/terminal-interface.js -> albums 
+              - |(albums[0].Title) --> AlbumTitle
+              - |(AlbumTitle) --> albumDictionary[AlbumId]
+
+          - |({TrackName, AlbumTitle}) --> result[i].Tracks[j]
+          - |j <-- j + 1
+        while: j < tracks.length
+
+      - |i <-- i + 1
+    while: i < genres.length
+
