@@ -1,0 +1,496 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Intermediate Event</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Boundary,Cancel,Catch,Compensation,Conditional,Error,Event,Intermediate,Interrupting,Link,Message,Multiple,None,Throw,Timer" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="initial-scale = 1.0"/>
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+     body { margin: 0px; background: #FFFFFF; padding-top: 20px;}
+     a {color:#12959F;}      /* unvisited link */
+     a:visited {color:#12959F;}  /* visited link */
+     a:hover {color:#12959F;}  /* mouse over link */
+     a:active {color:#12959F;}
+     .highlight {background-color: #FFFF40 !important;}
+     
+      img#fleximage { 
+        width: 100% !important;
+        height: auto !important;
+     }
+     
+      img#fleximage2 { 
+        width: 100% !important;
+        height: auto !important;
+     }
+     
+      img#fleximage3 { 
+        width: 100% !important;
+        height: auto !important;
+     }
+     
+       img#fleximage4 { 
+        width: 100% !important;
+        height: auto !important;
+     }
+     
+       img#fleximage5 { 
+        width: 100% !important;
+        height: auto !important;
+     }
+     
+      img#fleximage6 { 
+        width: 100% !important;
+        height: auto !important;
+     }
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "interrmediate_event.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+<p style="font-size: 8pt; position:relative; top:5px; padding-left:20px;"><span style="color:#959595;">Navigation: </span><a href="first_topic.htm">BPMN Quick Guide</a> &gt; <a href="event_basics.htm">Event</a> &gt; Intermediate Event</p>
+
+<table style="width:100%; border:none; border-spacing:0px;">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left; padding-left:20px;">    
+        <h1 class="p_Heading1" style="margin: 19px 0px 0px 0px;"><span class="f_Heading1" style="font-size: 24pt;">Intermediate Event</span></h1>
+
+    </td>
+    <td style="text-align:right; padding-right:20px; width:90px;">
+     <a href="startevent.htm"><img src="back.png" tilte="Previous Page" onmouseenter="this.src='back_hover.png';" onmouseleave="this.src='back.png';"></img></a>&nbsp;
+     <a href="first_topic.htm"><img src="top.png" tilte="Top Page" onmouseenter="this.src='top_hover.png';" onmouseleave="this.src='top.png';"></img></a>&nbsp;
+     <a href="end_event.htm"><img src="next.png" tilte="Next Page" onmouseenter="this.src='next_hover.png';" onmouseleave="this.src='next.png';"></img></a>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table style="width:100%;border:none;border-spacing:0px"><tr style="vertical-align:top"><td style="text-align:left;padding:5px">
+<p style="margin: 19px 0px 0px 0px;"><span style="font-size: 12pt;">&nbsp;</span></p>
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table style="width:100%; border:none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:208px; background-color:#12959f; padding:1px;"><p>&nbsp;</p>
+</th>
+<th colspan="3" style="vertical-align:top; width:1000px; background-color:#12959f; padding:1px;"><p><span style="font-size: 12pt;">&nbsp;</span></p>
+</th>
+<th style="vertical-align:top; width:128px; background-color:#12959f; padding:1px;"><br />
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; height:24px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; height:24px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span class="f_ImageCaption">&nbsp;&nbsp;<img src="intermediate.png" width="38" height="38" alt="Intermediate" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></span></p>
+</td>
+<td style="vertical-align:middle; width:34px; height:24px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; height:24px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - None Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; height:24px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_51d7383f.png" width="38" height="38" alt="Intermediate Message Catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Catch - Message Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_51d7383f.png" width="38" height="38" alt="Intermediate Message Catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Boundary - Catch - &nbsp;Message Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_6798747a.png" width="38" height="38" alt="Intermediate Message Catch Non" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting - Boundary - Catch - Message Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_4b3a2026.png" width="38" height="38" alt="Intermediate Message Throw" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Throw - Message Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_0d4c0a2e.png" width="38" height="38" alt="Intermediate timer" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Timer Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_0d4c0a2e.png" width="38" height="38" alt="Intermediate timer" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Boundary &nbsp;- Timer Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; height:33px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; height:33px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_fd542efd.png" width="38" height="38" alt="Intermediate timer Non" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; height:33px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; height:33px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting Boundary - Timer Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; height:33px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_7d1e1196.png" width="38" height="38" alt="Intermediate Conditional" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Conditional Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_7d1e1196.png" width="38" height="38" alt="Intermediate Conditional" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting – Boundary - Conditional Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_29f7cdf5.png" width="38" height="38" alt="Intermediate Conditional Non" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting - Boundary - Conditional Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_1785f9bb.png" width="38" height="38" alt="Intermediate signal Catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Catch - Signal Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_1785f9bb.png" width="38" height="38" alt="Intermediate signal Catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Boundary - Catch - Signal Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_af05e941.png" width="38" height="38" alt="Intermediate signal Catch Non" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting - Boundary - Catch - Signal Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_8e757c37.png" width="38" height="38" alt="Intermediate signal Throw" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Boundary - Throw - Signal Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_428212f5.png" width="38" height="38" alt="Intermediate Multiple Catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Catch - Multiple Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_428212f5.png" width="38" height="38" alt="Intermediate Multiple Catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Boundary - Catch - Multiple Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_0efc52ce.png" width="38" height="38" alt="Intermediate Multiple Catch Non" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting Boundary - Catch - Multiple Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_9c1d03d2.png" width="38" height="38" alt="Intermediate Multiple Throw" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Throw - Multiple Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_9aef7548.png" width="38" height="38" alt="Intermediate Parallel Catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Catch - Parallel Multiple Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_9aef7548.png" width="38" height="38" alt="Intermediate Parallel Catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Boundary - Catch - Parallel Multiple Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_b4bbe7f2.png" width="38" height="38" alt="Intermediate Parallel Catch Non" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting Boundary - Catch - Parallel Multiple Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_6d291cb6.png" width="38" height="38" alt="Intermediate Escalation catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Catch - Escalation Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_6d291cb6.png" width="38" height="38" alt="Intermediate Escalation catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Boundary - Catch - Escalation Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_87baa764.png" width="38" height="38" alt="Intermediate Escalation catch non" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting - Boundary - Catch - Escalation Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_39916419.png" width="38" height="38" alt="Intermediate Escalation Throw" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Throw - Escalation Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_f839399b.png" width="38" height="38" alt="Intermediate Error" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Boundary - Catch - Error Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_17830c27.png" width="38" height="38" alt="Intermediate Compensation Catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Boundary - Catch - Compensation Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_5592af1f.png" width="38" height="38" alt="Intermediate Compensation Throw" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Throw - Compensation Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_ab341e19.png" width="38" height="38" alt="Intermediate Link Catch" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Catch - Link Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_fc30ee46.png" width="38" height="38" alt="Intermediate Link Throw" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Throw - Link Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right; white-space: nowrap;"><img src="hmfile_hash_551c9a5b.png" width="38" height="38" alt="Intermediate Cancel" style="margin:0px 0px 0px auto;width:38px;height:38px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Boundary - Catch - Cancel Intermediate Event</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#b8dfe2; padding:1px;"><p style="white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:208px; background-color:#12959f; padding:1px;"><p style="text-align: center; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:401px; background-color:#12959f; padding:1px;"><p style="text-align: center; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:34px; background-color:#12959f; padding:1px;"><p style="text-align: center; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:541px; background-color:#12959f; padding:1px;"><p style="text-align: center; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:128px; background-color:#12959f; padding:1px;"><p style="text-align: center; white-space: nowrap;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><span style="font-size: 12pt;">&nbsp;</span></p>
+<p><span style="font-size: 12pt;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>

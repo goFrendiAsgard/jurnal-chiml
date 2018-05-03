@@ -1,0 +1,33 @@
+out: genres
+do:
+
+  - parallel:
+    - |('http://localhost:3010/genres') --> urlGenre
+    - |('http://localhost:3010/albums') --> urlAlbum
+    - |('http://localhost:3010/tracks') --> urlTrack
+
+  - |(urlGenre) -> curl -> genres
+
+  - map: genres
+    into: genres
+    ins: genre
+    out: genre
+    do:
+
+      - parallel:
+        - |(urlTrack + '?GenreId=' + genre.GenreId) -> curl -> tracks
+        - |({GenreName: genre.Name, Tracks: []}) --> genre
+
+      - map: tracks
+        into: tracks
+        ins: track
+        out: track
+        do:
+
+          - |(urlAlbum + '?AlbumId=' + track.AlbumId) -> curl -> albums
+          - |(albums[0].Title) --> albumTitle
+
+          - |({TrackName: track.Name, AlbumTitle: albumTitle}) --> track
+
+      - |(tracks) -->  genre.Tracks
+

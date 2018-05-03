@@ -1,40 +1,37 @@
-out: result
+out: genres
 do:
 
-  - |('http://localhost:3010/genres') --> urlGenre
-  - |('http://localhost:3010/albums') --> urlAlbum
-  - |('http://localhost:3010/tracks') --> urlTrack
+  - parallel:
+    - |('http://localhost:3010/genres') --> urlGenre
+    - |('http://localhost:3010/albums') --> urlAlbum
+    - |('http://localhost:3010/tracks') --> urlTrack
 
-  - |([]) --> result
-  - |({}) --> albumDictionary
+  - |(urlGenre) -> [$.httpRequest] -> response
+  - |(response.body) --> genres
 
-  - |(urlGenre) -> curl -> genres
-
-  - |i <-- 0
-  - if: genres.length > 0
+  - map: genres
+    into: genres
+    ins: genre
+    out: genre
     do:
-      - |(genres[i].GenreId) --> GenreId
-      - |(genres[i].Name) --> GenreName
-      - |({GenreName, Tracks: []}) --> result[i]
-      - |(urlTrack + '?GenreId=' + GenreId) -> curl -> tracks
 
-      - |j <-- 0
-      - if: tracks.length > 0
+      - parallel:
+        - do:
+          - |(urlTrack + '?GenreId=' + genre.GenreId) -> [$.httpRequest] -> response
+          - |(response.body) --> tracks
+        - |({GenreName: genre.Name, Tracks: []}) --> genre
+
+      - map: tracks
+        into: tracks
+        ins: track
+        out: track
         do:
-          - |(tracks[j].Name) --> TrackName
-          - |(tracks[j].AlbumId) --> AlbumId
 
-          - if: AlbumId in albumDictionary
-            do: |(albumDictionary[AlbumId]) --> AlbumTitle
-            else:
-              - |(urlAlbum + '?AlbumId=' + AlbumId) -> curl -> albums 
-              - |(albums[0].Title) --> AlbumTitle
-              - |(AlbumTitle) --> albumDictionary[AlbumId]
+          - |(urlAlbum + '?AlbumId=' + track.AlbumId) -> [$.httpRequest] -> response
+          - |(response.body) --> albums
+          - |(albums[0].Title) --> albumTitle
 
-          - |({TrackName, AlbumTitle}) --> result[i].Tracks[j]
-          - |j <-- j + 1
-        while: j < tracks.length
+          - |({TrackName: track.Name, AlbumTitle: albumTitle}) --> track
 
-      - |i <-- i + 1
-    while: i < genres.length
+      - |(tracks) -->  genre.Tracks
 

@@ -1,36 +1,28 @@
-out: result
+out: genres
 do:
-
-  - |([]) --> result
-  - |({}) --> albumDictionary
 
   - |('genres', {}) -> node components/terminal-interface.js -> genres
 
-  - |i <-- 0
-  - if: genres.length > 0
+  - map: genres
+    into: genres
+    ins: genre
+    out: genre
     do:
-      - |(genres[i].GenreId) --> GenreId
-      - |(genres[i].Name) --> GenreName
-      - |({GenreName, Tracks: []}) --> result[i]
-      - |('tracks', {GenreId}) -> node components/terminal-interface.js -> tracks
 
-      - |j <-- 0
-      - if: tracks.length > 0
+      - parallel:
+        - |('tracks', {GenreId: genre.GenreId}) -> node components/terminal-interface.js -> tracks
+        - |({GenreName: genre.Name, Tracks: []}) --> genre
+
+      - map: tracks
+        into: tracks
+        ins: track
+        out: track
         do:
-          - |(tracks[j].Name) --> TrackName
-          - |(tracks[j].AlbumId) --> AlbumId
 
-          - if: AlbumId in albumDictionary
-            do: |(albumDictionary[AlbumId]) --> AlbumTitle
-            else:
-              - |('albums', {AlbumId}) -> node components/terminal-interface.js -> albums 
-              - |(albums[0].Title) --> AlbumTitle
-              - |(AlbumTitle) --> albumDictionary[AlbumId]
+          - |('albums', {AlbumId: track.AlbumId}) -> node components/terminal-interface.js -> albums
+          - |(albums[0].Title) --> albumTitle
 
-          - |({TrackName, AlbumTitle}) --> result[i].Tracks[j]
-          - |j <-- j + 1
-        while: j < tracks.length
+          - |({TrackName: track.Name, AlbumTitle: albumTitle}) --> track
 
-      - |i <-- i + 1
-    while: i < genres.length
+      - |(tracks) -->  genre.Tracks
 

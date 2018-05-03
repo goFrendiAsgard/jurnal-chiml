@@ -1,0 +1,277 @@
+﻿<!DOCTYPE HTML><html>
+<head>
+<title>BPMN Quick Guide</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="initial-scale = 1.0"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<script type="text/javascript" src="jquery-1.11.2.js"></script>
+<script type="text/javascript" src="helpman_settings.js"></script>
+<script type="text/javascript" src="helpman_navigation.js"></script>
+<script type="text/javascript" src="helpNine.js"></script>
+<script type="text/javascript" src="bpmn_quick_guide_contextids.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<style>
+       body{
+                      background-color: #12959F;
+       }
+       iframe {
+              width:100%;
+              height:100%; 
+              border: 0px; 
+       }
+       #header {
+               position: fixed;
+               left: 0px;               
+               top: 0px;
+               right:0px;
+               height: 40px;
+               padding-top: 3px;            
+               min-width: 350px;
+               background-image: url('graph-background.png');
+               background-position: right;
+               background-repeat: no-repeat;
+               background-size: 320px 43px;   
+       }
+       
+       #header .brand {
+               margin-left: 7px;
+               }
+           img {
+               margin-left: 10px;
+               vertical-align: text-bottom;
+           }
+           span {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                color: #ffffff;
+                font-size: 24px;
+                margin-left:10px;
+           }
+           .search {
+                   float:right;
+                   margin-top: 3px;
+
+           }
+           #zoom-query {
+              border: 1px #0D696F solid;
+              padding: 5px 5px;
+              width: 230px;
+             -webkit-appearance: none;
+             border-radius: 0;
+             margin: 0px 0px;
+           }
+           
+           .toolbar-icon {
+             width: 15px;
+             height: 15px;
+             margin: 0px 0px;
+             border: 1px #0D696F solid;
+             background-color: #ffffff;
+             box-sizing: content-box;
+             padding: 5px 5px;
+             float: right;
+             cursor: pointer;
+             margin-right: 20px;
+           }
+           #zoom-search {
+             background-image: url('search.png');
+           }
+           #zoom-search:hover {
+             background-image: url('search_hover.png');
+           }
+           #nav-toggle {
+             background-image: url('navigation.png');
+             display:none;
+           }
+           #nav-toggle:hover {
+             background-image: url('navigation_hover.png');           
+           }
+           
+           @media screen and (max-width: 768px) {
+                  span {
+                       display:none;
+                  }
+                  #zoom-query {
+                      width: 210px;
+                  }
+           }
+           @media screen and (max-width: 450px) {
+                  #zoom-query {
+                      width:50%;
+                      float: right;
+                  }
+           }
+
+       #navigation {
+              position: fixed;
+              left: 0px;
+              top: 40px;              
+              width: 300px;
+              bottom: 0px;
+              -webkit-overflow-scrolling: touch;
+       }
+       #content {
+              position: fixed;
+              left: 300px;
+              top: 40px;              
+              right: 0px;
+              bottom: 0px;  
+              -webkit-overflow-scrolling: touch;
+       }
+       @media screen and (max-width: 768px) {
+              #navigation {
+                 display:none;
+                 width:100%;
+              }
+              #nav-toggle {
+                 display: block;
+              }
+              #content {
+                 left:0px;
+              }
+       }
+       
+#solutions-menu {
+    left: 20px;
+    top: 38px;
+    bottom: 35px;
+    width: 690px;
+    position:fixed;
+    max-width:80%;
+    max-height:80%;
+    background-color: #FFFFFF;
+    list-style:none;
+    border: 1px solid #7d7d7d;
+    padding: 10px 10px;
+    overflow-y: auto;    
+}
+
+#solutions-menu .solution img   {
+    margin: 5px 5px;
+    width: 150px;
+    height:150px;
+    border-width:3px;
+	border-style: solid;
+	border-color:#FFFFFF;
+}   
+
+#solutions-menu .solution img:hover   {
+	border-color:#AAAAAA;
+}   
+     
+             
+#solutions-menu .solution{
+    float: left;
+    cursor: pointer;
+}
+
+@media (max-width: 655px) {
+    #solutions-menu {
+                    width: 810px;
+    }   
+    
+    #solutions-menu .solution img {
+                   width: 150px;
+                   }
+}
+             
+@media (max-width: 455px) {
+    #solutions-menu {
+                    width: 215px;
+    }   
+    
+}         
+
+#solutions-button.show-pointer {
+    cursor: pointer;
+}
+#solutions-button  {
+    cursor: default;
+}
+
+#solutions-button img:hover {
+                      background-color: #CEE3E5;
+                      padding: 5px;
+                      
+                      }
+                      
+#solutions-button img {
+                     
+                      padding: 5px;
+                      
+                      }
+
+@media (max-width: 390px) {
+                   #solutions-button img{
+                   margin-left: 4px;
+                   }
+                   #header img {
+                   margin-left: 4px;
+                   }
+}
+
+
+.divider  {
+          background-image: url('divider.png');
+          display: inline-block;
+          vertical-align: top;
+          width: 1px;
+          height: 29px;
+          
+          }
+          
+
+</style>
+</head>
+<body>
+</div>
+     <script type="text/javascript">
+             function hideNavigation() {             
+                      $('#navigation').css('display','');
+             }
+             function toggleNavigation() {
+                      if($('#navigation').is(':visible')) {
+                          hideNavigation();
+                      } else {
+                          $('#navigation').toggle();
+                      }
+             }
+             function search(){ 
+                hideNavigation(); 
+                frames['hmcontent'].location = 'search_results.html?zoom_query=' + document.getElementById('zoom-query').value;
+             }
+     </script>
+     <div id="header">
+          <div class="search"><div class="toolbar-icon" id="nav-toggle" onclick="toggleNavigation()"></div><div id="zoom-search" class="toolbar-icon" onclick="search()"></div><input id="zoom-query" type="text" placeholder="search..." onkeyup="if(event.keyCode == 13) search();" ></input></div><img src="logo.png" onclick="toggleNavigation()"></img>
+          <span class="brand" style="vertical-align: text-bottom;">BPMN Quick Guide</span>
+          <div class="divider" style="margin: 3px 0px; margin-left: 10px;"></div>
+           <a id="solutions-button" href="#"><img src="solutions.png" style="padding-bottom: 4px; margin-left: -4px;" alt="Solutions" /></a>
+           <div class="divider" style="margin: 3px -4px;"></div>
+     </div>
+<script type="text/javascript">
+    var defaulttopic="first_topic.htm";
+    var query = window.location.search.substring(1).replace(/:|&#58;|&#x3a;|\//g,"");
+    if (query != "") {
+       defaulttopic = query + window.location.hash;
+       if (typeof(hmGetContextId) != "undefined") {
+         var tmpCntx = hmGetContextId(query);
+         if (tmpCntx != "") defaulttopic = tmpCntx;
+       }
+    }           
+document.write('<div id="content"><iframe name="hmcontent" src="' + defaulttopic + '"></iframe></div>');
+if (document.getElementById) {
+  document.write('<div id="navigation"><iframe name="hmnavigation" src="bpmn_quick_guide_content.htm" scrolling="auto" frameborder="0"></iframe></div>'); 
+} else {
+  document.write('<div id="navigation"><iframe name="hmnavigation" src="<%HREF_CONTENT_PAGE_STATIC% scrolling="auto" frameborder="0">"></iframe></div>'); 
+}
+
+//This fix the scrolling behaviour or iDevices  for iframes
+if((navigator.userAgent.match(/iPad/i)) ||(navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))) {
+   $('#navigation, #content').css('overflow','scroll');
+}
+</script>
+
+<div id="solutions-menu"> </div>
+  
+</body>
+</html>
+

@@ -1,0 +1,304 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+   <title>Event Sub Process</title>
+   <meta name="generator" content="Help &amp; Manual" />
+   <meta name="keywords" content="Collapsed,Compensation,Conditional,Escalation,Event,Interrupting,Message,Multiple,Non,Parallel,Process,Signal,Sub,Timer" />
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="initial-scale = 1.0"/>
+   <link type="text/css" href="default.css" rel="stylesheet" />
+   <style type="text/css">
+     body { margin: 0px; background: #FFFFFF; padding-top: 20px;}
+     a {color:#12959F;}      /* unvisited link */
+     a:visited {color:#12959F;}  /* visited link */
+     a:hover {color:#12959F;}  /* mouse over link */
+     a:active {color:#12959F;}
+     .highlight {background-color: #FFFF40 !important;}
+     
+      img#fleximage { 
+        width: 100% !important;
+        height: auto !important;
+     }
+     
+      img#fleximage2 { 
+        width: 100% !important;
+        height: auto !important;
+     }
+     
+      img#fleximage3 { 
+        width: 100% !important;
+        height: auto !important;
+     }
+     
+       img#fleximage4 { 
+        width: 100% !important;
+        height: auto !important;
+     }
+     
+       img#fleximage5 { 
+        width: 100% !important;
+        height: auto !important;
+     }
+     
+      img#fleximage6 { 
+        width: 100% !important;
+        height: auto !important;
+     }
+   </style>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="helpman_settings.js"></script>
+   <script type="text/javascript" src="helpman_topicinit.js"></script>
+
+   <script type="text/javascript">
+     HMSyncTOC("index.html", "event_sub_process.htm");
+   </script>
+   <script type="text/javascript" src="highlight.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function(){highlight();});
+   </script>
+</head>
+<body>
+<p style="font-size: 8pt; position:relative; top:5px; padding-left:20px;"><span style="color:#959595;">Navigation: </span><a href="first_topic.htm">BPMN Quick Guide</a> &gt; <a href="activity_basics.htm">Activity</a> &gt; Event Sub Process</p>
+
+<table style="width:100%; border:none; border-spacing:0px;">
+  <tr style="vertical-align:middle">
+    <td style="text-align:left; padding-left:20px;">    
+        <h1 class="p_Heading1" style="margin: 19px 0px 0px 0px;"><span class="f_Heading1" style="font-size: 24pt;">Event Sub Process</span></h1>
+
+    </td>
+    <td style="text-align:right; padding-right:20px; width:90px;">
+     <a href="transaction.htm"><img src="back.png" tilte="Previous Page" onmouseenter="this.src='back_hover.png';" onmouseleave="this.src='back.png';"></img></a>&nbsp;
+     <a href="first_topic.htm"><img src="top.png" tilte="Top Page" onmouseenter="this.src='top_hover.png';" onmouseleave="this.src='top.png';"></img></a>&nbsp;
+     <a href="call_activity.htm"><img src="next.png" tilte="Next Page" onmouseenter="this.src='next_hover.png';" onmouseleave="this.src='next.png';"></img></a>
+    </td>
+  </tr>
+</table>
+
+
+<!-- Placeholder for topic body. -->
+<table style="width:100%;border:none;border-spacing:0px"><tr style="vertical-align:top"><td style="text-align:left;padding:5px">
+<p style="margin: 19px 0px 0px 0px;"><span style="font-size: 12pt;">&nbsp;</span></p>
+<div style="text-align: center; text-indent: 0px; padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;"><table style="width:100%; border:none; border-spacing:0px;">
+<tr style="text-align:left;vertical-align:top;">
+<th style="vertical-align:top; width:170px; background-color:#12959f; padding:1px;"><p>&nbsp;</p>
+</th>
+<th colspan="3" style="vertical-align:top; width:1077px; background-color:#12959f; padding:1px;"><p><span style="font-size: 12pt;">&nbsp;</span></p>
+</th>
+<th style="vertical-align:top; width:93px; background-color:#12959f; padding:1px;"><br />
+</th>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_5a912ed3.png" width="89" height="74" alt="Event Sub Message Non" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting Message - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_35fd566c.png" width="89" height="74" alt="Event Sub Message" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting -Message - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_f0cdf5cc.png" width="89" height="74" alt="Event Sub Timer Non" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting - Timer - Event Sub-Process -Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_5d55ec5b.png" width="89" height="74" alt="Event Sub Timer" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Timer - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_ad149b1b.png" width="89" height="74" alt="Event Sub Conditional Non" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting - Conditional - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_1e640f7b.png" width="89" height="74" alt="Event Sub conditional" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Conditional - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_e0229944.png" width="89" height="74" alt="Event Sub Escalation Non" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting- Signal - &nbsp;Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_1e308e42.png" width="89" height="74" alt="Event Sub Signal" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Signal - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_86c77b48.png" width="89" height="74" alt="Event Sub Multiple Non" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting- Multiple - &nbsp;Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_6eb3710b.png" width="89" height="74" alt="Event Sub Multiple" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Multiple - &nbsp;Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_3bebe268.png" width="89" height="74" alt="Event Sub Parallel Non" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting &nbsp;- Parallel Multiple - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_e03f0387.png" width="89" height="74" alt="Event Sub Parallel" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Parallel Multiple - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; padding:1px;"><p style="text-align: right;"><img src="event-sub-escalation-non.png" width="89" height="74" alt="Event-Sub-Escalation-Non" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Non-interrupting – Escalation - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><img src="event-sub-escalation.png" width="89" height="74" alt="Event-Sub-Escalation" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting &nbsp;- Escalation Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_3739b857.png" width="89" height="74" alt="Event Sub Error" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting - Error - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; background-color:#b8dfe2; padding:1px;"><p style="text-align: right;"><img src="hmfile_hash_734eb935.png" width="89" height="74" alt="Event Sub Compensation" style="margin:0px 0px 0px auto;width:89px;height:74px;border:none" /></p>
+</td>
+<td style="vertical-align:middle; width:52px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; background-color:#b8dfe2; padding:1px;"><p style="text-align: justify;"><span style="font-size: 12pt;">Interrupting – Compensation - Event Sub-Process - Collapsed</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; background-color:#b8dfe2; padding:1px;"><p><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+<tr style="text-align:left;vertical-align:top;">
+<td style="vertical-align:middle; width:170px; background-color:#12959f; padding:1px;"><p style="text-align: center;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:438px; background-color:#12959f; padding:1px;"><p style="text-align: center;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:52px; background-color:#12959f; padding:1px;"><p style="text-align: center;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:574px; background-color:#12959f; padding:1px;"><p style="text-align: center;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+<td style="vertical-align:middle; width:93px; background-color:#12959f; padding:1px;"><p style="text-align: center;"><span style="color: #000000;">&nbsp;</span></p>
+</td>
+</tr>
+</table>
+</div>
+<p><span style="font-size: 12pt;">&nbsp;</span></p>
+<p><span style="font-size: 12pt;">&nbsp;</span></p>
+
+</td></tr></table>
+
+</body>
+</html>
