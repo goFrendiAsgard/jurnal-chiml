@@ -268,3 +268,93 @@ request(urlGenre, (error, response, body) => {
   })
 }
 ```
+
+### Performance
+
+```
+User:
+System:
+Real:
+```
+
+# Solution III: BPMN
+
+BPMN stands for Business Process Modelling Notation. This notation can be implemented as BPEL in oder to make it executable.
+
+As for BPEL, WSDL (web service definition language) for every web service is required.
+
+In this solution we use Node.Js `bpmn`' package, so that we can put a more detail implementation of every trigger and task. in a JavaScript. This detail implementation is called `handler`
+
+## Implementation Using Web-service Interface
+
+This is the graphical representation, and the handler and of `genres`
+
+![genres](genres.svg)
+
+```js
+// TODO: write the handler
+```
+
+![genres](tracks.svg)
+
+```js
+// TODO: write the handler
+```
+
+![genres](albums.svg)
+
+```js
+// TODO: write the handler
+```
+
+And to run the solution, we can use this simple program
+
+```js
+var bpmn = require("bpmn");
+bpmn.createUnmanagedProcess("./genres.bpmn", function(err, myProcess){
+    // we start the process
+    myProcess.triggerEvent("start");
+
+});
+```
+
+### Performance
+
+```
+User:
+System:
+Real:
+```
+
+# Your Opinion
+
+After seeing the problem and the alternative solutions, please fill up the questionaires.
+
+For each solutions, you have to answer these questions:
+
+* How familiar are you with the solution
+  - I can't follow the example and I never heard about it before
+  - I can't follow the example but I have heard about it before
+  - I understand the example eventhough I never heard about it before
+  - I understand the example and I'm already familiar with the solution
+
+* In the scale of 1-5 how readable is the solution (in case of you can provide the better implementation compared to ours, you can judge this question by using your own implementation)
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+
+* In the scale of 1-5 how likely will you use the solution in your next serious project
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+
+* In the scale of 1-5 how likely will you use the solution in your next hobby project
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
