@@ -1,12 +1,14 @@
-# Scenario
+# Problem
 
-We want to compare `HTTP-API`, `BPMN`, and `CHIML` and see the advantage/disadvantage of each technology.
+We want to give a brief example about how `CHIML`, `HTTP-API`, and `BPMN` can be use in order to orchestrate the pre-existing components to achieve a greater goal.
 
-The database used is [Chinook sample database](http://www.sqlitetutorial.net/sqlite-sample-database/). The structure of the database is as follow:
+We will keep the explanation as short as possible as we want the readers to state their opinions by directly looking at the implementation.
+
+We use the database from [Chinook sample database](http://www.sqlitetutorial.net/sqlite-sample-database/). The structure of the database is as follow:
 
 ![Database Diagram](components/sqlite-sample-database-diagram.png)
 
-In this scenario our goal is to group `tracks` based on the `genres`. For every track we will show it's track name and it's album title.
+In this scenario our goal is to group `tracks` based on the `genres`. The expected data is as follow
 
 ```json
 [
@@ -38,22 +40,27 @@ In this scenario our goal is to group `tracks` based on the `genres`. For every 
   }
 ]
 ```
-# Requirement
 
-* Sqlite3
-* Node.Js
-* Chimera-Framework
-* BPMN
+The developers can fetch the data through the pre-existing components.
 
-# Table Fetcher
+The developers are pressumed to not has any access to the component's source-code or database server.
 
-To fetch data from the table, we have build two version of table fetcher. The terminal-interface and the web-service
+The only possible interaction is by accessing the `terminal interface` from component's local computer or by accessing `web service` from the network.
+
+# The Pre-existing Components
+
+The component has two interfaces. The `terminal` one and the `web-service` one
+
+The `terminal-interface` can only be executed from the component's local computer.
+Assuming that the developer building the application in the same computer as the components
+
+The `web-service` can be executed through the network (internet) through HTTP protocol
 
 ## Terminal Interface
 
 The terminal interface is located at [`components/program.js`](components/terminal-interface.js).
 
-To use the terminal interface, you can invoke `node components/terminal-interface.js <tableName> <filter>`
+To access the terminal interface, developer can invoke `node components/terminal-interface.js <tableName> <filter>` from component's local computer
 
 __Example:__
 
@@ -66,9 +73,9 @@ gofrendi@asgard:~$ node components/terminal-interface.js genres "{\"Name\":\"Roc
 
 The web service is located at [`components/web-service.js`](components/web-service.js).
 
-To start the web service, you can invoke `node components/web-service.js` 
+The web service, can be started by using the following command `node components/web-service.js` 
 
-After the service started, you can send a GET request using this format `/<tableName>?<fieldName>=<value>`
+After the service started, the developer can send a GET request using this format `/<tableName>?<fieldName>=<value>` from the network.
 
 __Example:__
 
@@ -77,7 +84,7 @@ URL: http://localhost:3010/genres?Name=Rock
 RESULT: [{"GenreId":1,"Name":"Rock"}]
 ```
 
-# CHIML
+# Solution I: CHIML
 
 CHIML is a YAML based language designed to orchestrate process flow in [Chimera-Framework]()
 
@@ -85,7 +92,7 @@ The detail explanation about CHIML language specification can be found [here](ht
 
 There are 2 ways to develop the solutions. In the first implementation, we try to access terminal-interface, while in the second implementation we try to access web service
 
-## Implementation (Solution I: Accessing terminal-interface)
+## Implementation Using Terminal Interface
 
 ```
 # filename: chimera.terminal.chiml
@@ -122,16 +129,15 @@ do:
 
 To use terminal interface, you can write the above CHIML script and invoke `chimera chimera.terminal.chiml`
 
-This will simply run `node components/terminal-interface.js genres {}`, and put it into `genres` variable,
-do the mapping, fetch data from `tracks` table using the similar command, and fetch the album
+### Performance
 
-## Performance for Solution I
-
+```
 User:
 System:
 Real:
+```
 
-## Implementation (Solution II: Accessing web-service)
+## Implementation Using Web-service Interface
 
 ```
 # filename: chimera.web.chiml
@@ -175,14 +181,90 @@ do:
 
 ```
 
-To use terminal interface, you can write the above CHIML script and invoke `chimera chimera.terminal.chiml`
+To run the solution, you can write the above CHIML script and invoke `chimera chimera.web.chiml`
 
-This will simply run `node components/terminal-interface.js genres {}`, and put it into `genres` variable,
-do the mapping, fetch data from `tracks` table using the similar command, and fetch the album
-
-## Performance for Solution II
-
+### Performance
+```
 User:
 System:
 Real:
+```
 
+## Solution II: HTTP API
+
+HTTP API is currently gain it popularity. Almost everything on the internet has HTTP-API interface, either by using `SOAP`, `REST`, or non-standardized protocol.
+
+As already implied, HTTP API is only communicating through web-service. We are currently build the solution in Node.Js. Since Node.Js has asynchronous 
+
+## Implementation Using Terminal Interface
+
+```
+Not present
+```
+
+## Implementation Using Web-service Interface
+
+```js
+const request = require('request')
+const async = require('async')
+const urlGenre = 'http://localhost:3010/genres'
+const urlAlbum = 'http://localhost:3010/albums'
+const urlTrack = 'http://localhost:3010/tracks'
+
+let finalResult = []
+request(urlGenre, (error, response, body) => {
+  if (error) {
+    return console.error(error)
+  }
+
+  let genres = JSON.parse(body)
+  let fetchTracks = []
+
+  for (let i = 0; i < genres.length; i++) {
+    let genre = genres[i]
+
+    finalResult.push({GenreName: genre.Name, tracks: []})
+    genre.tracks = []
+
+    fetchTracks.push((nextFetchTrack) => {
+      request(urlTrack + '?GenreId=' + genre.GenreId, (error, response, body) => {
+        if (error) {
+          return nextFetchTrack(error)
+        }
+
+        let tracks = JSON.parse(body)
+        let fetchAlbum = []
+
+        for (let j = 0; j < tracks.length; j++) {
+          let track = tracks[j]
+          finalResult[i]['tracks'].push({TrackName: track.Name})
+
+          fetchAlbum.push((nextFetchAlbum) => {
+            request(urlAlbum + '?AlbumId=' + track.AlbumId, (error, response, body) => {
+              if (error) {
+                return nextFetchAlbum(error)
+              }
+
+              let albums = JSON.parse(body)
+              let album = albums[0]
+              finalResult[i]['tracks'][j]['AlbumTitle'] = album.Title
+              nextFetchAlbum()
+            })
+          })
+        }
+
+        return async.parallel(fetchAlbum, (error, result) => {
+          nextFetchTrack(error, result)
+        })
+      })
+    })
+  }
+
+  return async.parallel(fetchTracks, (error, result) => {
+    if (error) {
+      return console.error(error)
+    }
+    return console.log(JSON.stringify(finalResult))
+  })
+}
+```
