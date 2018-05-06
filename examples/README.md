@@ -43,7 +43,9 @@ In this scenario our goal is to group `tracks` based on the `genres`. The expect
 
 ## Constraints
 
-We are assuming that the only possible way to get the data is by accessing the pre-existing `web service` using HTTP.
+* We are assuming that the only possible way to get the data is by accessing the pre-existing `web service` using HTTP.
+
+* We are assuming that the developer should build the system in low resource computer (like `Raspberry Pi` or `Orange Pi`), and don't have enough resource to build another abstraction layer (i.e: GraphQL server or BPEL server).
 
 ## Web Service
 
@@ -133,7 +135,7 @@ sys     0m0.092s
 
 HTTP API is currently gain it popularity. Almost everything on the internet has HTTP-API interface, either by using `SOAP`, `REST`, or non-standardized protocol.
 
-As already implied, HTTP API is only communicating through web-service. We are currently build the solution in Node.Js. Since Node.Js has asynchronous 
+As already implied, HTTP API is only communicating through web-service. We are currently build the solution by using Node.Js. However, you can also build the same thing by using another languages like Python, Ruby, Java, or PHP.
 
 ## Implementation
 
