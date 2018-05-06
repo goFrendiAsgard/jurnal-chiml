@@ -1,3 +1,5 @@
+// filename: api.web.js
+// usage: node api.web.js
 const request = require('request')
 const async = require('async')
 const urlGenre = 'http://localhost:3010/genres'

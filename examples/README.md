@@ -132,9 +132,9 @@ To use terminal interface, you can write the above CHIML script and invoke `chim
 ### Performance
 
 ```
-User:
-System:
-Real:
+real    0m2.123s
+user    0m6.129s
+sys     0m0.623s
 ```
 
 ## Implementation Using Web-service Interface
@@ -185,9 +185,9 @@ To run the solution, you can write the above CHIML script and invoke `chimera ch
 
 ### Performance
 ```
-User:
-System:
-Real:
+real    0m0.530s
+user    0m0.526s
+sys     0m0.059s
 ```
 
 ## Solution II: HTTP API
@@ -205,6 +205,8 @@ Not present
 ## Implementation Using Web-service Interface
 
 ```js
+// filename: api.web.js
+// usage: node api.web.js
 const request = require('request')
 const async = require('async')
 const urlGenre = 'http://localhost:3010/genres'
@@ -269,12 +271,14 @@ request(urlGenre, (error, response, body) => {
 }
 ```
 
+To run the program, you can execute `node`
+
 ### Performance
 
 ```
-User:
-System:
-Real:
+real    0m0.286s
+user    0m0.248s
+sys     0m0.029s
 ```
 
 # Solution III: BPMN
@@ -285,7 +289,7 @@ As for BPEL, WSDL (web service definition language) for every web service is req
 
 In this solution we use Node.Js `bpmn`' package, so that we can put a more detail implementation of every trigger and task. in a JavaScript. This detail implementation is called `handler`
 
-## Implementation Using Web-service Interface
+## Implementation Using Terminal Interface
 
 This is the graphical representation, and the handler and of `genres`
 
@@ -310,12 +314,15 @@ This is the graphical representation, and the handler and of `genres`
 And to run the solution, we can use this simple program
 
 ```js
-var bpmn = require("bpmn");
-bpmn.createUnmanagedProcess("./genres.bpmn", function(err, myProcess){
-    // we start the process
-    myProcess.triggerEvent("start");
-
-});
+// filename: bpmn.terminal.js
+// usage: node bpmn.terminal.js
+const bpmn = require('bpmn')
+bpmn.createUnmanagedProcess('./genres.bpmn', (error, myProcess) => {
+  if (error) {
+    return console.error(error)
+  }
+  return myProcess.triggerEvent('start')
+})
 ```
 
 ### Performance
@@ -325,6 +332,17 @@ User:
 System:
 Real:
 ```
+
+## Implementation Using Web-service Interface
+
+### Performance
+
+```
+User:
+System:
+Real:
+```
+
 
 # Your Opinion
 

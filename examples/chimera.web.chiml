@@ -1,3 +1,5 @@
+# filename: chimera.web.chiml
+# usage: chimera chimera.web.chiml
 out: genres
 do:
 

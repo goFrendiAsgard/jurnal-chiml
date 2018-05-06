@@ -1,3 +1,5 @@
+# filename: chimera.terminal.chiml
+# usage: chimera chimera.terminal.chiml
 out: genres
 do:
 
