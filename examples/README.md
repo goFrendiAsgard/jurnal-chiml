@@ -1,6 +1,6 @@
 # Problem
 
-We want to give a brief example about how `CHIML`, `HTTP-API`, and `BPMN` can be use in order to orchestrate the pre-existing components to achieve a greater goal.
+We want to give a brief example about how `CHIML` and `Node.Js` can be use in order to orchestrate the pre-existing web-services to get data in a desired format.
 
 We will keep the explanation as short as possible as we want the readers to state their opinions by directly looking at the implementation.
 
@@ -41,41 +41,13 @@ In this scenario our goal is to group `tracks` based on the `genres`. The expect
 ]
 ```
 
-The developers can fetch the data through the pre-existing components.
+## Constraints
 
-The developers are pressumed to not has any access to the component's source-code or database server.
-
-The only possible interaction is by accessing the `terminal interface` from component's local computer or by accessing `web service` from the network.
-
-# The Pre-existing Components
-
-The component has two interfaces. The `terminal` one and the `web-service` one
-
-The `terminal-interface` can only be executed from the component's local computer.
-Assuming that the developer building the application in the same computer as the components
-
-The `web-service` can be executed through the network (internet) through HTTP protocol
-
-## Terminal Interface
-
-The terminal interface is located at [`components/program.js`](components/terminal-interface.js).
-
-To access the terminal interface, developer can invoke `node components/terminal-interface.js <tableName> <filter>` from component's local computer
-
-__Example:__
-
-```bash
-gofrendi@asgard:~$ node components/terminal-interface.js genres "{\"Name\":\"Rock\"}"
-[{"GenreId":1,"Name":"Rock"}]
-```
+We are assuming that the only possible way to get the data is by accessing the pre-existing `web service` using HTTP.
 
 ## Web Service
 
-The web service is located at [`components/web-service.js`](components/web-service.js).
-
-The web service, can be started by using the following command `node components/web-service.js` 
-
-After the service started, the developer can send a GET request using this format `/<tableName>?<fieldName>=<value>` from the network.
+Once the web-server has been started, the developer can send a GET request to `http://<server>:<port>/<tableName>?<fieldName>=<value>`  to the server.
 
 __Example:__
 
@@ -92,52 +64,7 @@ The detail explanation about CHIML language specification can be found [here](ht
 
 There are 2 ways to develop the solutions. In the first implementation, we try to access terminal-interface, while in the second implementation we try to access web service
 
-## Implementation Using Terminal Interface
-
-```
-# filename: chimera.terminal.chiml
-# usage: chimera chimera.terminal.chiml
-out: genres
-do:
-
-  - |('genres', {}) -> node components/terminal-interface.js -> genres
-
-  - map: genres
-    into: genres
-    ins: genre
-    out: genre
-    do:
-
-      - parallel:
-        - |('tracks', {GenreId: genre.GenreId}) -> node components/terminal-interface.js -> tracks
-        - |({GenreName: genre.Name, Tracks: []}) --> genre
-
-      - map: tracks
-        into: tracks
-        ins: track
-        out: track
-        do:
-
-          - |('albums', {AlbumId: track.AlbumId}) -> node components/terminal-interface.js -> albums
-          - |(albums[0].Title) --> albumTitle
-
-          - |({TrackName: track.Name, AlbumTitle: albumTitle}) --> track
-
-      - |(tracks) -->  genre.Tracks
-
-```
-
-To use terminal interface, you can write the above CHIML script and invoke `chimera chimera.terminal.chiml`
-
-### Performance
-
-```
-real    0m2.123s
-user    0m6.129s
-sys     0m0.623s
-```
-
-## Implementation Using Web-service Interface
+## Implementation
 
 ```
 # filename: chimera.web.chiml
@@ -181,13 +108,25 @@ do:
 
 ```
 
-To run the solution, you can write the above CHIML script and invoke `chimera chimera.web.chiml`
-
-### Performance
+## Performance (5 records for each tables)
 ```
 real    0m0.530s
 user    0m0.526s
 sys     0m0.059s
+```
+
+## Performance (10 records for each tables)
+```
+real    0m1.014s
+user    0m1.042s
+sys     0m0.091s
+```
+
+## Performance (15 records for each tables)
+```
+real    0m1.010s
+user    0m1.032s
+sys     0m0.092s
 ```
 
 ## Solution II: HTTP API
@@ -196,13 +135,7 @@ HTTP API is currently gain it popularity. Almost everything on the internet has 
 
 As already implied, HTTP API is only communicating through web-service. We are currently build the solution in Node.Js. Since Node.Js has asynchronous 
 
-## Implementation Using Terminal Interface
-
-```
-Not present
-```
-
-## Implementation Using Web-service Interface
+## Implementation
 
 ```js
 // filename: api.web.js
@@ -271,9 +204,7 @@ request(urlGenre, (error, response, body) => {
 }
 ```
 
-To run the program, you can execute `node`
-
-### Performance
+### Performance (5 records for each tables)
 
 ```
 real    0m0.286s
@@ -281,68 +212,21 @@ user    0m0.248s
 sys     0m0.029s
 ```
 
-# Solution III: BPMN
-
-BPMN stands for Business Process Modelling Notation. This notation can be implemented as BPEL in oder to make it executable.
-
-As for BPEL, WSDL (web service definition language) for every web service is required.
-
-In this solution we use Node.Js `bpmn`' package, so that we can put a more detail implementation of every trigger and task. in a JavaScript. This detail implementation is called `handler`
-
-## Implementation Using Terminal Interface
-
-This is the graphical representation, and the handler and of `genres`
-
-![genres](genres.svg)
-
-```js
-// TODO: write the handler
-```
-
-![genres](tracks.svg)
-
-```js
-// TODO: write the handler
-```
-
-![genres](albums.svg)
-
-```js
-// TODO: write the handler
-```
-
-And to run the solution, we can use this simple program
-
-```js
-// filename: bpmn.terminal.js
-// usage: node bpmn.terminal.js
-const bpmn = require('bpmn')
-bpmn.createUnmanagedProcess('./genres.bpmn', (error, myProcess) => {
-  if (error) {
-    return console.error(error)
-  }
-  return myProcess.triggerEvent('start')
-})
-```
-
-### Performance
+### Performance (10 records for each tables)
 
 ```
-User:
-System:
-Real:
+real    0m0.369s
+user    0m0.314s
+sys     0m0.044s
 ```
 
-## Implementation Using Web-service Interface
-
-### Performance
+### Performance (15 records for each tables)
 
 ```
-User:
-System:
-Real:
+real    0m0.358s
+user    0m0.319s
+sys     0m0.055s
 ```
-
 
 # Your Opinion
 
