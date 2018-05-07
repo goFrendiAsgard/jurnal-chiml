@@ -21,7 +21,8 @@ Previously, a YAML based orchestration language was developed for Chimera-Framew
 
 ## Research Question
 
-How to make a readable on compact orchestration language for Chimera-Framework
+* How to make a readable and compact orchestration language for Chimera-Framework
+* How the orchestration language compared to other possible solution
 
 # Literature Survey
 
@@ -39,6 +40,17 @@ How to make a readable on compact orchestration language for Chimera-Framework
 
 # CHIML
 
+# Result
+
+# Discsussion
+
 # Conclusion
 
-# Experiment
+# TODO:
+
+* Explain the acronym
+* The options of the questionaires is better to be sorted descending
+* Explain the `not-returned-questions`
+* Explain the outlier
+* Better to tabulate the questions
+* Put some `open-ended-question` to get more data (like: why do you choose...?)
