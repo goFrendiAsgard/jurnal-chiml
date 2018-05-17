@@ -19,6 +19,6 @@ function select (tableName, filter, callback) {
     sql += ' AND ' + key + '= ?'
     params.push(val)
   }
-  sql += ' LIMIT 15'
+  sql += ' LIMIT 100'
   runSql(sql, params, callback)
 }

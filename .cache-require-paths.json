@@ -9,24 +9,29 @@
     "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
     "./core-preprocessor.js": "/home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js",
     "./core-chiml-parser.js": "/home/gofrendi/Projects/chimera-framework/lib/core-chiml-parser.js",
-    "./core-dollar.js": "/home/gofrendi/Projects/chimera-framework/lib/core-dollar.js"
+    "./core-dollar.js": "/home/gofrendi/Projects/chimera-framework/lib/core-dollar.js",
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"
   },
   "/home/gofrendi/Projects/chimera-framework/lib/util.js": {
     "util": "util",
     "fs": "fs",
     "clone": "/home/gofrendi/Projects/chimera-framework/node_modules/clone/clone.js",
-    "json-stringify-safe": "/home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js"
+    "json-stringify-safe": "/home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js",
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"
   },
   "/home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js": {
     "./cmd.js": "/home/gofrendi/Projects/chimera-framework/lib/cmd.js",
-    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js"
+    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"
   },
   "/home/gofrendi/Projects/chimera-framework/lib/cmd.js": {
-    "child_process": "child_process"
+    "child_process": "child_process",
+    "cache-require-paths": "/home/gofrendi/Projects/chimera-framework/node_modules/cache-require-paths/index.js"
   },
   "/home/gofrendi/Projects/chimera-framework/lib/core-chiml-parser.js": {
     "js-yaml": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/index.js",
-    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js"
+    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"
   },
   "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/index.js": {
     "./lib/js-yaml.js": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml.js"
@@ -157,6 +162,20 @@
   "/home/gofrendi/Projects/chimera-framework/lib/core-dollar.js": {
     "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
     "./core.js": "/home/gofrendi/Projects/chimera-framework/lib/core.js",
-    "readline": "readline"
+    "readline": "readline",
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/require-once.js": {
+    "cache-require-paths": "/home/gofrendi/Projects/chimera-framework/node_modules/cache-require-paths/index.js",
+    "path": "path",
+    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
+    "./core-dollar.js": "/home/gofrendi/Projects/chimera-framework/lib/core-dollar.js",
+    "./core-chiml-parser.js": "/home/gofrendi/Projects/chimera-framework/lib/core-chiml-parser.js",
+    "js-yaml": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/index.js",
+    "fs": "fs",
+    "clone": "/home/gofrendi/Projects/chimera-framework/node_modules/clone/clone.js",
+    "neo-async": "/home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js",
+    "util": "util",
+    "./cmd.js": "/home/gofrendi/Projects/chimera-framework/lib/cmd.js"
   }
 }

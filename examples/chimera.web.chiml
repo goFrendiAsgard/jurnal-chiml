@@ -17,23 +17,16 @@ do:
     out: genre
     do:
 
-      - parallel:
-        - do:
-          - |(urlTrack + '?GenreId=' + genre.GenreId) -> [$.httpRequest] -> response
-          - |(response.body) --> tracks
-        - |({GenreName: genre.Name, Tracks: []}) --> genre
+      - |(urlTrack + '?GenreId=' + genre.GenreId) -> [$.httpRequest] -> response
+      - |({GenreName: genre.Name, Tracks: response.body}) --> genre
 
-      - map: tracks
-        into: tracks
+      - map: genre.Tracks
+        into: genre.Tracks
         ins: track
         out: track
         do:
 
           - |(urlAlbum + '?AlbumId=' + track.AlbumId) -> [$.httpRequest] -> response
-          - |(response.body) --> albums
-          - |(albums[0].Title) --> albumTitle
+          - |(response.body[0].Title) --> albumTitle
 
           - |({TrackName: track.Name, AlbumTitle: albumTitle}) --> track
-
-      - |(tracks) -->  genre.Tracks
-

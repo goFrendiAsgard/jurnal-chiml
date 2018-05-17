@@ -7,18 +7,14 @@ const express = require('express')
 const app = express()
 const port = 3010
 
-function reportError (error, res) {
-  console.error(error)
-  return res.send(JSON.stringify({error}))
-}
-
 function addRoute (app, tableName) {
   const route = '/' + tableName
   app.get(route, (req, res) => {
     const filter = req.query
     select(tableName, filter, (error, rows) => {
       if (error) {
-        return reportError(error, rows)
+        console.error(error)
+        return res.send(JSON.stringify({error}))
       }
       console.log(rows)
       return res.send(JSON.stringify(rows))

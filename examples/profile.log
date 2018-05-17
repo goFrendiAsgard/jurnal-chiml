@@ -1,0 +1,1048 @@
+Statistical profiling result from isolate-0x25c2df0-v8.log, (4059 ticks, 199 unaccounted, 0 excluded).
+
+ [Shared libraries]:
+   ticks  total  nonlib   name
+    987   24.3%          /usr/bin/node
+     24    0.6%          /lib/x86_64-linux-gnu/libc-2.27.so
+      1    0.0%          /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25
+
+ [JavaScript]:
+   ticks  total  nonlib   name
+     67    1.7%    2.2%  Builtin: InterpreterEntryTrampoline
+     36    0.9%    1.2%  Builtin: CallFunction_ReceiverIsAny
+     31    0.8%    1.0%  StoreIC: A store IC from the snapshot
+     28    0.7%    0.9%  Builtin: KeyedLoadIC_Megamorphic
+     25    0.6%    0.8%  Builtin: KeyedStoreIC_Megamorphic_Strict
+     16    0.4%    0.5%  KeyedLoadIC: A keyed load IC from the snapshot
+     15    0.4%    0.5%  LoadIC: A load IC from the snapshot
+     15    0.4%    0.5%  Builtin: Call_ReceiverIsAny
+     13    0.3%    0.4%  Builtin: StringEqual
+      9    0.2%    0.3%  Builtin: RegExpPrototypeMatch
+      8    0.2%    0.3%  Builtin: StringPrototypeCharAt
+      7    0.2%    0.2%  Stub: StringAddStub
+      7    0.2%    0.2%  LazyCompile: ~Request.onRequestResponse /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:881:48
+      7    0.2%    0.2%  LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      7    0.2%    0.2%  LazyCompile: *evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+      7    0.2%    0.2%  Builtin: HasProperty
+      6    0.1%    0.2%  Stub: GetPropertyStub
+      6    0.1%    0.2%  LazyCompile: ~Request.init /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:142:35
+      6    0.1%    0.2%  KeyedStoreIC: A keyed store IC from the snapshot {1}
+      6    0.1%    0.2%  Builtin: LoadIC_Noninlined
+      6    0.1%    0.2%  Builtin: Call_ReceiverIsNullOrUndefined
+      6    0.1%    0.2%  Builtin: ArgumentsAdaptorTrampoline
+      5    0.1%    0.2%  LazyCompile: ~nextTick internal/process/next_tick.js:245:20
+      5    0.1%    0.2%  LazyCompile: ~lookupAndConnect net.js:1043:26
+      5    0.1%    0.2%  LazyCompile: ~getTrueRootChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:60:27
+      5    0.1%    0.2%  LazyCompile: ~Socket.connect net.js:982:36
+      5    0.1%    0.2%  LazyCompile: ~ReadableState _stream_readable.js:58:23
+      5    0.1%    0.2%  Builtin: StringPrototypeSubstring
+      4    0.1%    0.1%  LazyCompile: ~runInNewContext vm.js:123:25
+      4    0.1%    0.1%  LazyCompile: ~matchKnownFields _http_incoming.js:150:26
+      4    0.1%    0.1%  LazyCompile: ~match native string.js:12:6
+      4    0.1%    0.1%  LazyCompile: ~getChainWithStandardKey /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:457:36
+      4    0.1%    0.1%  LazyCompile: ~evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+      4    0.1%    0.1%  LazyCompile: ~createChainRunner /home/gofrendi/Projects/chimera-framework/lib/core.js:400:30
+      4    0.1%    0.1%  LazyCompile: ~_onceWrap events.js:330:19
+      4    0.1%    0.1%  LazyCompile: ~Request.start /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:705:36
+      4    0.1%    0.1%  LazyCompile: ~Module._resolveLookupPaths module.js:345:38
+      4    0.1%    0.1%  LazyCompile: ~EventEmitter.init events.js:62:29
+      4    0.1%    0.1%  LazyCompile: *getPatchedObject /home/gofrendi/Projects/chimera-framework/lib/util.js:73:27
+      4    0.1%    0.1%  Builtin: StringPrototypeCharCodeAt
+      4    0.1%    0.1%  Builtin: ConstructFunction
+      3    0.1%    0.1%  LazyCompile: ~splitCommandString /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:258:31
+      3    0.1%    0.1%  LazyCompile: ~socketOnData _http_client.js:433:22
+      3    0.1%    0.1%  LazyCompile: ~series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+      3    0.1%    0.1%  LazyCompile: ~requireOnce /home/gofrendi/Projects/chimera-framework/lib/require-once.js:8:22
+      3    0.1%    0.1%  LazyCompile: ~parserOnIncomingClient _http_client.js:492:32
+      3    0.1%    0.1%  LazyCompile: ~parserOnHeadersComplete _http_common.js:61:33
+      3    0.1%    0.1%  LazyCompile: ~isInvalidPath _http_client.js:52:23
+      3    0.1%    0.1%  LazyCompile: ~initParams /home/gofrendi/Projects/chimera-framework/node_modules/request/index.js:24:21
+      3    0.1%    0.1%  LazyCompile: ~getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      3    0.1%    0.1%  LazyCompile: ~getNormalizedValue /home/gofrendi/Projects/chimera-framework/lib/core.js:288:31
+      3    0.1%    0.1%  LazyCompile: ~emitNone events.js:104:18
+      3    0.1%    0.1%  LazyCompile: ~autoEscapeStr url.js:442:23
+      3    0.1%    0.1%  LazyCompile: ~_extend util.js:981:17
+      3    0.1%    0.1%  LazyCompile: ~_addListener events.js:233:22
+      3    0.1%    0.1%  LazyCompile: ~Readable _stream_readable.js:140:18
+      3    0.1%    0.1%  LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+      3    0.1%    0.1%  LazyCompile: *parse url.js:101:37
+      3    0.1%    0.1%  Builtin: CompileLazy
+      3    0.1%    0.1%  Builtin: CallFunction_ReceiverIsNullOrUndefined
+      3    0.1%    0.1%  Builtin: ArrayIndexOf
+      2    0.0%    0.1%  Stub: CEntryStub {1}
+      2    0.0%    0.1%  Stub: CEntryStub
+      2    0.0%    0.1%  StoreIC: A store IC from the snapshot {1}
+      2    0.0%    0.1%  Script: ~<anonymous> evalmachine.<anonymous>:1:1
+      2    0.0%    0.1%  RegExp: ^\\{(.+)\\}$
+      2    0.0%    0.1%  LazyCompile: ~splitCommandStringByShortArrow /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:220:43
+      2    0.0%    0.1%  LazyCompile: ~setVariable /home/gofrendi/Projects/chimera-framework/lib/core.js:296:24
+      2    0.0%    0.1%  LazyCompile: ~request /home/gofrendi/Projects/chimera-framework/lib/core-dollar.js:26:17
+      2    0.0%    0.1%  LazyCompile: ~removeSocket _http_agent.js:284:53
+      2    0.0%    0.1%  LazyCompile: ~popAsyncIds internal/async_hooks.js:364:21
+      2    0.0%    0.1%  LazyCompile: ~onceWrapper events.js:307:21
+      2    0.0%    0.1%  LazyCompile: ~normalizeArgs net.js:127:23
+      2    0.0%    0.1%  LazyCompile: ~isRealObject /home/gofrendi/Projects/chimera-framework/lib/util.js:166:23
+      2    0.0%    0.1%  LazyCompile: ~isNullOrUndefined /home/gofrendi/Projects/chimera-framework/lib/util.js:178:28
+      2    0.0%    0.1%  LazyCompile: ~isLegalPort internal/net.js:5:21
+      2    0.0%    0.1%  LazyCompile: ~injectSpecialProperties /home/gofrendi/Projects/chimera-framework/lib/core.js:514:36
+      2    0.0%    0.1%  LazyCompile: ~getTrimmedArrayElements /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:194:36
+      2    0.0%    0.1%  LazyCompile: ~getName _http_agent.js:116:43
+      2    0.0%    0.1%  LazyCompile: ~getJsExecutable /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:291:28
+      2    0.0%    0.1%  LazyCompile: ~getChainAsObject /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:80:29
+      2    0.0%    0.1%  LazyCompile: ~evaluateObjectStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:147:36
+      2    0.0%    0.1%  LazyCompile: ~endReadableNT _stream_readable.js:1059:23
+      2    0.0%    0.1%  LazyCompile: ~emitReadable _stream_readable.js:498:22
+      2    0.0%    0.1%  LazyCompile: ~emit events.js:156:44
+      2    0.0%    0.1%  LazyCompile: ~defineDefaultChainOut /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:274:34
+      2    0.0%    0.1%  LazyCompile: ~defaultTriggerAsyncIdScope internal/async_hooks.js:275:36
+      2    0.0%    0.1%  LazyCompile: ~debug /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:135:16
+      2    0.0%    0.1%  LazyCompile: ~assignValue /home/gofrendi/Projects/chimera-framework/lib/core-dollar.js:67:22
+      2    0.0%    0.1%  LazyCompile: ~addChunk _stream_readable.js:261:18
+      2    0.0%    0.1%  LazyCompile: ~_send _http_outgoing.js:213:49
+      2    0.0%    0.1%  LazyCompile: ~_addHeaderLine _http_incoming.js:286:24
+      2    0.0%    0.1%  LazyCompile: ~Socket.end net.js:508:32
+      2    0.0%    0.1%  LazyCompile: ~Socket._writeGeneric net.js:721:42
+      2    0.0%    0.1%  LazyCompile: ~Socket._destroy net.js:547:37
+      2    0.0%    0.1%  LazyCompile: ~Request.end /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1504:34
+      2    0.0%    0.1%  LazyCompile: ~Module.require module.js:593:36
+      2    0.0%    0.1%  LazyCompile: ~EventEmitter events.js:27:22
+      2    0.0%    0.1%  LazyCompile: ~Caseless.has /home/gofrendi/Projects/chimera-framework/node_modules/caseless/index.js:18:35
+      2    0.0%    0.1%  LazyCompile: ~<anonymous> native typedarray.js:937:48
+      2    0.0%    0.1%  LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:778:34
+      2    0.0%    0.1%  LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:520:18
+      2    0.0%    0.1%  LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1122:27
+      2    0.0%    0.1%  LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1114:28
+      2    0.0%    0.1%  LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:335:12
+      2    0.0%    0.1%  LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:254:14
+      2    0.0%    0.1%  LazyCompile: *getTidyChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:493:25
+      2    0.0%    0.1%  LazyCompile: *getSmartSplitted /home/gofrendi/Projects/chimera-framework/lib/util.js:97:27
+      2    0.0%    0.1%  LazyCompile: *emit events.js:156:44
+      2    0.0%    0.1%  LazyCompile: *Request.onRequestResponse /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:881:48
+      2    0.0%    0.1%  LazyCompile: *Readable.on _stream_readable.js:771:33
+      2    0.0%    0.1%  KeyedStoreIC: A keyed store IC from the snapshot
+      2    0.0%    0.1%  KeyedLoadIC: A keyed load IC from the snapshot {1}
+      2    0.0%    0.1%  Builtin: StoreICStrict_Uninitialized
+      2    0.0%    0.1%  Builtin: RegExpPrototypeExec
+      2    0.0%    0.1%  Builtin: LoadIC_Uninitialized
+      2    0.0%    0.1%  Builtin: LoadICProtoArray
+      2    0.0%    0.1%  Builtin: FastNewObject
+      2    0.0%    0.1%  Builtin: FastNewClosure
+      2    0.0%    0.1%  Builtin: DeleteProperty
+      2    0.0%    0.1%  Builtin: Construct {1}
+      2    0.0%    0.1%  Builtin: Call_ReceiverIsNotNullOrUndefined
+      1    0.0%    0.0%  Stub: StringAddStub {1}
+      1    0.0%    0.0%  Stub: RecordWriteStub {5}
+      1    0.0%    0.0%  Stub: RecordWriteStub {4}
+      1    0.0%    0.0%  Stub: RecordWriteStub {3}
+      1    0.0%    0.0%  Stub: RecordWriteStub {2}
+      1    0.0%    0.0%  Stub: RecordWriteStub {1}
+      1    0.0%    0.0%  Stub: RecordWriteStub
+      1    0.0%    0.0%  Stub: JSEntryStub
+      1    0.0%    0.0%  Stub: InternalArrayConstructorStub
+      1    0.0%    0.0%  Stub: ElementsTransitionAndStoreStub
+      1    0.0%    0.0%  RegExp: ^([a-z]+):\\/\\/[^\\s/$.?#].[^\\s]*$
+      1    0.0%    0.0%  RegExp: \\r|\\n
+      1    0.0%    0.0%  LazyCompile: ~validateHeader _http_outgoing.js:485:24
+      1    0.0%    0.0%  LazyCompile: ~validateAsyncId internal/async_hooks.js:113:25
+      1    0.0%    0.0%  LazyCompile: ~v4 /home/gofrendi/Projects/chimera-framework/node_modules/uuid/v4.js:4:12
+      1    0.0%    0.0%  LazyCompile: ~undestroy internal/streams/destroy.js:46:19
+      1    0.0%    0.0%  LazyCompile: ~tryOnImmediate timers.js:747:24
+      1    0.0%    0.0%  LazyCompile: ~tickDone internal/process/next_tick.js:88:20
+      1    0.0%    0.0%  LazyCompile: ~spliceOne internal/util.js:273:19
+      1    0.0%    0.0%  LazyCompile: ~slice buffer.js:966:40
+      1    0.0%    0.0%  LazyCompile: ~setImmediate timers.js:826:22
+      1    0.0%    0.0%  LazyCompile: ~setHeader _http_outgoing.js:497:57
+      1    0.0%    0.0%  LazyCompile: ~self.callback /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:181:30
+      1    0.0%    0.0%  LazyCompile: ~resume_ _stream_readable.js:819:17
+      1    0.0%    0.0%  LazyCompile: ~resume _stream_readable.js:812:16
+      1    0.0%    0.0%  LazyCompile: ~responseKeepAlive _http_client.js:563:27
+      1    0.0%    0.0%  LazyCompile: ~resp.hasHeader /home/gofrendi/Projects/chimera-framework/node_modules/caseless/index.js:56:29
+      1    0.0%    0.0%  LazyCompile: ~resolve path.js:1156:28
+      1    0.0%    0.0%  LazyCompile: ~require internal/module.js:8:19
+      1    0.0%    0.0%  LazyCompile: ~removeListener events.js:355:28
+      1    0.0%    0.0%  LazyCompile: ~read _http_incoming.js:91:47
+      1    0.0%    0.0%  LazyCompile: ~parserOnMessageComplete _http_common.js:145:33
+      1    0.0%    0.0%  LazyCompile: ~onwriteStateUpdate _stream_writable.js:425:28
+      1    0.0%    0.0%  LazyCompile: ~onlookup dns.js:90:18
+      1    0.0%    0.0%  LazyCompile: ~onSocket _http_client.js:693:20
+      1    0.0%    0.0%  LazyCompile: ~onFinish _http_outgoing.js:719:18
+      1    0.0%    0.0%  LazyCompile: ~ok assert.js:69:12
+      1    0.0%    0.0%  LazyCompile: ~needMoreData _stream_readable.js:298:22
+      1    0.0%    0.0%  LazyCompile: ~needFinish _stream_writable.js:577:20
+      1    0.0%    0.0%  LazyCompile: ~isUint8Array internal/util/types.js:28:22
+      1    0.0%    0.0%  LazyCompile: ~isString /home/gofrendi/Projects/chimera-framework/lib/util.js:154:19
+      1    0.0%    0.0%  LazyCompile: ~isFunction /home/gofrendi/Projects/chimera-framework/lib/util.js:182:21
+      1    0.0%    0.0%  LazyCompile: ~getRevealedHiddenNestedChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:472:41
+      1    0.0%    0.0%  LazyCompile: ~getProxyFromURI /home/gofrendi/Projects/chimera-framework/node_modules/request/lib/getProxyFromURI.js:40:26
+      1    0.0%    0.0%  LazyCompile: ~getPatchedObject /home/gofrendi/Projects/chimera-framework/lib/util.js:73:27
+      1    0.0%    0.0%  LazyCompile: ~getCompiledCommand /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:401:31
+      1    0.0%    0.0%  LazyCompile: ~getChainWithId /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:87:27
+      1    0.0%    0.0%  LazyCompile: ~getChainWithDefaultValues /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:92:38
+      1    0.0%    0.0%  LazyCompile: ~get _stream_duplex.js:94:6
+      1    0.0%    0.0%  LazyCompile: ~fromList _stream_readable.js:932:18
+      1    0.0%    0.0%  LazyCompile: ~freeParser _http_common.js:201:20
+      1    0.0%    0.0%  LazyCompile: ~free internal/freelist.js:17:7
+      1    0.0%    0.0%  LazyCompile: ~format url.js:566:39
+      1    0.0%    0.0%  LazyCompile: ~filterOutReservedFunctions /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:58:37
+      1    0.0%    0.0%  LazyCompile: ~filterForNonReserved /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:44:31
+      1    0.0%    0.0%  LazyCompile: ~extname path.js:1455:28
+      1    0.0%    0.0%  LazyCompile: ~exports._unrefActive timers.js:155:32
+      1    0.0%    0.0%  LazyCompile: ~executeChain /home/gofrendi/Projects/chimera-framework/lib/core.js:30:23
+      1    0.0%    0.0%  LazyCompile: ~end /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:525:24
+      1    0.0%    0.0%  LazyCompile: ~emitPendingUnhandledRejections internal/process/promises.js:100:42
+      1    0.0%    0.0%  LazyCompile: ~done /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6903:18
+      1    0.0%    0.0%  LazyCompile: ~dirname path.js:1348:28
+      1    0.0%    0.0%  LazyCompile: ~destroy internal/streams/destroy.js:4:17
+      1    0.0%    0.0%  LazyCompile: ~defineDefaultChainCommand /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:281:38
+      1    0.0%    0.0%  LazyCompile: ~createSingleChainCallback /home/gofrendi/Projects/chimera-framework/lib/core.js:334:38
+      1    0.0%    0.0%  LazyCompile: ~createSingleChainAction /home/gofrendi/Projects/chimera-framework/lib/core.js:354:36
+      1    0.0%    0.0%  LazyCompile: ~createNestedChainActions /home/gofrendi/Projects/chimera-framework/lib/core.js:252:37
+      1    0.0%    0.0%  LazyCompile: ~createCallback /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:2906:30
+      1    0.0%    0.0%  LazyCompile: ~copy /home/gofrendi/Projects/chimera-framework/node_modules/request/lib/helpers.js:42:15
+      1    0.0%    0.0%  LazyCompile: ~clearBuffer _stream_writable.js:479:21
+      1    0.0%    0.0%  LazyCompile: ~clear internal/process/next_tick.js:42:8
+      1    0.0%    0.0%  LazyCompile: ~checkIsHttpToken _http_common.js:280:26
+      1    0.0%    0.0%  LazyCompile: ~checkInvalidHeaderChar _http_common.js:330:32
+      1    0.0%    0.0%  LazyCompile: ~cachePathsRequire /home/gofrendi/Projects/chimera-framework/node_modules/cache-require-paths/index.js:20:54
+      1    0.0%    0.0%  LazyCompile: ~assignVariableByInsValue /home/gofrendi/Projects/chimera-framework/lib/core.js:462:37
+      1    0.0%    0.0%  LazyCompile: ~assertPath path.js:26:20
+      1    0.0%    0.0%  LazyCompile: ~args /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:313:12
+      1    0.0%    0.0%  LazyCompile: ~allocate buffer.js:281:18
+      1    0.0%    0.0%  LazyCompile: ~afterShutdown net.js:311:23
+      1    0.0%    0.0%  LazyCompile: ~afterConnect net.js:1162:22
+      1    0.0%    0.0%  LazyCompile: ~adjustOffset buffer.js:950:22
+      1    0.0%    0.0%  LazyCompile: ~addRequest _http_agent.js:138:49
+      1    0.0%    0.0%  LazyCompile: ~addListener events.js:296:58
+      1    0.0%    0.0%  LazyCompile: ~action /home/gofrendi/Projects/chimera-framework/lib/core.js:572:20
+      1    0.0%    0.0%  LazyCompile: ~_unrefTimer net.js:268:52
+      1    0.0%    0.0%  LazyCompile: ~_tickCallback internal/process/next_tick.js:151:25
+      1    0.0%    0.0%  LazyCompile: ~_storeHeader _http_outgoing.js:287:22
+      1    0.0%    0.0%  LazyCompile: ~_combinedTickCallback internal/process/next_tick.js:129:33
+      1    0.0%    0.0%  LazyCompile: ~_addHeaderLines _http_incoming.js:119:25
+      1    0.0%    0.0%  LazyCompile: ~Writable.end _stream_writable.js:550:34
+      1    0.0%    0.0%  LazyCompile: ~Uint8Array native typedarray.js:158:31
+      1    0.0%    0.0%  LazyCompile: ~Tunnel.isEnabled /home/gofrendi/Projects/chimera-framework/node_modules/request/lib/tunnel.js:114:39
+      1    0.0%    0.0%  LazyCompile: ~Tunnel /home/gofrendi/Projects/chimera-framework/node_modules/request/lib/tunnel.js:105:17
+      1    0.0%    0.0%  LazyCompile: ~Socket.write net.js:712:34
+      1    0.0%    0.0%  LazyCompile: ~Socket._read net.js:491:34
+      1    0.0%    0.0%  LazyCompile: ~Request.jar /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1439:34
+      1    0.0%    0.0%  LazyCompile: ~Redirect.redirectTo /home/gofrendi/Projects/chimera-framework/node_modules/request/lib/redirect.js:45:42
+      1    0.0%    0.0%  LazyCompile: ~Redirect.onResponse /home/gofrendi/Projects/chimera-framework/node_modules/request/lib/redirect.js:79:42
+      1    0.0%    0.0%  LazyCompile: ~Redirect.onRequest /home/gofrendi/Projects/chimera-framework/node_modules/request/lib/redirect.js:19:41
+      1    0.0%    0.0%  LazyCompile: ~Readable.push _stream_readable.js:191:35
+      1    0.0%    0.0%  LazyCompile: ~Readable.on _stream_readable.js:771:33
+      1    0.0%    0.0%  LazyCompile: ~Querystring.init /home/gofrendi/Projects/chimera-framework/node_modules/request/lib/querystring.js:14:39
+      1    0.0%    0.0%  LazyCompile: ~Querystring /home/gofrendi/Projects/chimera-framework/node_modules/request/lib/querystring.js:6:22
+      1    0.0%    0.0%  LazyCompile: ~NativeModule.nonInternalExists bootstrap_node.js:562:46
+      1    0.0%    0.0%  LazyCompile: ~NativeModule.exists bootstrap_node.js:551:33
+      1    0.0%    0.0%  LazyCompile: ~Module._resolveFilename module.js:514:35
+      1    0.0%    0.0%  LazyCompile: ~Module._load module.js:448:24
+      1    0.0%    0.0%  LazyCompile: ~ClientRequest _http_client.js:79:23
+      1    0.0%    0.0%  LazyCompile: ~Caseless.get /home/gofrendi/Projects/chimera-framework/node_modules/caseless/index.js:27:35
+      1    0.0%    0.0%  LazyCompile: ~Buffer.concat buffer.js:425:25
+      1    0.0%    0.0%  LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:889:31
+      1    0.0%    0.0%  LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1074:41
+      1    0.0%    0.0%  LazyCompile: ~$getMaxListeners events.js:89:26
+      1    0.0%    0.0%  LazyCompile: *splitCommandStringByShortArrow /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:220:43
+      1    0.0%    0.0%  LazyCompile: *removeListener events.js:355:28
+      1    0.0%    0.0%  LazyCompile: *normalizeStringPosix path.js:101:30
+      1    0.0%    0.0%  LazyCompile: *done /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6903:18
+      1    0.0%    0.0%  LazyCompile: *_extend util.js:981:17
+      1    0.0%    0.0%  LazyCompile: *_addHeaderLines _http_incoming.js:119:25
+      1    0.0%    0.0%  LazyCompile: *SpreadIterable native spread.js:17:24
+      1    0.0%    0.0%  LazyCompile: *ReadableState _stream_readable.js:58:23
+      1    0.0%    0.0%  LazyCompile: *Readable.read _stream_readable.js:365:35
+      1    0.0%    0.0%  LazyCompile: *ClientRequest _http_client.js:79:23
+      1    0.0%    0.0%  LazyCompile: *Caseless.has /home/gofrendi/Projects/chimera-framework/node_modules/caseless/index.js:18:35
+      1    0.0%    0.0%  KeyedStoreIC: A keyed store IC from the snapshot {2}
+      1    0.0%    0.0%  Builtin: StringToLowerCaseIntl
+      1    0.0%    0.0%  Builtin: StringPrototypeIndexOf
+      1    0.0%    0.0%  Builtin: StringCharCodeAt
+      1    0.0%    0.0%  Builtin: ObjectPrototypeHasOwnProperty
+      1    0.0%    0.0%  Builtin: ObjectCreate
+      1    0.0%    0.0%  Builtin: ObjectAssign
+      1    0.0%    0.0%  Builtin: JSConstructStubGenericUnrestrictedReturn
+      1    0.0%    0.0%  Builtin: JSConstructStubApi
+      1    0.0%    0.0%  Builtin: InterpreterPushUndefinedAndArgsThenCall
+      1    0.0%    0.0%  Builtin: HandleApiCall
+      1    0.0%    0.0%  Builtin: GrowFastSmiOrObjectElements
+      1    0.0%    0.0%  Builtin: FunctionPrototypeCall
+      1    0.0%    0.0%  Builtin: FastFunctionPrototypeBind
+      1    0.0%    0.0%  Builtin: FastArrayPush
+      1    0.0%    0.0%  Builtin: CallWithSpread {1}
+      1    0.0%    0.0%  Builtin: CallWithArrayLike
+      1    0.0%    0.0%  Builtin: CallVarargs
+      1    0.0%    0.0%  Builtin: ArrayConcat
+      1    0.0%    0.0%  Builtin: AdaptorWithBuiltinExitFrame
+
+ [C++]:
+   ticks  total  nonlib   name
+    867   21.4%   28.5%  v8::internal::Isolate::IsAnyInitialArrayPrototype(v8::internal::Handle<v8::internal::JSArray>)
+    190    4.7%    6.2%  v8::internal::IncrementalMarking::Step(unsigned long, v8::internal::IncrementalMarking::CompletionAction, v8::internal::IncrementalMarking::ForceCompletionAction, v8::internal::StepOrigin)
+    159    3.9%    5.2%  v8::internal::IncrementalMarking::WhiteToGreyAndPush(v8::internal::HeapObject*)
+     82    2.0%    2.7%  void v8::internal::BodyDescriptorBase::IteratePointers<v8::internal::IncrementalMarkingMarkingVisitor>(v8::internal::HeapObject*, int, int, v8::internal::IncrementalMarkingMarkingVisitor*)
+     40    1.0%    1.3%  node::HandleWrap::Close(v8::FunctionCallbackInfo<v8::Value> const&)
+     30    0.7%    1.0%  v8::internal::Accessors::ErrorStackGetter(v8::Local<v8::Name>, v8::PropertyCallbackInfo<v8::Value> const&)
+     23    0.6%    0.8%  node::TCPWrap::Connect(v8::FunctionCallbackInfo<v8::Value> const&)
+     19    0.5%    0.6%  cfree
+     17    0.4%    0.6%  void node::StreamBase::JSMethod<node::LibuvStreamWrap, &(int node::StreamBase::WriteString<(node::encoding)4>(v8::FunctionCallbackInfo<v8::Value> const&))>(v8::FunctionCallbackInfo<v8::Value> const&)
+     17    0.4%    0.6%  v8::internal::HeapObject::Size() const
+     16    0.4%    0.5%  v8::internal::Scavenger::ScavengeObject(v8::internal::HeapObject**, v8::internal::HeapObject*)
+     15    0.4%    0.5%  bool v8::internal::MemoryChunk::IsEvacuationCandidate<(v8::internal::AccessMode)0>()
+     13    0.3%    0.4%  int v8::internal::BinarySearch<(v8::internal::SearchMode)1, v8::internal::DescriptorArray>(v8::internal::DescriptorArray*, v8::internal::Name*, int, int*)
+     13    0.3%    0.4%  bool v8::internal::MarkBit::Set<(v8::internal::AccessMode)1>()
+     12    0.3%    0.4%  node::crypto::RandomBytes(v8::FunctionCallbackInfo<v8::Value> const&)
+     12    0.3%    0.4%  __libc_malloc
+      9    0.2%    0.3%  v8::internal::StackFrame::GetCallerState(v8::internal::StackFrame::State*) const
+      9    0.2%    0.3%  v8::internal::FixedArray::set(int, v8::internal::Object*)
+      8    0.2%    0.3%  v8::internal::StackFrameIterator::StackFrameIterator(v8::internal::Isolate*)
+      8    0.2%    0.3%  v8::internal::HashTable<v8::internal::NameDictionary, v8::internal::NameDictionaryShape>::FindInsertionEntry(unsigned int)
+      7    0.2%    0.2%  v8::internal::PageScavengingItem::Process(v8::internal::Scavenger*)
+      7    0.2%    0.2%  v8::internal::LookupIterator::WriteDataValue(v8::internal::Handle<v8::internal::Object>, bool)
+      7    0.2%    0.2%  v8::internal::JSObject::MigrateToMap(v8::internal::Handle<v8::internal::JSObject>, v8::internal::Handle<v8::internal::Map>, int)
+      7    0.2%    0.2%  v8::internal::Isolate::CaptureSimpleStackTrace(v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::FrameSkipMode, v8::internal::Handle<v8::internal::Object>)
+      7    0.2%    0.2%  v8::internal::Deoptimizer::VisitAllOptimizedFunctionsForContext(v8::internal::Context*, v8::internal::OptimizedFunctionVisitor*)
+      7    0.2%    0.2%  syscall
+      6    0.1%    0.2%  void v8::internal::JSFunction::BodyDescriptorImpl<(v8::internal::JSFunction::BodyVisitingPolicy)1>::IterateBody<v8::internal::IncrementalMarkingMarkingVisitor>(v8::internal::HeapObject*, int, v8::internal::IncrementalMarkingMarkingVisitor*)
+      6    0.1%    0.2%  v8::internal::compiler::GraphReducer::ReduceTop()
+      6    0.1%    0.2%  v8::internal::InnerPointerToCodeCache::GetCacheEntry(unsigned char*)
+      6    0.1%    0.2%  mmap
+      6    0.1%    0.2%  __pthread_cond_wait
+      6    0.1%    0.2%  __libc_read
+      5    0.1%    0.2%  void v8::internal::String::WriteToFlat<unsigned char>(v8::internal::String*, unsigned char*, int, int)
+      5    0.1%    0.2%  v8::internal::String::SlowEquals(v8::internal::String*)
+      5    0.1%    0.2%  v8::internal::Object* v8::internal::VisitWeakList<v8::internal::JSFunction>(v8::internal::Heap*, v8::internal::Object*, v8::internal::WeakObjectRetainer*)
+      5    0.1%    0.2%  v8::internal::FixedArray::set(int, v8::internal::Object*, v8::internal::WriteBarrierMode)
+      5    0.1%    0.2%  std::deque<v8::internal::TranslatedValue, std::allocator<v8::internal::TranslatedValue> >::push_back(v8::internal::TranslatedValue const&)
+      4    0.1%    0.1%  v8::internal::LocalAllocator::Allocate(v8::internal::AllocationSpace, int, v8::internal::AllocationAlignment)
+      4    0.1%    0.1%  v8::internal::HeapObject::map() const
+      4    0.1%    0.1%  v8::internal::Heap::AllocateRaw(int, v8::internal::AllocationSpace, v8::internal::AllocationAlignment)
+      4    0.1%    0.1%  v8::internal::Bitmap::Clear()
+      4    0.1%    0.1%  v8::internal::BaseNameDictionary<v8::internal::NameDictionary, v8::internal::NameDictionaryShape>::CopyEnumKeysTo(v8::internal::Handle<v8::internal::NameDictionary>, v8::internal::Handle<v8::internal::FixedArray>, v8::internal::KeyCollectionMode, v8::internal::KeyAccumulator*)
+      4    0.1%    0.1%  munmap
+      4    0.1%    0.1%  __libc_write
+      4    0.1%    0.1%  __GI___pthread_mutex_lock
+      3    0.1%    0.1%  void std::__introsort_loop<v8::base::AtomicElement<v8::internal::Smi*>*, long, v8::internal::EnumIndexComparator<v8::internal::NameDictionary> >(v8::base::AtomicElement<v8::internal::Smi*>*, v8::base::AtomicElement<v8::internal::Smi*>*, long, v8::internal::EnumIndexComparator<v8::internal::NameDictionary>)
+      3    0.1%    0.1%  void std::__insertion_sort<v8::base::AtomicElement<v8::internal::Smi*>*, v8::internal::EnumIndexComparator<v8::internal::NameDictionary> >(v8::base::AtomicElement<v8::internal::Smi*>*, v8::base::AtomicElement<v8::internal::Smi*>*, v8::internal::EnumIndexComparator<v8::internal::NameDictionary>)
+      3    0.1%    0.1%  void node::StreamBase::JSMethod<node::LibuvStreamWrap, &node::StreamBase::Shutdown>(v8::FunctionCallbackInfo<v8::Value> const&)
+      3    0.1%    0.1%  v8::internal::Zone::New(unsigned long)
+      3    0.1%    0.1%  v8::internal::StackFrameIterator::Advance()
+      3    0.1%    0.1%  v8::internal::Scavenger::Process(v8::internal::Scavenger::Barrier*)
+      3    0.1%    0.1%  v8::internal::Scanner::ScanIdentifierOrKeyword()
+      3    0.1%    0.1%  v8::internal::Scanner::Next()
+      3    0.1%    0.1%  v8::internal::Runtime_StringCharCodeAtRT(int, v8::internal::Object**, v8::internal::Isolate*)
+      3    0.1%    0.1%  v8::internal::PagedSpace::Available()
+      3    0.1%    0.1%  v8::internal::Map::TransitionToDataProperty(v8::internal::Handle<v8::internal::Map>, v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyAttributes, v8::internal::PropertyConstness, v8::internal::Object::StoreFromKeyed, bool*)
+      3    0.1%    0.1%  v8::internal::LookupIterator::PropertyOrElement(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, bool*, v8::internal::LookupIterator::Configuration)
+      3    0.1%    0.1%  v8::internal::JSReceiver::SetOrCopyDataProperties(v8::internal::Isolate*, v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::Handle<v8::internal::Object>, v8::internal::ScopedVector<v8::internal::Handle<v8::internal::Object> > const*, bool)
+      3    0.1%    0.1%  v8::internal::JSObject::MakePrototypesFast(v8::internal::Handle<v8::internal::Object>, v8::internal::WhereToStart, v8::internal::Isolate*)
+      3    0.1%    0.1%  v8::internal::JSObject::FastPropertyAt(v8::internal::Handle<v8::internal::JSObject>, v8::internal::Representation, v8::internal::FieldIndex)
+      3    0.1%    0.1%  v8::internal::IncrementalMarking::RecordWriteSlow(v8::internal::HeapObject*, v8::internal::Object**, v8::internal::Object*)
+      3    0.1%    0.1%  v8::internal::IC::UpdateState(v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>)
+      3    0.1%    0.1%  v8::internal::Heap::CreateFillerObjectAt(unsigned char*, int, v8::internal::ClearRecordedSlots)
+      3    0.1%    0.1%  v8::internal::Heap::CopyJSObject(v8::internal::JSObject*, v8::internal::AllocationSite*)
+      3    0.1%    0.1%  v8::internal::Heap::AllocateWeakCell(v8::internal::HeapObject*)
+      3    0.1%    0.1%  v8::internal::Heap::AllocateStruct(v8::internal::InstanceType)
+      3    0.1%    0.1%  v8::internal::HashTable<v8::internal::StringTable, v8::internal::StringTableShape>::FindEntry(v8::internal::Isolate*, v8::internal::StringTableKey*)
+      3    0.1%    0.1%  v8::internal::HashTable<v8::internal::NameDictionary, v8::internal::NameDictionaryShape>::HasSufficientCapacityToAdd(int)
+      3    0.1%    0.1%  v8::internal::DescriptorArray::GetDescriptorEndSlot(int)
+      2    0.0%    0.1%  void v8::internal::LookupIterator::NextInternal<false>(v8::internal::Map*, v8::internal::JSReceiver*)
+      2    0.0%    0.1%  void node::StreamBase::JSMethod<node::LibuvStreamWrap, &(int node::StreamBase::WriteString<(node::encoding)1>(v8::FunctionCallbackInfo<v8::Value> const&))>(v8::FunctionCallbackInfo<v8::Value> const&)
+      2    0.0%    0.1%  v8::internal::compiler::NodeProperties::IsControlEdge(v8::internal::compiler::Edge)
+      2    0.0%    0.1%  v8::internal::WeakFixedArray::Add(v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::HeapObject>, int*)
+      2    0.0%    0.1%  v8::internal::TranslationIterator::Next()
+      2    0.0%    0.1%  v8::internal::TranslatedState::TranslatedState(v8::internal::JavaScriptFrame const*)
+      2    0.0%    0.1%  v8::internal::TranslatedFrame::GetValueCount()
+      2    0.0%    0.1%  v8::internal::TransitionsAccessor::SearchTransition(v8::internal::Name*, v8::internal::PropertyKind, v8::internal::PropertyAttributes)
+      2    0.0%    0.1%  v8::internal::ThreadId::GetCurrentThreadId()
+      2    0.0%    0.1%  v8::internal::StringTable::LookupString(v8::internal::Isolate*, v8::internal::Handle<v8::internal::String>)
+      2    0.0%    0.1%  v8::internal::String::SlowFlatten(v8::internal::Handle<v8::internal::ConsString>, v8::internal::PretenureFlag)
+      2    0.0%    0.1%  v8::internal::String::Flatten(v8::internal::Handle<v8::internal::String>, v8::internal::PretenureFlag)
+      2    0.0%    0.1%  v8::internal::String::ComputeAndSetHash()
+      2    0.0%    0.1%  v8::internal::SlicedString::SlicedStringGet(int)
+      2    0.0%    0.1%  v8::internal::Runtime_UnwindAndFindExceptionHandler(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.0%    0.1%  v8::internal::Runtime_InterpreterNewClosure(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.0%    0.1%  v8::internal::RelocIterator::next()
+      2    0.0%    0.1%  v8::internal::RecordMigratedSlotVisitor::RecordMigratedSlot(v8::internal::HeapObject*, v8::internal::Object*, unsigned char*)
+      2    0.0%    0.1%  v8::internal::PerIsolateAssertScope<(v8::internal::PerIsolateAssertType)0, false>::PerIsolateAssertScope(v8::internal::Isolate*)
+      2    0.0%    0.1%  v8::internal::ParserBase<v8::internal::Parser>::ParseExpressionOrLabelledStatement(v8::internal::ZoneList<v8::internal::AstRawString const*>*, v8::internal::AllowLabelledFunctionStatement, bool*)
+      2    0.0%    0.1%  v8::internal::Parser::ParseFunction(v8::internal::AstRawString const*, int, v8::internal::FunctionKind, v8::internal::FunctionLiteral::FunctionType, v8::internal::DeclarationScope*, int*, int*, bool*, int*, bool*)
+      2    0.0%    0.1%  v8::internal::OptimizedFrame::StackSlotOffsetRelativeToFp(int)
+      2    0.0%    0.1%  v8::internal::Object::SetProperty(v8::internal::LookupIterator*, v8::internal::Handle<v8::internal::Object>, v8::internal::LanguageMode, v8::internal::Object::StoreFromKeyed)
+      2    0.0%    0.1%  v8::internal::Object::NoSideEffectsToString(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>)
+      2    0.0%    0.1%  v8::internal::Object::AddDataProperty(v8::internal::LookupIterator*, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyAttributes, v8::internal::Object::ShouldThrow, v8::internal::Object::StoreFromKeyed)
+      2    0.0%    0.1%  v8::internal::MessageTemplate::FormatMessage(int, v8::internal::Handle<v8::internal::String>, v8::internal::Handle<v8::internal::String>, v8::internal::Handle<v8::internal::String>)
+      2    0.0%    0.1%  v8::internal::MemoryChunk::Initialize(v8::internal::Heap*, unsigned char*, unsigned long, unsigned char*, unsigned char*, v8::internal::Executability, v8::internal::Space*, v8::base::VirtualMemory*)
+      2    0.0%    0.1%  v8::internal::Map::Normalize(v8::internal::Handle<v8::internal::Map>, v8::internal::PropertyNormalizationMode, char const*)
+      2    0.0%    0.1%  v8::internal::Map::GeneralizeField(v8::internal::Handle<v8::internal::Map>, int, v8::internal::PropertyConstness, v8::internal::Representation, v8::internal::Handle<v8::internal::FieldType>)
+      2    0.0%    0.1%  v8::internal::LoadICNexus::StateFromFeedback() const
+      2    0.0%    0.1%  v8::internal::LoadIC::GetMapIndependentHandler(v8::internal::LookupIterator*)
+      2    0.0%    0.1%  v8::internal::JavaScriptFrame::IsConstructor() const
+      2    0.0%    0.1%  v8::internal::JSObject::GetElementsAccessor()
+      2    0.0%    0.1%  v8::internal::JSFunction::EnsureHasInitialMap(v8::internal::Handle<v8::internal::JSFunction>)
+      2    0.0%    0.1%  v8::internal::IterateAndScavengePromotedObjectsVisitor::VisitPointers(v8::internal::HeapObject*, v8::internal::Object**, v8::internal::Object**)
+      2    0.0%    0.1%  v8::internal::InterpretedFrame::Summarize(std::vector<v8::internal::FrameSummary, std::allocator<v8::internal::FrameSummary> >*, v8::internal::FrameSummary::Mode) const
+      2    0.0%    0.1%  v8::internal::IncrementalStringBuilder::AppendString(v8::internal::Handle<v8::internal::String>)
+      2    0.0%    0.1%  v8::internal::IC::TraceIC(char const*, v8::internal::Handle<v8::internal::Object>)
+      2    0.0%    0.1%  v8::internal::HeapObject::SizeFromMap(v8::internal::Map*) const
+      2    0.0%    0.1%  v8::internal::Heap::Scavenge()
+      2    0.0%    0.1%  v8::internal::Heap::AllocateMap(v8::internal::InstanceType, int, v8::internal::ElementsKind)
+      2    0.0%    0.1%  v8::internal::Heap::AllocateJSObjectFromMap(v8::internal::Map*, v8::internal::PretenureFlag, v8::internal::AllocationSite*)
+      2    0.0%    0.1%  v8::internal::Heap::AllocateFixedArrayWithFiller(int, v8::internal::PretenureFlag, v8::internal::Object*)
+      2    0.0%    0.1%  v8::internal::HashTable<v8::internal::NameDictionary, v8::internal::NameDictionaryShape>::Rehash(v8::internal::NameDictionary*)
+      2    0.0%    0.1%  v8::internal::HashTable<v8::internal::NameDictionary, v8::internal::NameDictionaryShape>::EnsureCapacity(v8::internal::Handle<v8::internal::NameDictionary>, int, v8::internal::PretenureFlag)
+      2    0.0%    0.1%  v8::internal::Handle<v8::internal::String> v8::internal::JsonParser<true>::ScanJsonString<true>()
+      2    0.0%    0.1%  v8::internal::FeedbackVector::GetKind(v8::internal::FeedbackSlot) const
+      2    0.0%    0.1%  v8::internal::Factory::NewConsString(v8::internal::Handle<v8::internal::String>, v8::internal::Handle<v8::internal::String>, int, bool)
+      2    0.0%    0.1%  v8::internal::ExpressionClassifier<v8::internal::ParserTypes<v8::internal::Parser> >::Accumulate(v8::internal::ExpressionClassifier<v8::internal::ParserTypes<v8::internal::Parser> >*, unsigned int, bool)
+      2    0.0%    0.1%  v8::internal::Execution::Call(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, int, v8::internal::Handle<v8::internal::Object>*)
+      2    0.0%    0.1%  v8::internal::Dictionary<v8::internal::NameDictionary, v8::internal::NameDictionaryShape>::NumberOfEnumerableProperties()
+      2    0.0%    0.1%  v8::internal::Builtin_JsonParse(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.0%    0.1%  v8::internal::BaseNameDictionary<v8::internal::NameDictionary, v8::internal::NameDictionaryShape>::EnsureCapacity(v8::internal::Handle<v8::internal::NameDictionary>, int)
+      2    0.0%    0.1%  v8::internal::AstValueFactory::GetOneByteStringInternal(v8::internal::Vector<unsigned char const>)
+      2    0.0%    0.1%  v8::internal::AccountingAllocator::ReturnSegment(v8::internal::Segment*)
+      2    0.0%    0.1%  std::vector<v8::internal::FrameSummary, std::allocator<v8::internal::FrameSummary> >::reserve(unsigned long)
+      2    0.0%    0.1%  node::AsyncWrap::EmitTraceEventAfter()
+      2    0.0%    0.1%  do_futex_wait.constprop.1
+      2    0.0%    0.1%  bool v8::internal::LookupIterator::SkipInterceptor<false>(v8::internal::JSObject*)
+      2    0.0%    0.1%  __pthread_cond_signal
+      2    0.0%    0.1%  __GI___pthread_mutex_unlock
+      2    0.0%    0.1%  _IO_vfprintf
+      1    0.0%    0.0%  write
+      1    0.0%    0.0%  void v8::internal::FeedbackVector::BodyDescriptor::IterateBody<v8::internal::IncrementalMarkingMarkingVisitor>(v8::internal::HeapObject*, int, v8::internal::IncrementalMarkingMarkingVisitor*)
+      1    0.0%    0.0%  void v8::internal::Code::BodyDescriptor::IterateBody<v8::internal::IncrementalMarkingMarkingVisitor>(v8::internal::HeapObject*, v8::internal::IncrementalMarkingMarkingVisitor*)
+      1    0.0%    0.0%  void v8::internal::BodyDescriptorApply<v8::internal::CallIterateBody, void, v8::internal::HeapObject*, int, v8::internal::ObjectVisitor*>(v8::internal::InstanceType, v8::internal::HeapObject*, int, v8::internal::ObjectVisitor*)
+      1    0.0%    0.0%  void std::vector<v8::internal::TranslatedFrame, std::allocator<v8::internal::TranslatedFrame> >::emplace_back<v8::internal::TranslatedFrame>(v8::internal::TranslatedFrame&&)
+      1    0.0%    0.0%  void std::__unguarded_linear_insert<v8::base::AtomicElement<v8::internal::Smi*>*, v8::internal::EnumIndexComparator<v8::internal::NameDictionary> >(v8::base::AtomicElement<v8::internal::Smi*>*, v8::internal::EnumIndexComparator<v8::internal::NameDictionary>)
+      1    0.0%    0.0%  v8_inspector::V8InspectorImpl::~V8InspectorImpl()
+      1    0.0%    0.0%  v8::internal::interpreter::IntrinsicsHelper::FromRuntimeId(v8::internal::Runtime::FunctionId)
+      1    0.0%    0.0%  v8::internal::interpreter::ConstantArrayBuilder::CreateReservedEntry()
+      1    0.0%    0.0%  v8::internal::interpreter::BytecodeRegisterOptimizer::RegisterListFreeEvent(v8::internal::interpreter::RegisterList)
+      1    0.0%    0.0%  v8::internal::interpreter::BytecodeRegisterOptimizer::RegisterAllocateEvent(v8::internal::interpreter::Register)
+      1    0.0%    0.0%  v8::internal::interpreter::BytecodeGenerator::VisitNoStackOverflowCheck(v8::internal::AstNode*)
+      1    0.0%    0.0%  v8::internal::interpreter::BytecodeGenerator::VisitCompareOperation(v8::internal::CompareOperation*)
+      1    0.0%    0.0%  v8::internal::interpreter::BytecodeArrayWriter::EmitBytecode(v8::internal::interpreter::BytecodeNode const*)
+      1    0.0%    0.0%  v8::internal::compiler::Typer::Visitor::UpdateType(v8::internal::compiler::Node*, v8::internal::compiler::Type*)
+      1    0.0%    0.0%  v8::internal::compiler::TypedOptimization::ReduceLoadField(v8::internal::compiler::Node*)
+      1    0.0%    0.0%  v8::internal::compiler::Type::SlowIs(v8::internal::compiler::Type*)
+      1    0.0%    0.0%  v8::internal::compiler::OperatorProperties::HasContextInput(v8::internal::compiler::Operator const*)
+      1    0.0%    0.0%  v8::internal::compiler::NodeProperties::GetControlInput(v8::internal::compiler::Node*, int)
+      1    0.0%    0.0%  v8::internal::compiler::NodeCache<long, v8::base::hash<long>, std::equal_to<long> >::GetCachedNodes(v8::internal::ZoneVector<v8::internal::compiler::Node*>*)
+      1    0.0%    0.0%  v8::internal::compiler::JSInliningHeuristic::Reduce(v8::internal::compiler::Node*)
+      1    0.0%    0.0%  v8::internal::compiler::JSBuiltinReducer::Reduce(v8::internal::compiler::Node*)
+      1    0.0%    0.0%  v8::internal::compiler::Instruction::AreMovesRedundant() const
+      1    0.0%    0.0%  v8::internal::compiler::GraphTrimmer::TrimGraph()
+      1    0.0%    0.0%  v8::internal::compiler::GraphReducer::ReduceNode(v8::internal::compiler::Node*)
+      1    0.0%    0.0%  v8::internal::compiler::DeadCodeElimination::Reduce(v8::internal::compiler::Node*)
+      1    0.0%    0.0%  v8::internal::compiler::ContextAccessOf(v8::internal::compiler::Operator const*)
+      1    0.0%    0.0%  v8::internal::compiler::BytecodeGraphBuilder::MergeEffect(v8::internal::compiler::Node*, v8::internal::compiler::Node*, v8::internal::compiler::Node*)
+      1    0.0%    0.0%  v8::internal::compiler::BytecodeGraphBuilder::Environment::Merge(v8::internal::compiler::BytecodeGraphBuilder::Environment*, v8::internal::compiler::BytecodeLivenessState const*)
+      1    0.0%    0.0%  v8::internal::compiler::BytecodeGraphBuilder::BuildLoopHeaderEnvironment(int)
+      1    0.0%    0.0%  v8::internal::compiler::BitsetType::Lub(v8::internal::compiler::Type*)
+      1    0.0%    0.0%  v8::internal::compiler::BitsetType::Lub(v8::internal::Map*)
+      1    0.0%    0.0%  v8::internal::Zone::Zone(v8::internal::AccountingAllocator*, char const*)
+      1    0.0%    0.0%  v8::internal::TransitionsAccessor::SearchHandler(v8::internal::Name*, v8::internal::Handle<v8::internal::Map>*)
+      1    0.0%    0.0%  v8::internal::TransitionsAccessor::ReplaceTransitions(v8::internal::Object*)
+      1    0.0%    0.0%  v8::internal::TransitionsAccessor::Initialize()
+      1    0.0%    0.0%  v8::internal::TransitionArray::SearchDetails(int, v8::internal::PropertyKind, v8::internal::PropertyAttributes, int*)
+      1    0.0%    0.0%  v8::internal::TimedHistogram::Start(v8::base::ElapsedTimer*, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::StringTable::LookupKey(v8::internal::Isolate*, v8::internal::StringTableKey*)
+      1    0.0%    0.0%  v8::internal::String::Trim(v8::internal::Handle<v8::internal::String>, v8::internal::String::TrimMode)
+      1    0.0%    0.0%  v8::internal::String::ToCString(v8::internal::AllowNullsFlag, v8::internal::RobustnessFlag, int, int, int*)
+      1    0.0%    0.0%  v8::internal::String::IsOneByteEqualTo(v8::internal::Vector<unsigned char const>)
+      1    0.0%    0.0%  v8::internal::String::GetFlatContent()
+      1    0.0%    0.0%  v8::internal::StoreDataPropertyInLiteralICNexus::StateFromFeedback() const
+      1    0.0%    0.0%  v8::internal::StoreBuffer::InsertDuringRuntime(v8::internal::StoreBuffer*, unsigned char*)
+      1    0.0%    0.0%  v8::internal::StackFrameIterator::StackFrameIterator(v8::internal::Isolate*, v8::internal::ThreadLocalTop*)
+      1    0.0%    0.0%  v8::internal::StackFrame::LookupCode() const
+      1    0.0%    0.0%  v8::internal::SlotCallbackResult v8::internal::RememberedSetUpdatingItem<v8::internal::MajorNonAtomicMarkingState>::CheckAndUpdateOldToNewSlot<(v8::internal::AccessMode)1>(unsigned char*)
+      1    0.0%    0.0%  v8::internal::Scope::Snapshot::Snapshot(v8::internal::Scope*)
+      1    0.0%    0.0%  v8::internal::Scope::Scope(v8::internal::Zone*, v8::internal::Scope*, v8::internal::ScopeType)
+      1    0.0%    0.0%  v8::internal::Scavenger::IterateAndScavengePromotedObject(v8::internal::HeapObject*, int)
+      1    0.0%    0.0%  v8::internal::ScavengeWeakObjectRetainer::RetainAs(v8::internal::Object*)
+      1    0.0%    0.0%  v8::internal::SaveContext::~SaveContext()
+      1    0.0%    0.0%  v8::internal::Runtime_PushCatchContext(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_OrdinaryHasInstance(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_LoadPropertyWithInterceptor(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_KeyedStoreIC_Slow(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_CreateArrayLiteral(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::RegExpTree::IsAssertion()
+      1    0.0%    0.0%  v8::internal::RegExpKey::IsMatch(v8::internal::Object*)
+      1    0.0%    0.0%  v8::internal::PrototypeIterator::Advance()
+      1    0.0%    0.0%  v8::internal::PropertyArray::set(int, v8::internal::Object*)
+      1    0.0%    0.0%  v8::internal::ParserBase<v8::internal::PreParser>::ParseBinaryExpression(int, bool, bool*)
+      1    0.0%    0.0%  v8::internal::ParserBase<v8::internal::PreParser>::ParseArguments(v8::internal::Scanner::Location*, bool, bool*)
+      1    0.0%    0.0%  v8::internal::ParserBase<v8::internal::Parser>::ParseStatementList(v8::internal::ZoneList<v8::internal::Statement*>*, int, bool, bool*)
+      1    0.0%    0.0%  v8::internal::ParserBase<v8::internal::Parser>::ParseArguments(v8::internal::Scanner::Location*, bool, bool*)
+      1    0.0%    0.0%  v8::internal::ParserBase<v8::internal::Parser>::IsValidReferenceExpression(v8::internal::Expression*)
+      1    0.0%    0.0%  v8::internal::ParserBase<v8::internal::Parser>::BindingPatternUnexpectedToken()
+      1    0.0%    0.0%  v8::internal::Parser::SetFunctionNameFromIdentifierRef(v8::internal::Expression*, v8::internal::Expression*)
+      1    0.0%    0.0%  v8::internal::ParseInfo::ResetCharacterStream()
+      1    0.0%    0.0%  v8::internal::PagedSpace::ResetFreeListStatistics()
+      1    0.0%    0.0%  v8::internal::PagedSpace::EmptyAllocationInfo()
+      1    0.0%    0.0%  v8::internal::OptimizedFrame::type() const
+      1    0.0%    0.0%  v8::internal::OptimizedFrame::Summarize(std::vector<v8::internal::FrameSummary, std::allocator<v8::internal::FrameSummary> >*, v8::internal::FrameSummary::Mode) const
+      1    0.0%    0.0%  v8::internal::Object::ToInt32(int*)
+      1    0.0%    0.0%  v8::internal::Object::SetProperty(v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::Object>, v8::internal::LanguageMode, v8::internal::Object::StoreFromKeyed)
+      1    0.0%    0.0%  v8::internal::Object::ConvertToString(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::Object* v8::internal::VisitWeakList<v8::internal::Context>(v8::internal::Heap*, v8::internal::Object*, v8::internal::WeakObjectRetainer*)
+      1    0.0%    0.0%  v8::internal::NormalizedMapCache::Clear()
+      1    0.0%    0.0%  v8::internal::NewSpace::InlineAllocationStep(unsigned char*, unsigned char*, unsigned char*, unsigned long)
+      1    0.0%    0.0%  v8::internal::MarkCompactCollector::CompactTransitionArray(v8::internal::Map*, v8::internal::TransitionArray*, v8::internal::DescriptorArray*)
+      1    0.0%    0.0%  v8::internal::MarkCompactCollector::ClearFullMapTransitions()
+      1    0.0%    0.0%  v8::internal::Map::instance_size() const
+      1    0.0%    0.0%  v8::internal::Map::UpdateFieldType(int, v8::internal::Handle<v8::internal::Name>, v8::internal::PropertyConstness, v8::internal::Representation, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::Map::TransitionElementsTo(v8::internal::Handle<v8::internal::Map>, v8::internal::ElementsKind)
+      1    0.0%    0.0%  v8::internal::Map::RawCopy(v8::internal::Handle<v8::internal::Map>, int)
+      1    0.0%    0.0%  v8::internal::Map::NumberOfFields() const
+      1    0.0%    0.0%  v8::internal::Map::GetPrototypeChainRootMap(v8::internal::Isolate*) const
+      1    0.0%    0.0%  v8::internal::Map::GetOrCreatePrototypeInfo(v8::internal::Handle<v8::internal::Map>, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Map::GetOrCreatePrototypeInfo(v8::internal::Handle<v8::internal::JSObject>, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Map::GetOrCreatePrototypeChainValidityCell(v8::internal::Handle<v8::internal::Map>, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Map::GeneralizeFieldType(v8::internal::Representation, v8::internal::Handle<v8::internal::FieldType>, v8::internal::Representation, v8::internal::Handle<v8::internal::FieldType>, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Map::EquivalentToForNormalization(v8::internal::Map const*, v8::internal::PropertyNormalizationMode) const
+      1    0.0%    0.0%  v8::internal::Map::EnsureDescriptorSlack(v8::internal::Handle<v8::internal::Map>, int)
+      1    0.0%    0.0%  v8::internal::Map::CopyAddDescriptor(v8::internal::Handle<v8::internal::Map>, v8::internal::Descriptor*, v8::internal::TransitionFlag)
+      1    0.0%    0.0%  v8::internal::Map::Copy(v8::internal::Handle<v8::internal::Map>, char const*)
+      1    0.0%    0.0%  v8::internal::LookupIterator::TransitionToAccessorPair(v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyAttributes)
+      1    0.0%    0.0%  v8::internal::LookupIterator::State v8::internal::LookupIterator::LookupInSpecialHolder<false>(v8::internal::Map*, v8::internal::JSReceiver*)
+      1    0.0%    0.0%  v8::internal::LookupIterator::PrepareTransitionToDataProperty(v8::internal::Handle<v8::internal::JSObject>, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyAttributes, v8::internal::Object::StoreFromKeyed)
+      1    0.0%    0.0%  v8::internal::LookupIterator::PrepareForDataProperty(v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::LookupIterator::LookupIterator(v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::LookupIterator::Configuration)
+      1    0.0%    0.0%  v8::internal::LookupIterator::GetDataValue() const
+      1    0.0%    0.0%  v8::internal::LookupIterator::ForTransitionHandler(v8::internal::Isolate*, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::Object>, v8::internal::MaybeHandle<v8::internal::Object>, v8::internal::Handle<v8::internal::Map>)
+      1    0.0%    0.0%  v8::internal::LookupIterator::ApplyTransitionToDataProperty(v8::internal::Handle<v8::internal::JSObject>)
+      1    0.0%    0.0%  v8::internal::Logger::CodeLinePosInfoRecordEvent(v8::internal::AbstractCode*, v8::internal::ByteArray*)
+      1    0.0%    0.0%  v8::internal::LoadIC::LoadFromPrototype(v8::internal::Handle<v8::internal::Map>, v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::Smi>)
+      1    0.0%    0.0%  v8::internal::LoadGlobalICNexus::StateFromFeedback() const
+      1    0.0%    0.0%  v8::internal::LoadGlobalIC::Load(v8::internal::Handle<v8::internal::Name>)
+      1    0.0%    0.0%  v8::internal::List<v8::internal::Statement*, v8::internal::ZoneAllocationPolicy>::Add(v8::internal::Statement* const&, v8::internal::ZoneAllocationPolicy)
+      1    0.0%    0.0%  v8::internal::KeyedStoreICNexus::StateFromFeedback() const
+      1    0.0%    0.0%  v8::internal::KeyedStoreIC::StoreElementHandler(v8::internal::Handle<v8::internal::Map>, v8::internal::KeyedAccessStoreMode)
+      1    0.0%    0.0%  v8::internal::KeyedStoreIC::Store(v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::KeyAccumulator::GetKeys(v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::KeyCollectionMode, v8::internal::PropertyFilter, v8::internal::GetKeysConversion, bool)
+      1    0.0%    0.0%  v8::internal::JsonStringifier::SerializeArrayLikeSlow(v8::internal::Handle<v8::internal::JSReceiver>, unsigned int, unsigned int)
+      1    0.0%    0.0%  v8::internal::JsonStringifier::Result v8::internal::JsonStringifier::Serialize_<true>(v8::internal::Handle<v8::internal::Object>, bool, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::JsonStringifier::Result v8::internal::JsonStringifier::Serialize_<false>(v8::internal::Handle<v8::internal::Object>, bool, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::JsonParser<true>::ParseJson()
+      1    0.0%    0.0%  v8::internal::JsonParser<true>::CommitStateToJsonObject(v8::internal::Handle<v8::internal::JSObject>, v8::internal::Handle<v8::internal::Map>, v8::internal::ZoneList<v8::internal::Handle<v8::internal::Object> >*)
+      1    0.0%    0.0%  v8::internal::JavaScriptFrame::GetParameter(int) const
+      1    0.0%    0.0%  v8::internal::JSReceiver::ValidateAndApplyPropertyDescriptor(v8::internal::Isolate*, v8::internal::LookupIterator*, bool, v8::internal::PropertyDescriptor*, v8::internal::PropertyDescriptor*, v8::internal::Object::ShouldThrow, v8::internal::Handle<v8::internal::Name>)
+      1    0.0%    0.0%  v8::internal::JSReceiver::ToPrimitive(v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::ToPrimitiveHint)
+      1    0.0%    0.0%  v8::internal::JSReceiver::GetProperty(v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::Handle<v8::internal::Name>)
+      1    0.0%    0.0%  v8::internal::JSObject::SetOwnPropertyIgnoreAttributes(v8::internal::Handle<v8::internal::JSObject>, v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyAttributes)
+      1    0.0%    0.0%  v8::internal::JSObject::SetNormalizedProperty(v8::internal::Handle<v8::internal::JSObject>, v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyDetails)
+      1    0.0%    0.0%  v8::internal::JSObject::New(v8::internal::Handle<v8::internal::JSFunction>, v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::Handle<v8::internal::AllocationSite>)
+      1    0.0%    0.0%  v8::internal::JSObject::LazyRegisterPrototypeUser(v8::internal::Handle<v8::internal::Map>, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::JSObject::EnsureWritableFastElements(v8::internal::Handle<v8::internal::JSObject>)
+      1    0.0%    0.0%  v8::internal::JSObject::AddDataElement(v8::internal::Handle<v8::internal::JSObject>, unsigned int, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyAttributes, v8::internal::Object::ShouldThrow)
+      1    0.0%    0.0%  v8::internal::Isolate::UnwindAndFindHandler()
+      1    0.0%    0.0%  v8::internal::Isolate::CaptureAndSetSimpleStackTrace(v8::internal::Handle<v8::internal::JSReceiver>, v8::internal::FrameSkipMode, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::InterpretedFrame::GetExpressionAddress(int) const
+      1    0.0%    0.0%  v8::internal::IncrementalMarking::Hurry()
+      1    0.0%    0.0%  v8::internal::IC::IC(v8::internal::IC::FrameDepth, v8::internal::Isolate*, v8::internal::FeedbackNexus*)
+      1    0.0%    0.0%  v8::internal::IC::ComputeHandler(v8::internal::LookupIterator*)
+      1    0.0%    0.0%  v8::internal::HeapObject::synchronized_set_map(v8::internal::Map*)
+      1    0.0%    0.0%  v8::internal::Heap::RegisterNewArrayBuffer(v8::internal::JSArrayBuffer*)
+      1    0.0%    0.0%  v8::internal::Heap::RecordWrite(v8::internal::Object*, v8::internal::Object**, v8::internal::Object*)
+      1    0.0%    0.0%  v8::internal::Heap::OnMoveEvent(v8::internal::HeapObject*, v8::internal::HeapObject*, int)
+      1    0.0%    0.0%  v8::internal::Heap::NotifyObjectLayoutChange(v8::internal::HeapObject*, int, v8::internal::PerThreadAssertScopeDebugOnly<(v8::internal::PerThreadAssertType)0, false> const&)
+      1    0.0%    0.0%  v8::internal::Heap::InitializeJSObjectBody(v8::internal::JSObject*, v8::internal::Map*, int)
+      1    0.0%    0.0%  v8::internal::Heap::DeoptMarkedAllocationSites()
+      1    0.0%    0.0%  v8::internal::Heap::AllocateJSObject(v8::internal::JSFunction*, v8::internal::PretenureFlag, v8::internal::AllocationSite*)
+      1    0.0%    0.0%  v8::internal::Heap::Allocate(v8::internal::Map*, v8::internal::AllocationSpace, v8::internal::AllocationSite*)
+      1    0.0%    0.0%  v8::internal::HashTable<v8::internal::UnseededNumberDictionary, v8::internal::UnseededNumberDictionaryShape>::FindEntry(v8::internal::Isolate*, unsigned int)
+      1    0.0%    0.0%  v8::internal::HashTable<v8::internal::StringTable, v8::internal::StringTableShape>::FindInsertionEntry(unsigned int)
+      1    0.0%    0.0%  v8::internal::HandlerTable::LookupReturn(int)
+      1    0.0%    0.0%  v8::internal::HandlerTable::LookupRange(int, int*, v8::internal::HandlerTable::CatchPrediction*)
+      1    0.0%    0.0%  v8::internal::Handle<v8::internal::String> v8::internal::JsonParser<false>::ScanJsonString<true>()
+      1    0.0%    0.0%  v8::internal::Handle<v8::internal::JSMessageObject> v8::internal::Factory::New<v8::internal::JSMessageObject>(v8::internal::Handle<v8::internal::Map>, v8::internal::AllocationSpace)
+      1    0.0%    0.0%  v8::internal::Handle<v8::internal::FeedbackMetadata> v8::internal::FeedbackMetadata::New<v8::internal::FeedbackVectorSpec>(v8::internal::Isolate*, v8::internal::FeedbackVectorSpec const*)
+      1    0.0%    0.0%  v8::internal::FunctionCallbackArguments::Call(void (*)(v8::FunctionCallbackInfo<v8::Value> const&))
+      1    0.0%    0.0%  v8::internal::FuncNameInferrer::PushLiteralName(v8::internal::AstRawString const*)
+      1    0.0%    0.0%  v8::internal::FrameSummary::~FrameSummary()
+      1    0.0%    0.0%  v8::internal::FrameSummary::JavaScriptFrameSummary::JavaScriptFrameSummary(v8::internal::Isolate*, v8::internal::Object*, v8::internal::JSFunction*, v8::internal::AbstractCode*, int, bool, v8::internal::FrameSummary::Mode)
+      1    0.0%    0.0%  v8::internal::FieldType::NowIs(v8::internal::Handle<v8::internal::FieldType>)
+      1    0.0%    0.0%  v8::internal::FeedbackNexus::ExtractMaps(std::vector<v8::internal::Handle<v8::internal::Map>, std::allocator<v8::internal::Handle<v8::internal::Map> > >*) const
+      1    0.0%    0.0%  v8::internal::Factory::NewSyntaxError(v8::internal::MessageTemplate::Template, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::Factory::NewProperSubString(v8::internal::Handle<v8::internal::String>, int, int)
+      1    0.0%    0.0%  v8::internal::Factory::NewJSTypedArray(v8::internal::ExternalArrayType, v8::internal::Handle<v8::internal::JSArrayBuffer>, unsigned long, unsigned long, v8::internal::PretenureFlag)
+      1    0.0%    0.0%  v8::internal::Factory::NewJSMessageObject(v8::internal::MessageTemplate::Template, v8::internal::Handle<v8::internal::Object>, int, int, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::Factory::NewJSArray(v8::internal::ElementsKind, int, int, v8::internal::ArrayStorageAllocationMode, v8::internal::PretenureFlag)
+      1    0.0%    0.0%  v8::internal::Factory::NewFunctionFromSharedFunctionInfo(v8::internal::Handle<v8::internal::Map>, v8::internal::Handle<v8::internal::SharedFunctionInfo>, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Cell>, v8::internal::PretenureFlag)
+      1    0.0%    0.0%  v8::internal::Factory::NewFunction(v8::internal::Handle<v8::internal::Map>, v8::internal::Handle<v8::internal::SharedFunctionInfo>, v8::internal::Handle<v8::internal::Object>, v8::internal::PretenureFlag)
+      1    0.0%    0.0%  v8::internal::Factory::NewFixedArrayWithHoles(int, v8::internal::PretenureFlag)
+      1    0.0%    0.0%  v8::internal::Factory::NewFixedArray(int, v8::internal::PretenureFlag)
+      1    0.0%    0.0%  v8::internal::Factory::NewError(v8::internal::Handle<v8::internal::JSFunction>, v8::internal::MessageTemplate::Template, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::Factory::NewConsString(v8::internal::Handle<v8::internal::String>, v8::internal::Handle<v8::internal::String>)
+      1    0.0%    0.0%  v8::internal::Factory::NewCatchContext(v8::internal::Handle<v8::internal::JSFunction>, v8::internal::Handle<v8::internal::Context>, v8::internal::Handle<v8::internal::ScopeInfo>, v8::internal::Handle<v8::internal::String>, v8::internal::Handle<v8::internal::Object>)
+      1    0.0%    0.0%  v8::internal::Factory::NewBlockContext(v8::internal::Handle<v8::internal::JSFunction>, v8::internal::Handle<v8::internal::Context>, v8::internal::Handle<v8::internal::ScopeInfo>)
+      1    0.0%    0.0%  v8::internal::Factory::CopyJSObject(v8::internal::Handle<v8::internal::JSObject>)
+      1    0.0%    0.0%  v8::internal::ExitFrame::ComputeCallerState(v8::internal::StackFrame::State*) const
+      1    0.0%    0.0%  v8::internal::ElementsAccessor::Concat(v8::internal::Isolate*, v8::internal::Arguments*, unsigned int, unsigned int)
+      1    0.0%    0.0%  v8::internal::Deserializer::ReadData(v8::internal::Object**, v8::internal::Object**, int, unsigned char*)
+      1    0.0%    0.0%  v8::internal::DependentCode::MarkCodeForDeoptimization(v8::internal::Isolate*, v8::internal::DependentCode::DependencyGroup)
+      1    0.0%    0.0%  v8::internal::ContextSlotCache::Lookup(v8::internal::Object*, v8::internal::String*, v8::internal::VariableMode*, v8::internal::InitializationFlag*, v8::internal::MaybeAssignedFlag*)
+      1    0.0%    0.0%  v8::internal::Context::IncrementErrorsThrown()
+      1    0.0%    0.0%  v8::internal::CodeStub::UseSpecialCache()
+      1    0.0%    0.0%  v8::internal::CodeStub::GetCode()
+      1    0.0%    0.0%  v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Builtin_ArrayUnshift(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::BuiltinExitFrame::type() const
+      1    0.0%    0.0%  v8::internal::Bitmap::MarkBitFromIndex(unsigned int)
+      1    0.0%    0.0%  v8::internal::BaseNameDictionary<v8::internal::NameDictionary, v8::internal::NameDictionaryShape>::Add(v8::internal::Handle<v8::internal::NameDictionary>, v8::internal::Handle<v8::internal::Name>, v8::internal::Handle<v8::internal::Object>, v8::internal::PropertyDetails, int*)
+      1    0.0%    0.0%  v8::internal::AstValueFactory::NewConsString(v8::internal::AstRawString const*)
+      1    0.0%    0.0%  v8::internal::AstRawStringInternalizationKey::IsMatch(v8::internal::Object*)
+      1    0.0%    0.0%  v8::internal::Assembler::~Assembler()
+      1    0.0%    0.0%  v8::internal::Assembler::call(v8::internal::Label*)
+      1    0.0%    0.0%  v8::internal::Assembler::bind_to(v8::internal::Label*, int)
+      1    0.0%    0.0%  v8::internal::ApiNatives::InstantiateObject(v8::internal::Handle<v8::internal::ObjectTemplateInfo>, v8::internal::Handle<v8::internal::JSReceiver>)
+      1    0.0%    0.0%  v8::internal::AllocationResult v8::internal::Heap::CopyArrayAndGrow<v8::internal::FixedArray>(v8::internal::FixedArray*, int, v8::internal::PretenureFlag)
+      1    0.0%    0.0%  v8::base::TemplateHashMapImpl<void*, void*, v8::base::HashEqualityThenKeyMatcher<void*, bool (*)(void*, void*)>, v8::internal::ZoneAllocationPolicy>::FillEmptyEntry(v8::base::TemplateHashMapEntry<void*, void*>*, void* const&, void* const&, unsigned int, v8::internal::ZoneAllocationPolicy)
+      1    0.0%    0.0%  v8::base::TemplateHashMapImpl<unsigned long, unsigned int, v8::base::KeyEqualityMatcher<long>, v8::base::DefaultAllocationPolicy>::Resize(v8::base::DefaultAllocationPolicy)
+      1    0.0%    0.0%  v8::base::TemplateHashMapImpl<long, unsigned int, v8::base::KeyEqualityMatcher<long>, v8::internal::ZoneAllocationPolicy>::Resize(v8::internal::ZoneAllocationPolicy)
+      1    0.0%    0.0%  v8::Value::ToString(v8::Local<v8::Context>) const
+      1    0.0%    0.0%  v8::Value::IsFunction() const
+      1    0.0%    0.0%  v8::Isolate::GetCurrentContext()
+      1    0.0%    0.0%  v8::Function::Call(v8::Local<v8::Value>, int, v8::Local<v8::Value>*)
+      1    0.0%    0.0%  v8::Function::Call(v8::Local<v8::Context>, v8::Local<v8::Value>, int, v8::Local<v8::Value>*)
+      1    0.0%    0.0%  v8::EscapableHandleScope::Escape(v8::internal::Object**)
+      1    0.0%    0.0%  v8::EscapableHandleScope::EscapableHandleScope(v8::Isolate*)
+      1    0.0%    0.0%  v8::ArrayBuffer::New(v8::Isolate*, void*, unsigned long, v8::ArrayBufferCreationMode)
+      1    0.0%    0.0%  uv_run
+      1    0.0%    0.0%  uprv_malloc_60
+      1    0.0%    0.0%  std::vector<v8::internal::TranslatedFrame, std::allocator<v8::internal::TranslatedFrame> >::reserve(unsigned long)
+      1    0.0%    0.0%  std::_Hashtable<v8::internal::JSArrayBuffer*, v8::internal::JSArrayBuffer*, std::allocator<v8::internal::JSArrayBuffer*>, std::__detail::_Identity, std::equal_to<v8::internal::JSArrayBuffer*>, std::hash<v8::internal::JSArrayBuffer*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::erase(std::__detail::_Node_const_iterator<v8::internal::JSArrayBuffer*, true, false>)
+      1    0.0%    0.0%  std::_Hashtable<v8::internal::JSArrayBuffer*, v8::internal::JSArrayBuffer*, std::allocator<v8::internal::JSArrayBuffer*>, std::__detail::_Identity, std::equal_to<v8::internal::JSArrayBuffer*>, std::hash<v8::internal::JSArrayBuffer*>, std::__detail::_Mod_range_hashing, std::__detail::_Default_ranged_hash, std::__detail::_Prime_rehash_policy, std::__detail::_Hashtable_traits<false, true, true> >::_M_insert_unique_node(unsigned long, unsigned long, std::__detail::_Hash_node<v8::internal::JSArrayBuffer*, false>*)
+      1    0.0%    0.0%  node::TCPWrap::New(v8::FunctionCallbackInfo<v8::Value> const&)
+      1    0.0%    0.0%  node::ShutdownWrap::~ShutdownWrap()
+      1    0.0%    0.0%  node::NodePlatform::MonotonicallyIncreasingTime()
+      1    0.0%    0.0%  node::Buffer::New(node::Environment*, char*, unsigned long)
+      1    0.0%    0.0%  node::AsyncWrap::EmitTraceEventBefore()
+      1    0.0%    0.0%  memcpy
+      1    0.0%    0.0%  getsockopt
+      1    0.0%    0.0%  fwrite
+      1    0.0%    0.0%  _init
+      1    0.0%    0.0%  __lll_unlock_wake
+
+ [Summary]:
+   ticks  total  nonlib   name
+    742   18.3%   24.4%  JavaScript
+   2106   51.9%   69.1%  C++
+    598   14.7%   19.6%  GC
+   1012   24.9%          Shared libraries
+    199    4.9%          Unaccounted
+
+ [C++ entry points]:
+   ticks    cpp   total   name
+    998   40.6%   24.6%  v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+    496   20.2%   12.2%  v8::internal::Builtin_ArrayUnshift(int, v8::internal::Object**, v8::internal::Isolate*)
+    378   15.4%    9.3%  v8::internal::Builtin_ArraySplice(int, v8::internal::Object**, v8::internal::Isolate*)
+    155    6.3%    3.8%  v8::internal::Builtin_JsonParse(int, v8::internal::Object**, v8::internal::Isolate*)
+     80    3.3%    2.0%  v8::internal::Runtime_StoreIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+     53    2.2%    1.3%  v8::internal::Runtime_CompileLazy(int, v8::internal::Object**, v8::internal::Isolate*)
+     33    1.3%    0.8%  v8::internal::Runtime_CompileOptimized_Concurrent(int, v8::internal::Object**, v8::internal::Isolate*)
+     25    1.0%    0.6%  v8::internal::Runtime_SetProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+     21    0.9%    0.5%  v8::internal::Runtime_LoadIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+     19    0.8%    0.5%  v8::internal::Runtime_LoadGlobalIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+     19    0.8%    0.5%  v8::internal::Runtime_KeyedGetProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+     18    0.7%    0.4%  v8::internal::Runtime_ObjectKeys(int, v8::internal::Object**, v8::internal::Isolate*)
+     15    0.6%    0.4%  v8::internal::Runtime_KeyedStoreIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+     15    0.6%    0.4%  v8::internal::Builtin_ObjectAssign(int, v8::internal::Object**, v8::internal::Isolate*)
+     14    0.6%    0.3%  v8::internal::Runtime_KeyedStoreIC_Slow(int, v8::internal::Object**, v8::internal::Isolate*)
+     14    0.6%    0.3%  v8::internal::Runtime_HasProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+     11    0.4%    0.3%  v8::internal::Runtime_CreateObjectLiteral(int, v8::internal::Object**, v8::internal::Isolate*)
+     10    0.4%    0.2%  v8::internal::Runtime_StackGuard(int, v8::internal::Object**, v8::internal::Isolate*)
+      8    0.3%    0.2%  v8::internal::Builtin_ObjectDefineProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+      7    0.3%    0.2%  v8::internal::Runtime_NotifyDeoptimized(int, v8::internal::Object**, v8::internal::Isolate*)
+      6    0.2%    0.1%  v8::internal::Runtime_StringSplit(int, v8::internal::Object**, v8::internal::Isolate*)
+      6    0.2%    0.1%  v8::internal::Runtime_LoadPropertyWithInterceptor(int, v8::internal::Object**, v8::internal::Isolate*)
+      6    0.2%    0.1%  v8::internal::Runtime_DefineDataPropertyInLiteral(int, v8::internal::Object**, v8::internal::Isolate*)
+      5    0.2%    0.1%  v8::internal::Runtime_StringCharCodeAtRT(int, v8::internal::Object**, v8::internal::Isolate*)
+      5    0.2%    0.1%  v8::internal::Runtime_InterpreterNewClosure(int, v8::internal::Object**, v8::internal::Isolate*)
+      5    0.2%    0.1%  v8::internal::Runtime_CreateArrayLiteral(int, v8::internal::Object**, v8::internal::Isolate*)
+      5    0.2%    0.1%  v8::internal::Builtin_StringPrototypeTrim(int, v8::internal::Object**, v8::internal::Isolate*)
+      4    0.2%    0.1%  v8::internal::Runtime_NewObject(int, v8::internal::Object**, v8::internal::Isolate*)
+      3    0.1%    0.1%  v8::internal::Runtime_PushCatchContext(int, v8::internal::Object**, v8::internal::Isolate*)
+      3    0.1%    0.1%  v8::internal::Builtin_ObjectGetPrototypeOf(int, v8::internal::Object**, v8::internal::Isolate*)
+      3    0.1%    0.1%  v8::internal::Builtin_ArrayConcat(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.1%    0.0%  v8::internal::Runtime_StringReplaceGlobalRegExpWithString(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.1%    0.0%  v8::internal::Runtime_KeyedLoadIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+      2    0.1%    0.0%  v8::internal::Runtime_CreateRegExpLiteral(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_ToString(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_StoreCallbackProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_RegExpExec(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_PushBlockContext(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_OrdinaryHasInstance(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_DeleteProperty(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Runtime_CompileForOnStackReplacement(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::internal::Builtin_JsonStringify(int, v8::internal::Object**, v8::internal::Isolate*)
+      1    0.0%    0.0%  v8::Value::ToString(v8::Local<v8::Context>) const
+      1    0.0%    0.0%  v8::Isolate::GetCurrentContext()
+      1    0.0%    0.0%  uprv_malloc_60
+
+ [Bottom up (heavy) profile]:
+  Note: percentage shows a share of a particular caller in the total
+  amount of its parent calls.
+  Callers occupying less than 1.0% are not shown.
+
+   ticks parent  name
+    987   24.3%  /usr/bin/node
+    863   87.4%    v8::internal::Builtin_HandleApiCall(int, v8::internal::Object**, v8::internal::Isolate*)
+    605   70.1%      LazyCompile: ~createContext vm.js:68:23
+    605  100.0%        LazyCompile: ~runInNewContext vm.js:123:25
+    605  100.0%          LazyCompile: ~safeEval /home/gofrendi/Projects/chimera-framework/lib/safe-eval.js:3:36
+    468   77.4%            LazyCompile: *evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+    137   22.6%            LazyCompile: ~evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+     97   11.2%      LazyCompile: ~createScript vm.js:79:22
+     85   87.6%        LazyCompile: ~runInThisContext vm.js:138:26
+     85  100.0%          LazyCompile: ~Module._compile module.js:609:37
+     85  100.0%            LazyCompile: ~Module._extensions..js module.js:661:37
+     12   12.4%        LazyCompile: ~runInNewContext vm.js:123:25
+     12  100.0%          LazyCompile: ~safeEval /home/gofrendi/Projects/chimera-framework/lib/safe-eval.js:3:36
+     12  100.0%            LazyCompile: ~evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+     48    5.6%      LazyCompile: *createScript vm.js:79:22
+     48  100.0%        LazyCompile: ~runInNewContext vm.js:123:25
+     48  100.0%          LazyCompile: ~safeEval /home/gofrendi/Projects/chimera-framework/lib/safe-eval.js:3:36
+     37   77.1%            LazyCompile: *evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+     11   22.9%            LazyCompile: ~evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+     40    4.6%      LazyCompile: ~runInThisContext bootstrap_node.js:496:28
+     40  100.0%        LazyCompile: ~NativeModule.compile bootstrap_node.js:585:44
+     40  100.0%          LazyCompile: ~NativeModule.require bootstrap_node.js:517:34
+      4   10.0%            Script: ~<anonymous> module.js:1:11
+      4   10.0%            LazyCompile: ~Module._load module.js:448:24
+      3    7.5%            Script: ~<anonymous> util.js:1:11
+      3    7.5%            Script: ~<anonymous> tty.js:1:11
+      3    7.5%            Script: ~<anonymous> http.js:1:11
+      2    5.0%            Script: ~<anonymous> tls.js:1:11
+      2    5.0%            Script: ~<anonymous> stream.js:1:11
+      2    5.0%            Script: ~<anonymous> internal/loader/ModuleRequest.js:1:11
+      2    5.0%            LazyCompile: ~setupGlobalVariables bootstrap_node.js:252:32
+      1    2.5%            Script: ~<anonymous> timers.js:1:11
+      1    2.5%            Script: ~<anonymous> readline.js:1:11
+      1    2.5%            Script: ~<anonymous> net.js:1:11
+      1    2.5%            Script: ~<anonymous> internal/url.js:1:11
+      1    2.5%            Script: ~<anonymous> internal/trace_events_async_hooks.js:1:11
+      1    2.5%            Script: ~<anonymous> internal/loader/ModuleJob.js:1:11
+      1    2.5%            Script: ~<anonymous> https.js:1:11
+      1    2.5%            Script: ~<anonymous> fs.js:1:11
+      1    2.5%            Script: ~<anonymous> _stream_wrap.js:1:11
+      1    2.5%            Script: ~<anonymous> _http_common.js:1:11
+      1    2.5%            Script: ~<anonymous> _http_client.js:1:11
+      1    2.5%            LazyCompile: ~startup bootstrap_node.js:12:19
+      1    2.5%            LazyCompile: ~setup_performance internal/process.js:14:27
+      1    2.5%            LazyCompile: ~setupGlobalTimeouts bootstrap_node.js:297:31
+      1    2.5%            LazyCompile: ~setupGlobalConsole bootstrap_node.js:307:30
+     18    2.1%      LazyCompile: ~Script.runInContext vm.js:54:41
+     18  100.0%        LazyCompile: ~Script.runInNewContext vm.js:63:44
+     13   72.2%          LazyCompile: ~runInNewContext vm.js:123:25
+     13  100.0%            LazyCompile: ~safeEval /home/gofrendi/Projects/chimera-framework/lib/safe-eval.js:3:36
+      5   27.8%          LazyCompile: *evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+      4   80.0%            LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      1   20.0%            LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+     11    1.3%      LazyCompile: *evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+     11  100.0%        LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+     11  100.0%          LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+     11  100.0%            LazyCompile: *series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+     10    1.2%      LazyCompile: ~lookup dns.js:122:16
+      9   90.0%        LazyCompile: ~<anonymous> net.js:1102:61
+      9  100.0%          LazyCompile: ~defaultTriggerAsyncIdScope internal/async_hooks.js:275:36
+      9  100.0%            LazyCompile: ~lookupAndConnect net.js:1043:26
+      1   10.0%        LazyCompile: *lookupAndConnect net.js:1043:26
+      1  100.0%          LazyCompile: ~Socket.connect net.js:982:36
+      1  100.0%            LazyCompile: ~connect net.js:103:17
+     60    6.1%    v8::internal::Runtime_StoreIC_Miss(int, v8::internal::Object**, v8::internal::Isolate*)
+     58   96.7%      LazyCompile: ~Script.runInContext vm.js:54:41
+     58  100.0%        LazyCompile: ~Script.runInNewContext vm.js:63:44
+     30   51.7%          LazyCompile: ~runInNewContext vm.js:123:25
+     30  100.0%            LazyCompile: ~safeEval /home/gofrendi/Projects/chimera-framework/lib/safe-eval.js:3:36
+     28   48.3%          LazyCompile: *evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+     25   89.3%            LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      3   10.7%            LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      2    3.3%      Script: ~<anonymous> evalmachine.<anonymous>:1:1
+      2  100.0%        /usr/bin/node
+      2  100.0%          LazyCompile: ~Script.runInContext vm.js:54:41
+      2  100.0%            LazyCompile: ~Script.runInNewContext vm.js:63:44
+
+    867   21.4%  v8::internal::Isolate::IsAnyInitialArrayPrototype(v8::internal::Handle<v8::internal::JSArray>)
+    493   56.9%    v8::internal::Builtin_ArrayUnshift(int, v8::internal::Object**, v8::internal::Isolate*)
+    296   60.0%      LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+    296  100.0%        LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+    195   65.9%          LazyCompile: ~series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+    126   64.6%            LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+     69   35.4%            LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+    101   34.1%          LazyCompile: *series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+    101  100.0%            LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+    197   40.0%      LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+    197  100.0%        LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+    197  100.0%          LazyCompile: *series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+    197  100.0%            LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+    371   42.8%    v8::internal::Builtin_ArraySplice(int, v8::internal::Object**, v8::internal::Isolate*)
+    252   67.9%      LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js:16:18
+    252  100.0%        Stub: CEntryStub {1}
+    252  100.0%          LazyCompile: ~stringify /home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js:4:19
+    252  100.0%            LazyCompile: ~normalizeOutputValue /home/gofrendi/Projects/chimera-framework/tools/run.js:7:31
+     94   25.3%      LazyCompile: ~removeSocket _http_agent.js:284:53
+     94  100.0%        LazyCompile: ~onClose _http_agent.js:262:19
+     94  100.0%          LazyCompile: *emit events.js:156:44
+     94  100.0%            LazyCompile: ~_handle.close net.js:565:24
+     22    5.9%      LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js:16:18
+     22  100.0%        Stub: CEntryStub {1}
+     22  100.0%          LazyCompile: ~stringify /home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js:4:19
+     22  100.0%            LazyCompile: ~normalizeOutputValue /home/gofrendi/Projects/chimera-framework/tools/run.js:7:31
+
+    199    4.9%  UNKNOWN
+
+    190    4.7%  v8::internal::IncrementalMarking::Step(unsigned long, v8::internal::IncrementalMarking::CompletionAction, v8::internal::IncrementalMarking::ForceCompletionAction, v8::internal::StepOrigin)
+
+    159    3.9%  v8::internal::IncrementalMarking::WhiteToGreyAndPush(v8::internal::HeapObject*)
+
+     82    2.0%  void v8::internal::BodyDescriptorBase::IteratePointers<v8::internal::IncrementalMarkingMarkingVisitor>(v8::internal::HeapObject*, int, int, v8::internal::IncrementalMarkingMarkingVisitor*)
+
+     67    1.7%  Builtin: InterpreterEntryTrampoline
+      3    4.5%    LazyCompile: ~runRootChain /home/gofrendi/Projects/chimera-framework/lib/core.js:479:25
+      2   66.7%      LazyCompile: ~executeChain /home/gofrendi/Projects/chimera-framework/lib/core.js:30:23
+      2  100.0%        LazyCompile: ~action /home/gofrendi/Projects/chimera-framework/lib/core.js:572:20
+      2  100.0%          LazyCompile: ~arrayEachIndex /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:2529:26
+      2  100.0%            LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:2882:20
+      1   33.3%      LazyCompile: *executeChain /home/gofrendi/Projects/chimera-framework/lib/core.js:30:23
+      1  100.0%        LazyCompile: ~action /home/gofrendi/Projects/chimera-framework/lib/core.js:572:20
+      1  100.0%          LazyCompile: ~arrayEachIndex /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:2529:26
+      1  100.0%            LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:2882:20
+      3    4.5%    LazyCompile: ~responseKeepAlive _http_client.js:563:27
+      3  100.0%      LazyCompile: ~responseOnEnd _http_client.js:593:23
+      3  100.0%        LazyCompile: ~emitNone events.js:104:18
+      3  100.0%          LazyCompile: *emit events.js:156:44
+      3  100.0%            LazyCompile: ~endReadableNT _stream_readable.js:1059:23
+      3    4.5%    LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      2   66.7%      LazyCompile: ~series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+      1   50.0%        LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+      1  100.0%          LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:254:14
+      1  100.0%            LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1   50.0%        LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+      1  100.0%          LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:254:14
+      1  100.0%            LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1   33.3%      LazyCompile: *series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+      1  100.0%        LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+      1  100.0%          LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:254:14
+      1  100.0%            LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      3    4.5%    LazyCompile: ~_tickCallback internal/process/next_tick.js:151:25
+      2    3.0%    LazyCompile: ~splitCommandStringByLongArrow /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:202:42
+      2  100.0%      LazyCompile: ~splitCommandString /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:258:31
+      2  100.0%        LazyCompile: ~getChainWithTrueCommand /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:428:36
+      2  100.0%          LazyCompile: ~getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      2  100.0%            LazyCompile: ~getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      2    3.0%    LazyCompile: ~onlookup dns.js:90:18
+      2    3.0%    LazyCompile: ~onceWrapper events.js:307:21
+      1   50.0%      LazyCompile: ~emitOne events.js:114:17
+      1  100.0%        LazyCompile: ~emit events.js:156:44
+      1  100.0%          LazyCompile: ~tickOnSocket _http_client.js:617:22
+      1  100.0%            LazyCompile: ~onSocketNT _http_client.js:664:20
+      1   50.0%      LazyCompile: ~emitNone events.js:104:18
+      1  100.0%        LazyCompile: *emit events.js:156:44
+      1  100.0%          LazyCompile: ~afterConnect net.js:1162:22
+      2    3.0%    LazyCompile: ~chunkInvalid _stream_readable.js:279:22
+      2  100.0%      LazyCompile: ~readableAddChunk _stream_readable.js:216:26
+      2  100.0%        LazyCompile: ~Readable.push _stream_readable.js:191:35
+      2  100.0%          LazyCompile: ~parserOnBody _http_common.js:126:22
+      2  100.0%            /usr/bin/node
+      2    3.0%    LazyCompile: ~Request /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:94:18
+      2  100.0%      LazyCompile: ~request /home/gofrendi/Projects/chimera-framework/node_modules/request/index.js:42:18
+      2  100.0%        LazyCompile: ~httpRequest /home/gofrendi/Projects/chimera-framework/lib/core-dollar.js:24:22
+      2  100.0%          LazyCompile: ~args /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:344:12
+      2  100.0%            LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      2    3.0%    LazyCompile: ~ClientRequest _http_client.js:79:23
+      2  100.0%      LazyCompile: ~request http.js:37:17
+      2  100.0%        LazyCompile: ~Request.start /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:705:36
+      2  100.0%          LazyCompile: ~Request.end /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1504:34
+      2  100.0%            LazyCompile: ~end /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:525:24
+      2    3.0%    LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1122:27
+      2  100.0%      LazyCompile: *emit events.js:156:44
+      2  100.0%        LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1084:42
+      2  100.0%          LazyCompile: *onceWrapper events.js:307:21
+      2  100.0%            LazyCompile: ~emitNone events.js:104:18
+      2    3.0%    LazyCompile: *evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+      1   50.0%      LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      1  100.0%        LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1  100.0%          LazyCompile: ~series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+      1  100.0%            LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+      1   50.0%      LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      1  100.0%        LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1  100.0%          LazyCompile: *series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+      1  100.0%            LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+      2    3.0%    LazyCompile: *emit events.js:156:44
+      1   50.0%      LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1074:41
+      1  100.0%        LazyCompile: *emit events.js:156:44
+      1  100.0%          LazyCompile: *Readable.read _stream_readable.js:365:35
+      1  100.0%            LazyCompile: ~flow _stream_readable.js:843:14
+      1   50.0%      LazyCompile: *Readable.read _stream_readable.js:365:35
+      1  100.0%        LazyCompile: ~flow _stream_readable.js:843:14
+      1  100.0%          LazyCompile: ~resume_ _stream_readable.js:819:17
+      1  100.0%            LazyCompile: *_tickCallback internal/process/next_tick.js:151:25
+      2    3.0%    /usr/bin/node
+      2  100.0%      LazyCompile: ~socketOnData _http_client.js:433:22
+      1   50.0%        LazyCompile: ~emitOne events.js:114:17
+      1  100.0%          LazyCompile: ~emit events.js:156:44
+      1  100.0%            LazyCompile: ~addChunk _stream_readable.js:261:18
+      1   50.0%        LazyCompile: *emit events.js:156:44
+      1  100.0%          LazyCompile: ~addChunk _stream_readable.js:261:18
+      1  100.0%            LazyCompile: ~readableAddChunk _stream_readable.js:216:26
+      1    1.5%    LazyCompile: ~splitCommandString /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:258:31
+      1  100.0%      LazyCompile: ~getChainWithTrueCommand /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:428:36
+      1  100.0%        LazyCompile: ~getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      1  100.0%          LazyCompile: ~getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      1  100.0%            LazyCompile: ~getTrueRootChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:60:27
+      1    1.5%    LazyCompile: ~socketOnData _http_client.js:433:22
+      1  100.0%      LazyCompile: *emit events.js:156:44
+      1  100.0%        LazyCompile: ~addChunk _stream_readable.js:261:18
+      1  100.0%          LazyCompile: ~readableAddChunk _stream_readable.js:216:26
+      1  100.0%            LazyCompile: ~Readable.push _stream_readable.js:191:35
+      1    1.5%    LazyCompile: ~request /home/gofrendi/Projects/chimera-framework/node_modules/request/index.js:42:18
+      1  100.0%      LazyCompile: ~httpRequest /home/gofrendi/Projects/chimera-framework/lib/core-dollar.js:24:22
+      1  100.0%        LazyCompile: ~args /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:344:12
+      1  100.0%          LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      1  100.0%            LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1    1.5%    LazyCompile: ~readableAddChunk _stream_readable.js:216:26
+      1  100.0%      LazyCompile: ~Readable.push _stream_readable.js:191:35
+      1  100.0%        LazyCompile: ~parserOnBody _http_common.js:126:22
+      1  100.0%          /usr/bin/node
+      1  100.0%            LazyCompile: ~socketOnData _http_client.js:433:22
+      1    1.5%    LazyCompile: ~installListeners _http_agent.js:255:26
+      1  100.0%      LazyCompile: ~oncreate _http_agent.js:212:20
+      1  100.0%        LazyCompile: ~createSocket _http_agent.js:196:53
+      1  100.0%          LazyCompile: ~addRequest _http_agent.js:138:49
+      1  100.0%            LazyCompile: ~ClientRequest _http_client.js:79:23
+      1    1.5%    LazyCompile: ~httpRequest /home/gofrendi/Projects/chimera-framework/lib/core-dollar.js:24:22
+      1  100.0%      LazyCompile: ~args /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:344:12
+      1  100.0%        LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      1  100.0%          LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1  100.0%            LazyCompile: ~series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+      1    1.5%    LazyCompile: ~getCompiledCommand /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:401:31
+      1  100.0%      LazyCompile: ~getChainWithTrueCommand /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:428:36
+      1  100.0%        LazyCompile: *getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      1  100.0%          LazyCompile: *getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      1  100.0%            LazyCompile: ~getTrueRootChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:60:27
+      1    1.5%    LazyCompile: ~getChainWithTrueCommand /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:428:36
+      1  100.0%      LazyCompile: *getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      1  100.0%        LazyCompile: *getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      1  100.0%          LazyCompile: ~getTrueRootChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:60:27
+      1  100.0%            LazyCompile: ~runRootChain /home/gofrendi/Projects/chimera-framework/lib/core.js:479:25
+      1    1.5%    LazyCompile: ~evaluateStatement /home/gofrendi/Projects/chimera-framework/lib/core.js:182:30
+      1  100.0%      LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+      1  100.0%        LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:254:14
+      1  100.0%          LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1  100.0%            LazyCompile: *_tickCallback internal/process/next_tick.js:151:25
+      1    1.5%    LazyCompile: ~emitLookup net.js:1103:46
+      1  100.0%      LazyCompile: ~onlookup dns.js:90:18
+      1    1.5%    LazyCompile: ~emit events.js:156:44
+      1  100.0%      LazyCompile: ~tickOnSocket _http_client.js:617:22
+      1  100.0%        LazyCompile: ~onSocketNT _http_client.js:664:20
+      1  100.0%          LazyCompile: ~_combinedTickCallback internal/process/next_tick.js:129:33
+      1  100.0%            LazyCompile: ~_tickCallback internal/process/next_tick.js:151:25
+      1    1.5%    LazyCompile: ~args /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:313:12
+      1  100.0%      LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      1  100.0%        LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1  100.0%          LazyCompile: ~series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+      1  100.0%            LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+      1    1.5%    LazyCompile: ~addListener events.js:296:58
+      1  100.0%      LazyCompile: ~Request.init /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:142:35
+      1  100.0%        LazyCompile: ~Request /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:94:18
+      1  100.0%          LazyCompile: ~request /home/gofrendi/Projects/chimera-framework/node_modules/request/index.js:42:18
+      1  100.0%            LazyCompile: ~httpRequest /home/gofrendi/Projects/chimera-framework/lib/core-dollar.js:24:22
+      1    1.5%    LazyCompile: ~_implicitHeader _http_client.js:290:67
+      1  100.0%      LazyCompile: ~end _http_outgoing.js:723:45
+      1  100.0%        LazyCompile: ~Request.end /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1504:34
+      1  100.0%          LazyCompile: ~end /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:525:24
+      1  100.0%            LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:520:18
+      1    1.5%    LazyCompile: ~_addHeaderLines _http_incoming.js:119:25
+      1  100.0%      LazyCompile: ~parserOnHeadersComplete _http_common.js:61:33
+      1  100.0%        /usr/bin/node
+      1  100.0%          LazyCompile: ~socketOnData _http_client.js:433:22
+      1  100.0%            LazyCompile: *emit events.js:156:44
+      1    1.5%    LazyCompile: ~Socket net.js:185:16
+      1  100.0%      LazyCompile: ~connect net.js:103:17
+      1  100.0%        LazyCompile: ~createSocket _http_agent.js:196:53
+      1  100.0%          LazyCompile: ~addRequest _http_agent.js:138:49
+      1  100.0%            LazyCompile: ~ClientRequest _http_client.js:79:23
+      1    1.5%    LazyCompile: ~Readable.push _stream_readable.js:191:35
+      1  100.0%      LazyCompile: ~parserOnBody _http_common.js:126:22
+      1  100.0%        /usr/bin/node
+      1  100.0%          LazyCompile: ~socketOnData _http_client.js:433:22
+      1  100.0%            LazyCompile: *emit events.js:156:44
+      1    1.5%    LazyCompile: ~Module.require module.js:593:36
+      1  100.0%      LazyCompile: ~cachePathsRequire /home/gofrendi/Projects/chimera-framework/node_modules/cache-require-paths/index.js:20:54
+      1  100.0%        LazyCompile: ~require internal/module.js:8:19
+      1  100.0%          Script: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js:1:11
+      1  100.0%            LazyCompile: ~Module._compile module.js:609:37
+      1    1.5%    LazyCompile: ~Module._resolveFilename module.js:514:35
+      1  100.0%      LazyCompile: ~Module._load module.js:448:24
+      1  100.0%        LazyCompile: ~Module.require module.js:593:36
+      1  100.0%          LazyCompile: ~cachePathsRequire /home/gofrendi/Projects/chimera-framework/node_modules/cache-require-paths/index.js:20:54
+      1  100.0%            LazyCompile: ~require internal/module.js:8:19
+      1    1.5%    LazyCompile: ~InnerArrayJoin native array.js:274:24
+      1  100.0%      LazyCompile: ~join native array.js:287:46
+      1  100.0%        LazyCompile: ~setupConfig internal/process.js:113:21
+      1  100.0%          LazyCompile: ~startup bootstrap_node.js:12:19
+      1  100.0%            Script: ~<anonymous> bootstrap_node.js:10:10
+      1    1.5%    LazyCompile: ~EventEmitter events.js:27:22
+      1  100.0%      LazyCompile: ~Stream internal/streams/legacy.js:6:16
+      1  100.0%        LazyCompile: ~OutgoingMessage _http_outgoing.js:68:25
+      1  100.0%          LazyCompile: ~ClientRequest _http_client.js:79:23
+      1  100.0%            LazyCompile: ~request http.js:37:17
+      1    1.5%    LazyCompile: ~Buffer.concat buffer.js:425:25
+      1  100.0%      LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1122:27
+      1  100.0%        LazyCompile: *emit events.js:156:44
+      1  100.0%          LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1084:42
+      1  100.0%            LazyCompile: *onceWrapper events.js:307:21
+      1    1.5%    LazyCompile: ~<anonymous> net.js:1102:61
+      1  100.0%      LazyCompile: ~defaultTriggerAsyncIdScope internal/async_hooks.js:275:36
+      1  100.0%        LazyCompile: ~lookupAndConnect net.js:1043:26
+      1  100.0%          LazyCompile: ~Socket.connect net.js:982:36
+      1  100.0%            LazyCompile: ~connect net.js:103:17
+      1    1.5%    LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:778:34
+      1  100.0%      LazyCompile: ~emitOne events.js:114:17
+      1  100.0%        LazyCompile: ~emit events.js:156:44
+      1  100.0%          LazyCompile: ~tickOnSocket _http_client.js:617:22
+      1  100.0%            LazyCompile: ~onSocketNT _http_client.js:664:20
+      1    1.5%    LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:254:14
+      1  100.0%      LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1  100.0%        LazyCompile: ~series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+      1  100.0%          LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+      1  100.0%            LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1    1.5%    LazyCompile: *removeListener events.js:355:28
+      1  100.0%      LazyCompile: ~socketOnData _http_client.js:433:22
+      1  100.0%        LazyCompile: *emit events.js:156:44
+      1  100.0%          LazyCompile: ~addChunk _stream_readable.js:261:18
+      1  100.0%            LazyCompile: ~readableAddChunk _stream_readable.js:216:26
+      1    1.5%    LazyCompile: *parse url.js:101:37
+      1  100.0%      LazyCompile: ~urlParse url.js:93:18
+      1  100.0%        LazyCompile: ~Request.init /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:142:35
+      1  100.0%          LazyCompile: ~Request /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:94:18
+      1  100.0%            LazyCompile: ~request /home/gofrendi/Projects/chimera-framework/node_modules/request/index.js:42:18
+      1    1.5%    LazyCompile: *getTidyChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:493:25
+      1  100.0%      LazyCompile: *getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      1  100.0%        LazyCompile: *getTrueChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:531:25
+      1  100.0%          LazyCompile: ~getTrueRootChain /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:60:27
+      1  100.0%            LazyCompile: ~runRootChain /home/gofrendi/Projects/chimera-framework/lib/core.js:479:25
+      1    1.5%    LazyCompile: *done /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6903:18
+      1  100.0%      LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:335:12
+      1  100.0%        LazyCompile: ~args /home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js:313:12
+      1  100.0%          LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      1  100.0%            LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1    1.5%    LazyCompile: *_tickCallback internal/process/next_tick.js:151:25
+      1    1.5%    LazyCompile: *ClientRequest _http_client.js:79:23
+      1  100.0%      LazyCompile: ~request http.js:37:17
+      1  100.0%        LazyCompile: ~Request.start /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:705:36
+      1  100.0%          LazyCompile: ~Request.end /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1504:34
+      1  100.0%            LazyCompile: ~end /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:525:24
+      1    1.5%    LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:355:12
+      1  100.0%      LazyCompile: ~arrayIterator /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6893:27
+      1  100.0%        LazyCompile: *series /home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js:6870:18
+      1  100.0%          LazyCompile: *<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:404:12
+      1  100.0%            LazyCompile: ~<anonymous> /home/gofrendi/Projects/chimera-framework/lib/core.js:254:14
+      1    1.5%    Builtin: ArrayForEach
+      1  100.0%      LazyCompile: ~copy /home/gofrendi/Projects/chimera-framework/node_modules/request/lib/helpers.js:42:15
+      1  100.0%        LazyCompile: ~Request.start /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:705:36
+      1  100.0%          LazyCompile: ~Request.end /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:1504:34
+      1  100.0%            LazyCompile: ~end /home/gofrendi/Projects/chimera-framework/node_modules/request/request.js:525:24
+
