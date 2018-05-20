@@ -147,81 +147,81 @@ The questions are as follow:
 
 1. From the scale 1-5, How familiar are you with `web service`
 
-  * 1 - Never know about it
-  * 2 - Know it, but never use it
-  * 3 - Somehow familiar
-  * 4 - Familiar
-  * 5 - Very familiar
+  - 1 - Never know about it
+  - 2 - Know it, but never use it
+  - 3 - Somehow familiar
+  - 4 - Familiar
+  - 5 - Very familiar
 
 2. From the scale 1-5, How familiar are you with `functional programming` (i.e: `map`, `reduce`, and `filter`)
 
-  * 1 - Never know about it
-  * 2 - Know it, but never use it
-  * 3 - Somehow familiar
-  * 4 - Familiar
-  * 5 - Very familiar
+  - 1 - Never know about it
+  - 2 - Know it, but never use it
+  - 3 - Somehow familiar
+  - 4 - Familiar
+  - 5 - Very familiar
 
 
 3. Do you able to provide the 1st solution?
 
-  * Yes
-  * No
+  - Yes
+  - No
 
 4. How long do you need to build the 1st solution?
 
-  * Less than an hour
-  * More than an hour but less than a day
-  * More than a day
+  - Less than an hour
+  - More than an hour but less than a day
+  - More than a day
 
 5. Do you able to provide the 2nd solution?
 
-  * Yes
-  * No
+  - Yes
+  - No
 
 6. How long do you need to build the 2nd solution?
 
-  * Less than an hour
-  * More than an hour but less than a day
-  * More than a day
+  - Less than an hour
+  - More than an hour but less than a day
+  - More than a day
 
 7. From scale 1-5, How readable your 1st solution is?
 
-  * Not readable
-  * Need some time to understand
-  * Somehow readable
-  * Readable
-  * Very readable
+  - Not readable
+  - Need some time to understand
+  - Somehow readable
+  - Readable
+  - Very readable
 
 8. From scale 1-5, How readable your 2nd solution is?
 
-  * Not readable
-  * Need some time to understand
-  * Somehow readable
-  * Readable
-  * Very readable
+  - Not readable
+  - Need some time to understand
+  - Somehow readable
+  - Readable
+  - Very readable
 
 9. Suppose you get a job related to web-service. Which one would you like to use?
 
-  * 1st solution
-  * 2nd solution
+  - 1st solution
+  - 2nd solution
 
 10. Suppose you get a hobby project related to web-service. Which one would you like to use?
 
-  * 1st solution
-  * 2nd solution
+  - 1st solution
+  - 2nd solution
 
 11. Suppose you have to teach someone about web-service. Which one would you like to show?
 
-  * 1st solution
-  * 2nd solution
+  - 1st solution
+  - 2nd solution
 
 12. According to your opinion, what are the main disadvantages of using CHIML (you can choose more than one)?
 
-  * CHIML script is difficult to read
-  * Chimera-Framework installation is challanging
-  * The performance is quite slow
-  * No community/company backup
-  * Others
+  - CHIML script is difficult to read
+  - Chimera-Framework installation is challanging
+  - The performance is quite slow
+  - No community/company backup
+  - Others
 
 # Task 
 
