@@ -7,8 +7,8 @@ This survey involve `instructors` and `respondents`. Instructors should be someo
 The instructor explains:
 
 * The nature of this research: We want to measure how usable and readable is CHIML
-* Chimera-Framework: How to use and install it
-* CHIML: The basic structure of the language
+* Chimera-Framework: How to use and install it. The resource is available online [here](https://github.com/goFrendiAsgard/chimera-framework/wiki)
+* CHIML: The basic structure of the language. The specification is also availabe online [here](https://github.com/goFrendiAsgard/chimera-framework/wiki/CHIML)
 
 ## Web Service Explanation (~ 10 minutes)
 
