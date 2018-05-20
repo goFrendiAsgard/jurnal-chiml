@@ -20,7 +20,8 @@
     "./safe-eval.js": "/home/gofrendi/Projects/chimera-framework/lib/safe-eval.js",
     "vm": "vm",
     "request": "/home/gofrendi/Projects/chimera-framework/node_modules/request/index.js",
-    "./cmd.js": "/home/gofrendi/Projects/chimera-framework/lib/cmd.js"
+    "./cmd.js": "/home/gofrendi/Projects/chimera-framework/lib/cmd.js",
+    "json-stringify-safe": "/home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js"
   },
   "/home/gofrendi/Projects/chimera-framework/lib/util.js": {
     "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"

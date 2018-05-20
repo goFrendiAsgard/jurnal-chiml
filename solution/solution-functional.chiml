@@ -1,0 +1,12 @@
+# filename: solution-functional.chiml
+# usage: chimera solution-functional.chiml
+
+out: results
+do:
+
+  - |('http://chiml-survey.herokuapp.com/genres') -> [$.httpRequest] -> response
+  - |(response.body) --> genres
+
+  - map: genres
+    into: results
+    do: |(genre) -> {(x) => x.name} -> result

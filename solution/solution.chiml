@@ -4,9 +4,13 @@
 out: results
 do:
 
-  - ('http://chiml-survey.herokuapp.com/genres') -> [$.httpRequest] -> response
-  - (response.body) --> genres
+  - |('http://chiml-survey.herokuapp.com/genres') -> [$.httpRequest] -> response
+  - |(response.body) --> genres
 
-  - map: genres
-    into: results
-    do: |(genre) -> {(x) => x.name} -> result
+  - |([]) --> results
+
+  - |i <-- 0
+  - while: i < genres.length
+    do:
+      - |results[i] <-- (genres[i].name)
+      - |i <-- (i+1)

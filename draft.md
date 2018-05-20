@@ -234,16 +234,16 @@ do: cal
 can be written as:
 
 ```
-(month, year) -> cal -> calendar
+|(month, year) -> cal -> calendar
 ```
 
 or
 
 ```
-calendar <- cal <- (month, year)
+|calendar <- cal <- (month, year)
 ```
 
-We are supporting reverse arrow to make it more intuitive for developers. So, typical assignment likke `result = add(num1, num2)` can be mapped directly into  `result <- add <- (num1, num2)` without any need to reverse the order into `(num1, num2) -> add -> result`.
+We are supporting reverse arrow to make it more intuitive for developers. So, typical assignment likke `result = add(num1, num2)` can be mapped directly into  `|result <- add <- (num1, num2)` without any need to reverse the order into `|(num1, num2) -> add -> result`.
 
 Despite of it's nature as orchestration language, CHIML also support several control structures like `if`, `else`, and `while`. It is useful for prototyping since the developers doesn't have to deploy intermediary components for control structure.
 

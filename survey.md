@@ -132,8 +132,29 @@ print(json.dumps(result))
 out: results
 do:
 
-  - ('http://chiml-survey.herokuapp.com/genres') -> [$.httpRequest] -> response
-  - (response.body) --> genres
+  - |('http://chiml-survey.herokuapp.com/genres') -> [$.httpRequest] -> response
+  - |(response.body) --> genres
+
+  - |([]) --> results
+
+  - |i <-- 0
+  - while: i < genres.length
+    do:
+      - |results[i] <-- (genres[i].name)
+      - |i <-- (i+1)
+```
+
+or a more functional approach
+
+```yaml
+# filename: solution-functional.chiml
+# usage: chimera solution-functional.chiml
+
+out: results
+do:
+
+  - |('http://chiml-survey.herokuapp.com/genres') -> [$.httpRequest] -> response
+  - |(response.body) --> genres
 
   - map: genres
     into: results
