@@ -89,6 +89,8 @@ Show an array containing genre's names
 
 #### Solution 1 (Python3)
 
+Suppose the respondent is proficient in Python, the solution could be like this:
+
 ```python
 # filename: solution.py
 # usage: python3 solution.py
@@ -124,6 +126,9 @@ print(json.dumps(result))
 ```
 
 #### Solution 2 (CHIML)
+
+For the second solution, respondent should try to provide the solution in CHIML format.
+To make it easier, the respondent can access `http://chiml-survey.herokuapp.com`
 
 ```yaml
 # filename: solution.chiml
@@ -185,7 +190,7 @@ The questions are as follow:
 
 3. Do you able to provide the 1st solution?
 
-    - Yes
+    - Yes (please provide link on gist, github, pastebin, dropbox, or google drive)
     - No
 
 4. How long do you need to build the 1st solution?
@@ -196,7 +201,7 @@ The questions are as follow:
 
 5. Do you able to provide the 2nd solution?
 
-    - Yes
+    - Yes (please provide link on gist, github, pastebin, dropbox, or google drive)
     - No
 
 6. How long do you need to build the 2nd solution?
@@ -281,4 +286,4 @@ The value of `books` should be another array of object which each element contai
 
 # Survey
 
-__TODO:__ Put link to google form here
+The respondent should fill up the survey [here](https://goo.gl/forms/CXiQ2MgoZokOjBKg2)
