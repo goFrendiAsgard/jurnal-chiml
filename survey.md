@@ -19,7 +19,7 @@ The instructor explains the pre-deployed web-service. The web-service will give 
 http://chiml-survey.herokuapp.com/<tableName>
 
 // SELECT * FROM <tableName> WHERE <field>=<value>
-http://chiml-survey.herokuapp.com/<tableName>?<field>=<value>&
+http://chiml-survey.herokuapp.com/<tableName>?<field>=<value>
 ```
 
 The API expose 3 tables:
@@ -166,7 +166,7 @@ do:
     do: |(genre) -> {(x) => x.name} -> result
 ```
 
-## Survey
+## Filling Up Survey (~ 20 minutes)
 
 After finishing the task, the respondents should fill up the surveys in the google forms
 The questions are as follow:

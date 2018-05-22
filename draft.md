@@ -74,7 +74,14 @@ On the other hand, REST (Representation State Transfer) is a more strict impleme
 
 CORBA (Common Object Request Broker) is a specification created by OMG (Object Management Group). It was published in 1991, and it's last version was released on November 2012
 
+BPEL (Business Process Execution Language) is another specification published by OASIS. I was published in 2003. BPEL was 
+
+EJB (Enterprise Java Beans) is another specification for microservice
+
 ## GRPC
+
+GRPC stands for Google Remote Procedure Call. This specification was created by google and currently it is supporting several programming languages.
+
 
 # CHIML
 
