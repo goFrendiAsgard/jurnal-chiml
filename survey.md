@@ -10,7 +10,7 @@ The instructor explains:
 * Chimera-Framework: How to use and install it. The resource is available online [here](https://github.com/goFrendiAsgard/chimera-framework/wiki)
 * CHIML: The basic structure of the language. The specification is also availabe online [here](https://github.com/goFrendiAsgard/chimera-framework/wiki/CHIML)
 
-## Web Service Explanation (~ 10 minutes)
+## Exposed Web Service Explanation (~ 10 minutes)
 
 The instructor explains the pre-deployed web-service. The web-service will give response based on `GET` request. The specification of the API is as follow:
 
@@ -137,8 +137,7 @@ To make it easier, the respondent can access `http://chiml-survey.herokuapp.com`
 out: results
 do:
 
-  - |('http://chiml-survey.herokuapp.com/genres') -> [$.httpRequest] -> response
-  - |(response.body) --> genres
+  - |('http://chiml-survey.herokuapp.com/genres') -> [$.httpRequestBody] -> genres
 
   - |([]) --> results
 
@@ -158,8 +157,7 @@ or a more functional approach
 out: results
 do:
 
-  - |('http://chiml-survey.herokuapp.com/genres') -> [$.httpRequest] -> response
-  - |(response.body) --> genres
+  - |('http://chiml-survey.herokuapp.com/genres') -> [$.httpRequestBody] -> genres
 
   - map: genres
     into: results
