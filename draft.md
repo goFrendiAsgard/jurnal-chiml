@@ -70,22 +70,41 @@ HTTP API is a quite common protocol. The architecture is also relatively simple.
 
 On the other hand, REST (Representation State Transfer) is a more strict implementation of HTTP API. It was introduced and defined in 2000 by Roy Fielding in his doctoral thesis [ref](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). Fiedling focusing on how a URI should represent an object, while HTTP verb serve as it's method. If the endpoint is fully adapting REST specification, it is called `RESTful web service`.
 
-## CORBA, BPEL and EJB
+## SOAP
 
-CORBA (Common Object Request Broker) is a specification created by OMG (Object Management Group). It was published in 1991, and it's last version was released on November 2012
+SOAP (Simple Object Access Protocol) is a standard XML format for sending and receiving message. In SOAP, every message has to be wrapped in an envelope element. Inside an evelope, developer can write header and body. Header should contains application specific information, while body should contains the message itself.
 
-BPEL (Business Process Execution Language) is another specification published by OASIS. I was published in 2003. BPEL was 
+SOAP containing many standards that are not specified in HTTP/REST API. However, this also mean that SOAP is more verbose and eat more bandwidth than HTTP/REST API.
 
-EJB (Enterprise Java Beans) is another specification for microservice
+Nowadays, SOAP is still used and supported by many system. But, for new system, developers tend to choose simpler protocol.
 
-## GRPC
+## CORBA, BPEL, and EJB
 
-GRPC stands for Google Remote Procedure Call. This specification was created by google and currently it is supporting several programming languages.
+CORBA (Common Object Request Broker) is a specification created by OMG (Object Management Group). It was published in 1991, and it's last version was released on November 2012. CORBA supporting a lot of programming languages including C and Java.
 
+BPEL (Business Process Execution Language) is another specification published by OASIS. I was published in 2003. BPEL is usually used by enterprise. Unlike CORBA, BPEL is more language agnostic. That means that the components can be written in any language.
+
+EJB (Enterprise Java Beans) is another specification for microservice. compared to CORBA and BPEL, EJB is less language agnostic. in EJB, the orchestration component has to be written in Java.
+
+CORBA, BPEL, and EJB are more strict compared to HTTP API. The server and the client should be agree on the data format. This agreement is usually written in IDL (Interface Definition Language). Since the server and the client has already agree on the data format, server response can be shorter than HTTP/REST API.
+
+We conclude that although CORBA, BPEL, and EJB are more difficult to set up compared to HTTP/REST API and SOAP, it might benefit the system for the long run.
+
+## JSON-RPC, XML-RPC, and GRPC
+
+RPC stands for Remote Procedure Call. The focus of RPC is to let developer invoke procedures in remote computer as easy as they are a local procedure. JSON-RPC and XML-RPC works in a same manner, only the data exchange format is different. As the names implied, JSON-RPC use JSON, while XML-RPC use XML. First the client send a request to the server. The request contains the name of the method and the parameters. The server then replied with the return value.
+
+As XML is more verbose than JSON, XML-RPC is also need more bandwidth compared to JSON-RPC. And as XML and JSON are text format, binary data should also be encoded in text format. For example, an image might need to be encoded in base-64 format.
+
+To overcome the need to encode data into text format, Google create another protocol named GRPC (Google Remote Procedure Call). GRPC supporting several programming languages including Python, Javascript, Java, and PHP. In order to use GRPC, developers have to create stub skeleton (similar to IDL in CORBA, BPEL, or EJB).
 
 # CHIML
 
-CHIML (Chimera Markup Language) is a language used in Chimera-Framework in order to conduct component orchestration. Our goal is to make it as readable and as compact as possible. In order to measure the readability of the language, we conduct a simple survey with 10 respondents.
+CHIML (Chimera Markup Language) is a language used in Chimera-Framework. CHIML is an orchestration language. In term of language agnosticism and simplicity, Chimera-Framework is comparable to HTTP API. It doesn't even require HTTP protocol as any valid command line executable can serve as component. Our goal is to make CHIML as readable and as compact as possible. In order to measure the readability of the language, we conduct a simple survey with 5 respondents.
+
+We provide three HTTP API endpoint and ask the respondents to compose the API in order to print the data in a specified format. The respondents should conduct two solutions. In the first solution, the respondents can choose any technology they like. But for the second solution, the respondents have to use CHIML.
+
+The results are then analyzed and compared to get an overview about CHIML.
 
 ## Design
 
@@ -264,7 +283,7 @@ or
 |calendar <- cal <- (month, year)
 ```
 
-We are supporting reverse arrow to make it more intuitive for developers. So, typical assignment likke `result = add(num1, num2)` can be mapped directly into  `|result <- add <- (num1, num2)` without any need to reverse the order into `|(num1, num2) -> add -> result`.
+We are implementing reverse arrow in CHIML to make it more intuitive for developers. So, typical assignment like `result = add(num1, num2)` can be mapped directly into  `|result <- add <- (num1, num2)` without any need to reverse the order into `|(num1, num2) -> add -> result`.
 
 Despite of it's nature as orchestration language, CHIML also support several control structures like `if`, `else`, and `while`. It is useful for prototyping since the developers doesn't have to deploy intermediary components for control structure.
 
@@ -320,13 +339,16 @@ There are some default variables in every CHIML script:
 
 In order to parse and execute CHIML script, we have build a parser to evaluate the script and execute it on the fly. The javascript statements inside CHIML script are evaluated by using builtin Node.Js `vm` module. The global control flow is handled by using `neo-async`, a faster version of `async` module.
 
-## Comparison
-
 # Result
+
+Generally CHIML is slower than native Python/JavaScript solution.
 
 # Discsussion
 
+CHIML serve well as orchestration language. However for control structure, the existance of intermediary components can help to boost performance. The best trait of CHIML is it's support for programming-in-large and programming-in-small. Eventough the control structure is still suffering for speed and performance, it serves well as prototyping tool. This mean that the developer can start orchestration solution in CHIML, then gradually do optimization.
+
 # Conclusion
+
 
 # TODO:
 
@@ -337,3 +359,4 @@ In order to parse and execute CHIML script, we have build a parser to evaluate t
 * Better to tabulate the questions
 * Put some `open-ended-question` to get more data (like: why do you choose...?)
 * Length of development, usage scope, LOC, speed, pre-requisites
+* Use `child_process.fork` for map and filter
