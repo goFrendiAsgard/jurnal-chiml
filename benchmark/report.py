@@ -129,8 +129,8 @@ def build_testcase_df(testcase_list, trial_count):
 
 testcase_df = build_testcase_df(testcase_list, 10)
 print(testcase_df)
-vars_benchmark = ['b_user', 'b_real', 'b_sys', 'size']
-vars_readability = ['loc', 'fre', 'fkgl']
+vars_benchmark = ['b_user', 'b_real', 'b_sys']
+vars_readability = ['loc', 'fre', 'fkgl', 'size']
 markers = ['v', '^', 'o']
 # benchmark
 gb = sns.pairplot(testcase_df, hue='solution',
