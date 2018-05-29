@@ -100,11 +100,7 @@ To overcome the need to encode data into text format, Google create another prot
 
 # CHIML
 
-CHIML (Chimera Markup Language) is a language used in Chimera-Framework. CHIML is an orchestration language. In term of language agnosticism and simplicity, Chimera-Framework is comparable to HTTP API. It doesn't even require HTTP protocol as any valid command line executable can serve as component. Our goal is to make CHIML as readable and as compact as possible. In order to measure the readability of the language, we conduct a simple survey with 5 respondents.
-
-We provide three HTTP API endpoint and ask the respondents to compose the API in order to print the data in a specified format. The respondents should conduct two solutions. In the first solution, the respondents can choose any technology they like. But for the second solution, the respondents have to use CHIML.
-
-The results are then analyzed and compared to get an overview about CHIML.
+CHIML (Chimera Markup Language) is a language used in Chimera-Framework. CHIML is an orchestration language. In term of language agnosticism and simplicity, Chimera-Framework is comparable to HTTP API. However, unlike HTTP API, Chimera-Framework doesn't even require HTTP protocol. Any valid command line executable can serve as component. In this research, our goal is to make CHIML as readable as possible.
 
 ## Design
 
@@ -339,9 +335,79 @@ There are some default variables in every CHIML script:
 
 In order to parse and execute CHIML script, we have build a parser to evaluate the script and execute it on the fly. The javascript statements inside CHIML script are evaluated by using builtin Node.Js `vm` module. The global control flow is handled by using `neo-async`, a faster version of `async` module.
 
-# Result
+# Experiment
 
-Generally CHIML is slower than native Python/JavaScript solution.
+For the test-case, we provide three HTTP API endpoint exposing three tables, `genres`, `books`, and `authors`. These HTTP end points are assumed as a black-box system. The only way to interact with those APIs is by sending HTTP GET request.
+
+To select all the data from each end-point, the user can send GET request to `http://localhost:3000/<table-name>`. The user can also filter the data by adding `field-name` and `value` as GET parameter. For example, if the user want to select all books written that have genreId = 5, the user should access this url: `http://localhost:3000/books?genreId=5`.
+
+The response from those API will be in JSON format containing array of object. Each element of the array is correlated to table's row.
+
+The table structure is as follow:
+
+```yaml
+TABLE: genres
+FIELDS:
+  - id
+  - name
+
+TABLE: books
+FIELDS:
+  - id
+  - title
+  - genreId
+  - authorId
+
+TABLE: author
+FIELDS:
+  - id
+  - name
+```
+
+Using these API end points, we provide three problems. The first problem is named `g` problem. In order to solve `g` problem, we should transform HTTP API endpoint's response into array of genre's name (i.e: `["fiction","history","science"]`). In `g` problem, only one endpoint is involved
+
+The second problem is named `gb` problem. In `gb` problem we should fetch book titles for each genres and present it in the following manner: `[{"name":"fiction","books":["Rise of the Rebels","A New Dawn"]},{"name":"history","books":["John Adams","1776"]},{"name":"science","books":["Brief History of Time","Grand Design"]}]`. This problem is more difficult than the first problem, since we have to deal with two endpoints (genres and books).
+
+The last problem named `gba`. It is very similar to `gb` problem, but in this case we should also show the author's name of every book. The expected result is as follow: 
+`[{"name":"fiction","books":[{"title":"Rise of the Rebels","author":"Michael Kogge"},{"title":"A New Dawn","author":"John Jackson Miller"}]},{"name":"history","books":[{"title":"John Adams","author":"David McCullough"},{"title":"1776","author":"David McCullough"}]},{"name":"science","books":[{"title":"Brief History of Time","author":"Stephen Hawking"},{"title":"Grand Design","author":"Stephen Hawking"}]}]`
+
+In order to measure the readability of the solutions, we use Flesch Kincaid readability test. In the other hand, we use UNIX `time` utility to measure the performance of the solutions.
+
+## Solutions
+
+For each problems, we build 3 solutions. The solutions are using HTTP API protocol and written in three programming languages (Python, JavaScript, and CHIML). Some technologies like CORBA, BPEL, and EJB are not helpful to solve our problems since those technologies require IDL, broker setup, and other prerequisites. Like HTTP API, SOAP and RPCs are just protocols. Given the correct data encoder/decoder and suitable end point, we can also build the same solutions for these technologies.
+
+For `g` problem, the solutions are as follow:
+
+```javascript
+const rpn = require('request-promise-native')
+async function fetchGenres () {
+  const body = await rpn('http://localhost:3000/genres')
+  const genres = JSON.parse(body).map((genre) => genre.name)
+  console.log(JSON.stringify(genres))
+}
+fetchGenres()
+```
+
+```python
+import json
+from urllib import request
+response = request.urlopen('http://localhost:3000/genres').read()
+genres = json.loads(response)
+result = list(map(lambda genre: genre['name'], genres))
+print(json.dumps(result))
+```
+
+```yaml
+out: genres
+do:
+  - |('http://localhost:3000/genres') -> [$.httpRequestBody] -> genres
+  - map: genres
+    into: genres
+    do: |(genre) -> (x) => x.name -> genre
+```
+
+# Result
 
 # Discsussion
 

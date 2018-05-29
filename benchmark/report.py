@@ -86,10 +86,11 @@ def build_testcase_dict(testcase_list, trial_count):
     for testcase in testcase_list:
         with open(testcase) as f:
             lines = f.readlines()
+        size = len(''.join(lines))
         loc = len(lines)
         fre = round(get_fre(lines), 3)
         fkgl = round(get_fkgl(lines), 3)
-        testcase_dict[testcase] = {'loc': loc, 'fre': fre,
+        testcase_dict[testcase] = {'loc': loc, 'fre': fre, 'size': size,
                                    'fkgl': fkgl, 'raw_benchmarks': []}
     # performance
     for fileIndex in range(trial_count):
