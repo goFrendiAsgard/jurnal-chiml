@@ -377,7 +377,9 @@ In order to measure the readability of the solutions, we use Flesch Kincaid read
 
 For each problems, we build 3 solutions. The solutions are using HTTP API protocol and written in three programming languages (Python, JavaScript, and CHIML). Some technologies like CORBA, BPEL, and EJB are not helpful to solve our problems since those technologies require IDL, broker setup, and other prerequisites. Like HTTP API, SOAP and RPCs are just protocols. Given the correct data encoder/decoder and suitable end point, we can also build the same solutions for these technologies.
 
-For `g` problem, the solutions are as follow:
+In order to make the code shorter, we use `map` and `arrow function` for JavaScript, and using `lambda expression` for Python.
+
+The solutions of problem `g` are as follow:
 
 ```javascript
 const rpn = require('request-promise-native')
@@ -407,22 +409,42 @@ do:
     do: |(genre) -> (x) => x.name -> genre
 ```
 
-# Result
+# Result and Discussion
 
-# Discsussion
+After building the solutions, we compare the performance by using UNIX `time` command. This benchmark providing 3 numbers, `sys`, `user`, and `real`. `Sys` is the amount of CPU time spent within kernel. `User` is the amount of CPU time spent outside the kernel but within the process. And `real` is the clock time from start to finish the call. `Real` also include time spent for IO process. We named these performance `b_sys`, `b_real`, and `b_user` respectively.
 
-CHIML serve well as orchestration language. However for control structure, the existance of intermediary components can help to boost performance. The best trait of CHIML is it's support for programming-in-large and programming-in-small. Eventough the control structure is still suffering for speed and performance, it serves well as prototyping tool. This mean that the developer can start orchestration solution in CHIML, then gradually do optimization.
+Beside comparing the performance, we also calculate the file size in byte (`size`), number of lines in code (`loc`), Flesch reading ease (`fre`), and Flesh-Kincaid grade level (`fkgl`).
+
+For `b_sys`, `b_real`, and `b_user`, smaller number means better performance. For `size` and `loc`, smaller number is also means better. For `fre`, greater numbers means that the program is more readable. However, for `fkgl`, smaller number means smaller years of education required. This means that `fkgl` and `fre` should has negative correlation.
+
+The result is presented in the table:
+
+|  b_real |  b_sys | b_user |  fkgl  |   fre  | loc | problem | size | solution  |
+|--------:|-------:|-------:|-------:|-------:|----:|--------:|-----:|----------:|
+|   0.246 |  0.022 |  0.236 |  8.390 | 42.035 | 30  |  gba    | 978  |     js    |
+|   0.113 |  0.010 |  0.098 | 18.128 |-28.851 | 15  |  gba    | 662  |     py    |
+|   0.317 |  0.025 |  0.304 |  7.103 | 50.217 | 17  |  gba    | 554  |  chiml    |
+|   0.230 |  0.018 |  0.226 | 11.044 | 22.670 | 16  |   gb    | 540  |     js    |
+|   0.101 |  0.013 |  0.087 | 15.674 |-11.228 | 12  |   gb    | 471  |     py    |
+|   0.310 |  0.026 |  0.294 |  4.516 | 68.987 | 13  |   gb    | 381  |  chiml    |
+|   0.221 |  0.021 |  0.214 | 19.039 |-35.587 |  7  |    g    | 250  |     js    |
+|   0.095 |  0.010 |  0.084 | 17.319 |-23.463 |  6  |    g    | 217  |     py    |
+|   0.293 |  0.020 |  0.287 |  4.613 | 68.522 |  6  |    g    | 163  |  chiml    |
+
+![benchmark metrics](benchmark/benchmark.png)
+
+From the test result, we can conclude that python solution is outperforming Javascript and CHIML. Also, `b_user` and `b_real` is strongly corelated to each other. This is make sense since the majority CPU time is spent in `user` mode.
+
+![readability metrics](benchmark/readability.png)
+
+In terms of `size`, CHIML outperforming Python and JavaScript. The same is also true for `fkgl` and `fre`. Thus, we can conclude that according to Flesch-Kincaid readability test, CHIML is more readable from Python and JavaScript.
+
+CHIML is unexpectedly slow when performing map or filter. It seems to be related to it's internal mechanism in translating map/filter. In CHIML, map and filter is translated into starting another subchain-execution.
+
+We also realize that starting another external process (like UNIX tool) from CHIML is sometime take less time than running JavaScript expression inside CHIML (i.e: we use JavaScript to evaluate control structure). We are still trying to analyze this trait, but there are some possibilities that we have to consider. The first possibility is related to Chimera-Framework mechanism in evaluating JavaScript expression. Since internally we use `script.runInNewContext(context)`, the interpreter will always copy global variables and creating new context everytime. When the content of global variables increases, this can drag down the performance. The second possibility is related to Node.Js single thread nature. Eventough internally Node.Js can use more than one processor in a single thread, this will not work for our local code. In some cases, especially when the code doesn't involve IO process, everything will be executed sequentially.
+
+So, for the sake of improving performance, we should refine CHIML parser and interpreter. Either by switching to a more concurrent language like `golang`, or by optimizing the current parser and interpreter. One of the possible solutions is using `child_process.fork` that allow developer to run child process in another thread.
 
 # Conclusion
 
-
-# TODO:
-
-* Explain the acronym
-* The options of the questionnaires is better to be sorted descending
-* Explain the `not-returned-questions`
-* Explain the outlier
-* Better to tabulate the questions
-* Put some `open-ended-question` to get more data (like: why do you choose...?)
-* Length of development, usage scope, LOC, speed, pre-requisites
-* Use `child_process.fork` for map and filter
+CHIML serve well as orchestration language. However for control structure, the existance of intermediary components can help to boost performance. The best trait of CHIML is it's support for programming-in-large and programming-in-small. Eventough the control structure is still suffering for speed and performance, it serves well as prototyping tool. This mean that the developer can start orchestration solution in CHIML, then gradually do optimization.
