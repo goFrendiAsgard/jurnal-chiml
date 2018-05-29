@@ -22,17 +22,17 @@ Software development is a very interesting topic. The way people developing soft
 
 As software become more and more complex, building and maintaining softwares is also become harder. Various approaches have been attempted in order to make the processes easier.
 
-Several frameworks like [Rails](https://rubyonrails.org/), [Django](https://www.djangoproject.com/), [Laravel](https://laravel.com/), etc are focusing on how to make codes clean, separated, and reusable. In turn, this make software development and maintainance easier. These frameworks quickly gained popularity among software developers.
+Several frameworks like [Rails](https://rubyonrails.org/), [Django](https://www.djangoproject.com/), [Laravel](https://laravel.com/), etc are focusing on how to make codes clean, separated, and reusable. In turn, this make software development and maintenance easier. These frameworks quickly gained popularity among software developers.
 
-However, despite on the clear advantage of those frameworks, they also have several disadvantages. Since the frameworks were built on top of specific programming language, integration to different programming languages is quite challanging. For example, in order to build software by using Rails, developers should code in Ruby. The same is also true for Django, which is built on top of Python, and Laravel which is built on top of PHP. This situation is known as [vendor-lock-in](https://www.makeuseof.com/tag/software-vendor-lock-avoid/). And in some cases it can affect maintainability as well as further development in a bad way.
+However, despite on the clear advantage of those frameworks, they also have several disadvantages. Since the frameworks were built on top of specific programming language, integration to different programming languages is quite challenging. For example, in order to build software by using Rails, developers should code in Ruby. The same is also true for Django, which is built on top of Python, and Laravel which is built on top of PHP. This situation is known as [vendor-lock-in](https://www.makeuseof.com/tag/software-vendor-lock-avoid/). And in some cases it can affect maintainability as well as further development in a bad way.
 
-Thus, a more technology agnostic approach is needed in order to overcome vendor-lock-in problem. Recently, SOA and micro-services are gaining popularity. Those approaches let developers to focus on small components known as services rather than complex monolithic software. A service usually represent single resource or business process. The services can be independent to each other or aware to each others. Despite of the advantages and popularity, SOA and micoservices are prone to concurrency problem [ref](https://www.infoq.com/news/2015/12/soa-v-microservices).
+Thus, a more technology agnostic approach is needed in order to overcome vendor-lock-in problem. Recently, SOA and micro-services are gaining popularity. Those approaches let developers to focus on small components known as services rather than complex monolithic software. A service usually represent single resource or business process. The services can be independent to each other or aware to each others. Despite of the advantages and popularity, SOA and micro-services are prone to concurrency problem [ref](https://www.infoq.com/news/2015/12/soa-v-microservices).
 
 One important aspect in SOA/micro-services is how a developer can compose independent services to work together. There are two common approach to compose services. The process to compose several services that are independent to each others is named orchestration, while the process to compose several services that aware to each others is named choreography. Orchestration require one central controller in order to manage the services [ref](https://simplicable.com/new/orchestration-vs-choreography).
 
 Orchestration has a very long history. The earliest implementation of orchestration was Unix Pipe mechanism. This mechanism is still relevant and used by Unix/Linux users.
 
-Unix Pipe mechanism is not the only implementation of softwre orchestration. Remote Procedure Call (RPC) is also used for bigger projects. Beside Unix Pipe and RPC Several other implementations were introduced by independent companies and consortiums. OMG introduced CORBA on 1991, while OASIS intoduced BPEL on 2001. Some developers also implement their own HTTP/REST API implementation. On 2016, Feilhauer and Sobotka creating a framework named DEF which is focusing on parallel execution. On 2017, we also conduct a research to develop another language agnostic framework named Chimera-Framework. Recently Google also introduce [GRPC](https://grpc.io/), a more modern and sophisticated version of RPC.
+Unix Pipe mechanism is not the only implementation of software orchestration. Remote Procedure Call (RPC) is also used for bigger projects. Beside Unix Pipe and RPC Several other implementations were introduced by independent companies and consortiums. OMG introduced CORBA on 1991, while OASIS intoduced BPEL on 2001. Some developers also implement their own HTTP/REST API implementation. On 2016, Feilhauer and Sobotka creating a framework named DEF which is focusing on parallel execution. On 2017, we also conduct a research to develop another language agnostic framework named Chimera-Framework. Recently Google also introduce [GRPC](https://grpc.io/), a more modern and sophisticated version of RPC.
 
 Compared to the monolithic frameworks like Rails and Django, these orchestration mechanism are more scalable and technology agnostic. This mean that the developers can choose the best technology stack to build their components/services.
 
@@ -68,7 +68,7 @@ From the technical point of view, SOA and micro-service might involve either orc
 
 HTTP API is a quite common protocol. The architecture is also relatively simple. There are web services and a clients. The client send a request to the web service, and the web service reply with a response. The response data is usually in JSON/XML format. SOA components are commonly exposing HTTP API endpoint. [OMDB](https://www.omdbapi.com/) for example, provide an API to search for movie database.
 
-On the other hand, REST (Representation State Transfer) is a more strict implementation of HTTP API. It was introduced and defined in 2000 by Roy Fielding in his doctoral thesis [ref](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). Fiedling focusing on how a URI should represent an object, while HTTP verb serve as it's method. If the endpoint is fully adapting REST specification, it is called `RESTful web service`.
+On the other hand, REST (Representation State Transfer) is a more strict implementation of HTTP API. It was introduced and defined in 2000 by Roy Fielding in his doctoral thesis [ref](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). Fielding focusing on how a URI should represent an object, while HTTP verb serve as it's method. If the endpoint is fully adapting REST specification, it is called `RESTful web service`.
 
 ## SOAP
 
@@ -259,7 +259,7 @@ The `CHIML-script` should contain a single `<program>`.
 <jsPromise> ::= Javascript promise
 ```
 
-Since we are focusing on how to make the language more compact, we also support several shorthands so that a single process can be written in a single line.
+Since we are focusing on how to make the language more compact, we also support several short-hands so that a single process can be written in a single line.
 
 For example, this process:
 
@@ -353,7 +353,7 @@ CHIML serve well as orchestration language. However for control structure, the e
 # TODO:
 
 * Explain the acronym
-* The options of the questionaires is better to be sorted descending
+* The options of the questionnaires is better to be sorted descending
 * Explain the `not-returned-questions`
 * Explain the outlier
 * Better to tabulate the questions

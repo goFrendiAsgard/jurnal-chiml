@@ -1,0 +1,887 @@
+{
+  "/home/gofrendi/Projects/chimera-framework/tools/run.js": {
+    "../lib/core.js": "/home/gofrendi/Projects/chimera-framework/lib/core.js",
+    "../lib/util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
+    "json-stringify-safe": "/home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/core.js": {
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js",
+    "./core-preprocessor.js": "/home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/require-once.js": {
+    "cache-require-paths": "/home/gofrendi/Projects/chimera-framework/node_modules/cache-require-paths/index.js",
+    "path": "path",
+    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
+    "./core-dollar.js": "/home/gofrendi/Projects/chimera-framework/lib/core-dollar.js",
+    "./core-chiml-parser.js": "/home/gofrendi/Projects/chimera-framework/lib/core-chiml-parser.js",
+    "js-yaml": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/index.js",
+    "fs": "fs",
+    "neo-async": "/home/gofrendi/Projects/chimera-framework/node_modules/neo-async/async.js",
+    "./safe-eval.js": "/home/gofrendi/Projects/chimera-framework/lib/safe-eval.js",
+    "vm": "vm",
+    "request": "/home/gofrendi/Projects/chimera-framework/node_modules/request/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/util.js": {
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/core-dollar.js": {
+    "./util.js": "/home/gofrendi/Projects/chimera-framework/lib/util.js",
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/core-chiml-parser.js": {
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/index.js": {
+    "./lib/js-yaml.js": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml.js": {
+    "./js-yaml/loader": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/loader.js",
+    "./js-yaml/dumper": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/dumper.js",
+    "./js-yaml/type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js",
+    "./js-yaml/schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "./js-yaml/schema/failsafe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/failsafe.js",
+    "./js-yaml/schema/json": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/json.js",
+    "./js-yaml/schema/core": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/core.js",
+    "./js-yaml/schema/default_safe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js",
+    "./js-yaml/schema/default_full": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_full.js",
+    "./js-yaml/exception": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/exception.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/loader.js": {
+    "./common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js",
+    "./exception": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/exception.js",
+    "./mark": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/mark.js",
+    "./schema/default_safe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js",
+    "./schema/default_full": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_full.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/mark.js": {
+    "./common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js": {
+    "../schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "./core": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/core.js",
+    "../type/timestamp": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/timestamp.js",
+    "../type/merge": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/merge.js",
+    "../type/binary": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/binary.js",
+    "../type/omap": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/omap.js",
+    "../type/pairs": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/pairs.js",
+    "../type/set": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/set.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js": {
+    "./common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js",
+    "./exception": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/exception.js",
+    "./type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js": {
+    "./exception": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/exception.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/core.js": {
+    "../schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "./json": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/json.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/json.js": {
+    "../schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "./failsafe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/failsafe.js",
+    "../type/null": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/null.js",
+    "../type/bool": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/bool.js",
+    "../type/int": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/int.js",
+    "../type/float": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/float.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/failsafe.js": {
+    "../schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "../type/str": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/str.js",
+    "../type/seq": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/seq.js",
+    "../type/map": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/map.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/str.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/seq.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/map.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/null.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/bool.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/int.js": {
+    "../common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js",
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/float.js": {
+    "../common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js",
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/timestamp.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/merge.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/binary.js": {
+    "buffer": "buffer",
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/omap.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/pairs.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/set.js": {
+    "../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_full.js": {
+    "../schema": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema.js",
+    "./default_safe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js",
+    "../type/js/undefined": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/undefined.js",
+    "../type/js/regexp": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/regexp.js",
+    "../type/js/function": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/function.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/undefined.js": {
+    "../../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/regexp.js": {
+    "../../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type/js/function.js": {
+    "esprima": "/home/gofrendi/Projects/chimera-framework/node_modules/esprima/dist/esprima.js",
+    "../../type": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/type.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/dumper.js": {
+    "./common": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/common.js",
+    "./exception": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/exception.js",
+    "./schema/default_full": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_full.js",
+    "./schema/default_safe": "/home/gofrendi/Projects/chimera-framework/node_modules/js-yaml/lib/js-yaml/schema/default_safe.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/core-preprocessor.js": {
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/lib/safe-eval.js": {
+    "./require-once.js": "/home/gofrendi/Projects/chimera-framework/lib/require-once.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/index.js": {
+    "extend": "/home/gofrendi/Projects/chimera-framework/node_modules/extend/index.js",
+    "./lib/cookies": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/cookies.js",
+    "./lib/helpers": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/helpers.js",
+    "./request": "/home/gofrendi/Projects/chimera-framework/node_modules/request/request.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/cookies.js": {
+    "tough-cookie": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/cookie.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/cookie.js": {
+    "net": "net",
+    "url": "url",
+    "./pubsuffix": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/pubsuffix.js",
+    "./store": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/store.js",
+    "./memstore": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/memstore.js",
+    "./pathMatch": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/pathMatch.js",
+    "../package.json": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/package.json",
+    "punycode": "punycode",
+    "./permuteDomain": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/permuteDomain.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/pubsuffix.js": {
+    "punycode": "punycode"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/memstore.js": {
+    "./store": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/store.js",
+    "./permuteDomain": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/permuteDomain.js",
+    "./pathMatch": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/pathMatch.js",
+    "util": "util"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/permuteDomain.js": {
+    "./pubsuffix": "/home/gofrendi/Projects/chimera-framework/node_modules/tough-cookie/lib/pubsuffix.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/helpers.js": {
+    "json-stringify-safe": "/home/gofrendi/Projects/chimera-framework/node_modules/json-stringify-safe/stringify.js",
+    "crypto": "crypto",
+    "safe-buffer": "/home/gofrendi/Projects/chimera-framework/node_modules/safe-buffer/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/safe-buffer/index.js": {
+    "buffer": "buffer"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/request.js": {
+    "http": "http",
+    "https": "https",
+    "url": "url",
+    "util": "util",
+    "stream": "stream",
+    "zlib": "zlib",
+    "hawk": "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/index.js",
+    "aws-sign2": "/home/gofrendi/Projects/chimera-framework/node_modules/aws-sign2/index.js",
+    "aws4": "/home/gofrendi/Projects/chimera-framework/node_modules/aws4/aws4.js",
+    "http-signature": "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/index.js",
+    "mime-types": "/home/gofrendi/Projects/chimera-framework/node_modules/mime-types/index.js",
+    "stringstream": "/home/gofrendi/Projects/chimera-framework/node_modules/stringstream/stringstream.js",
+    "caseless": "/home/gofrendi/Projects/chimera-framework/node_modules/caseless/index.js",
+    "forever-agent": "/home/gofrendi/Projects/chimera-framework/node_modules/forever-agent/index.js",
+    "form-data": "/home/gofrendi/Projects/chimera-framework/node_modules/form-data/lib/form_data.js",
+    "extend": "/home/gofrendi/Projects/chimera-framework/node_modules/extend/index.js",
+    "isstream": "/home/gofrendi/Projects/chimera-framework/node_modules/isstream/isstream.js",
+    "is-typedarray": "/home/gofrendi/Projects/chimera-framework/node_modules/is-typedarray/index.js",
+    "./lib/helpers": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/helpers.js",
+    "./lib/cookies": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/cookies.js",
+    "./lib/getProxyFromURI": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/getProxyFromURI.js",
+    "./lib/querystring": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/querystring.js",
+    "./lib/har": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/har.js",
+    "./lib/auth": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/auth.js",
+    "./lib/oauth": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/oauth.js",
+    "./lib/multipart": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/multipart.js",
+    "./lib/redirect": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/redirect.js",
+    "./lib/tunnel": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/tunnel.js",
+    "performance-now": "/home/gofrendi/Projects/chimera-framework/node_modules/performance-now/lib/performance-now.js",
+    "safe-buffer": "/home/gofrendi/Projects/chimera-framework/node_modules/safe-buffer/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/index.js": {
+    "boom": "/home/gofrendi/Projects/chimera-framework/node_modules/boom/lib/index.js",
+    "sntp": "/home/gofrendi/Projects/chimera-framework/node_modules/sntp/lib/index.js",
+    "./server": "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/server.js",
+    "./client": "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/client.js",
+    "./crypto": "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/crypto.js",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/utils.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/boom/lib/index.js": {
+    "hoek": "/home/gofrendi/Projects/chimera-framework/node_modules/hoek/lib/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/hoek/lib/index.js": {
+    "crypto": "crypto",
+    "path": "path",
+    "util": "util",
+    "./escape": "/home/gofrendi/Projects/chimera-framework/node_modules/hoek/lib/escape.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sntp/lib/index.js": {
+    "dgram": "dgram",
+    "dns": "dns",
+    "hoek": "/home/gofrendi/Projects/chimera-framework/node_modules/hoek/lib/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/server.js": {
+    "boom": "/home/gofrendi/Projects/chimera-framework/node_modules/boom/lib/index.js",
+    "hoek": "/home/gofrendi/Projects/chimera-framework/node_modules/hoek/lib/index.js",
+    "cryptiles": "/home/gofrendi/Projects/chimera-framework/node_modules/cryptiles/lib/index.js",
+    "./crypto": "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/crypto.js",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/utils.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/cryptiles/lib/index.js": {
+    "crypto": "crypto",
+    "boom": "/home/gofrendi/Projects/chimera-framework/node_modules/cryptiles/node_modules/boom/lib/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/cryptiles/node_modules/boom/lib/index.js": {
+    "hoek": "/home/gofrendi/Projects/chimera-framework/node_modules/hoek/lib/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/crypto.js": {
+    "crypto": "crypto",
+    "url": "url",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/utils.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/utils.js": {
+    "sntp": "/home/gofrendi/Projects/chimera-framework/node_modules/sntp/lib/index.js",
+    "boom": "/home/gofrendi/Projects/chimera-framework/node_modules/boom/lib/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/client.js": {
+    "url": "url",
+    "hoek": "/home/gofrendi/Projects/chimera-framework/node_modules/hoek/lib/index.js",
+    "cryptiles": "/home/gofrendi/Projects/chimera-framework/node_modules/cryptiles/lib/index.js",
+    "./crypto": "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/crypto.js",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/hawk/lib/utils.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/aws-sign2/index.js": {
+    "crypto": "crypto",
+    "url": "url"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/aws4/aws4.js": {
+    "url": "url",
+    "querystring": "querystring",
+    "crypto": "crypto",
+    "./lru": "/home/gofrendi/Projects/chimera-framework/node_modules/aws4/lru.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/index.js": {
+    "./parser": "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/parser.js",
+    "./signer": "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/signer.js",
+    "./verify": "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/verify.js",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/utils.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/parser.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "util": "util",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/utils.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js": {
+    "assert": "assert",
+    "stream": "stream",
+    "util": "util"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/utils.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "sshpk": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/index.js",
+    "util": "util"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/index.js": {
+    "./key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "./fingerprint": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/fingerprint.js",
+    "./signature": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/signature.js",
+    "./private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./certificate": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/certificate.js",
+    "./identity": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/identity.js",
+    "./errors": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/errors.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "./algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "crypto": "crypto",
+    "./fingerprint": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/fingerprint.js",
+    "./signature": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/signature.js",
+    "./dhe": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/dhe.js",
+    "./errors": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/errors.js",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "./private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./ed-compat": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/ed-compat.js",
+    "./formats/auto": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/auto.js",
+    "./formats/pem": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pem.js",
+    "./formats/pkcs1": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pkcs1.js",
+    "./formats/pkcs8": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pkcs8.js",
+    "./formats/rfc4253": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/rfc4253.js",
+    "./formats/ssh": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/ssh.js",
+    "./formats/ssh-private": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/ssh-private.js",
+    "./formats/dnssec": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/dnssec.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/fingerprint.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "./algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "crypto": "crypto",
+    "./errors": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/errors.js",
+    "./key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "./certificate": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/certificate.js",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/errors.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "util": "util"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/certificate.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "./algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "crypto": "crypto",
+    "./fingerprint": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/fingerprint.js",
+    "./signature": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/signature.js",
+    "./errors": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/errors.js",
+    "util": "util",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "./key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "./private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./identity": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/identity.js",
+    "./formats/openssh-cert": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/openssh-cert.js",
+    "./formats/x509": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/x509.js",
+    "./formats/x509-pem": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/x509-pem.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/signature.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "./algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "crypto": "crypto",
+    "./errors": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/errors.js",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "asn1": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/index.js",
+    "./ssh-buffer": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/ssh-buffer.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "./private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "crypto": "crypto",
+    "./algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "asn1": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "./algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "crypto": "crypto",
+    "./fingerprint": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/fingerprint.js",
+    "./signature": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/signature.js",
+    "./errors": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/errors.js",
+    "util": "util",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "./dhe": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/dhe.js",
+    "./ed-compat": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/ed-compat.js",
+    "./key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "./formats/auto": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/auto.js",
+    "./formats/pem": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pem.js",
+    "./formats/pkcs1": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pkcs1.js",
+    "./formats/pkcs8": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pkcs8.js",
+    "./formats/rfc4253": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/rfc4253.js",
+    "./formats/ssh-private": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/ssh-private.js",
+    "./formats/dnssec": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/dnssec.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/dhe.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "crypto": "crypto",
+    "./algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "./key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "./private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/ed-compat.js": {
+    "stream": "stream",
+    "util": "util",
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "./signature": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/signature.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/auto.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./pem": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pem.js",
+    "./ssh": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/ssh.js",
+    "./rfc4253": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/rfc4253.js",
+    "./dnssec": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/dnssec.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pem.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "asn1": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/index.js",
+    "crypto": "crypto",
+    "../algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./pkcs1": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pkcs1.js",
+    "./pkcs8": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pkcs8.js",
+    "./ssh-private": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/ssh-private.js",
+    "./rfc4253": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/rfc4253.js",
+    "../errors": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/errors.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/index.js": {
+    "./ber/index": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/index.js": {
+    "./errors": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/errors.js",
+    "./types": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/types.js",
+    "./reader": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/reader.js",
+    "./writer": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/writer.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/reader.js": {
+    "assert": "assert",
+    "./types": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/types.js",
+    "./errors": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/errors.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/writer.js": {
+    "assert": "assert",
+    "./types": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/types.js",
+    "./errors": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/ber/errors.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pkcs1.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "asn1": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/index.js",
+    "../algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./pem": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pem.js",
+    "./pkcs8": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pkcs8.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pkcs8.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "asn1": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/index.js",
+    "../algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./pem": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pem.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/ssh-private.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "asn1": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/index.js",
+    "../algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "crypto": "crypto",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./pem": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pem.js",
+    "./rfc4253": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/rfc4253.js",
+    "../ssh-buffer": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/ssh-buffer.js",
+    "../errors": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/errors.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/rfc4253.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "../algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "../ssh-buffer": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/ssh-buffer.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/ssh-buffer.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/ssh.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "./rfc4253": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/rfc4253.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./ssh-private": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/ssh-private.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/dnssec.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "../ssh-buffer": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/ssh-buffer.js",
+    "../dhe": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/dhe.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/identity.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "./algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "crypto": "crypto",
+    "./fingerprint": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/fingerprint.js",
+    "./signature": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/signature.js",
+    "./errors": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/errors.js",
+    "util": "util",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "asn1": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/openssh-cert.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "../ssh-buffer": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/ssh-buffer.js",
+    "crypto": "crypto",
+    "../algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "../identity": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/identity.js",
+    "./rfc4253": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/rfc4253.js",
+    "../signature": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/signature.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "../certificate": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/certificate.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/x509.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "asn1": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/index.js",
+    "../algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./pem": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pem.js",
+    "../identity": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/identity.js",
+    "../signature": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/signature.js",
+    "../certificate": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/certificate.js",
+    "./pkcs8": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pkcs8.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/x509-pem.js": {
+    "./x509": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/x509.js",
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "asn1": "/home/gofrendi/Projects/chimera-framework/node_modules/asn1/lib/index.js",
+    "../algs": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/algs.js",
+    "../utils": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/utils.js",
+    "../key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/key.js",
+    "../private-key": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/private-key.js",
+    "./pem": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/formats/pem.js",
+    "../identity": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/identity.js",
+    "../signature": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/signature.js",
+    "../certificate": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/certificate.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/signer.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "crypto": "crypto",
+    "http": "http",
+    "util": "util",
+    "sshpk": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/index.js",
+    "jsprim": "/home/gofrendi/Projects/chimera-framework/node_modules/jsprim/lib/jsprim.js",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/utils.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/jsprim/lib/jsprim.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "util": "util",
+    "extsprintf": "/home/gofrendi/Projects/chimera-framework/node_modules/extsprintf/lib/extsprintf.js",
+    "verror": "/home/gofrendi/Projects/chimera-framework/node_modules/verror/lib/verror.js",
+    "json-schema": "/home/gofrendi/Projects/chimera-framework/node_modules/json-schema/lib/validate.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/extsprintf/lib/extsprintf.js": {
+    "assert": "assert",
+    "util": "util"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/verror/lib/verror.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "util": "util",
+    "extsprintf": "/home/gofrendi/Projects/chimera-framework/node_modules/extsprintf/lib/extsprintf.js",
+    "core-util-is": "/home/gofrendi/Projects/chimera-framework/node_modules/core-util-is/lib/util.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/verify.js": {
+    "assert-plus": "/home/gofrendi/Projects/chimera-framework/node_modules/assert-plus/assert.js",
+    "crypto": "crypto",
+    "sshpk": "/home/gofrendi/Projects/chimera-framework/node_modules/sshpk/lib/index.js",
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/http-signature/lib/utils.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/mime-types/index.js": {
+    "mime-db": "/home/gofrendi/Projects/chimera-framework/node_modules/mime-db/index.js",
+    "path": "path"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/mime-db/index.js": {
+    "./db.json": "/home/gofrendi/Projects/chimera-framework/node_modules/mime-db/db.json"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/stringstream/stringstream.js": {
+    "util": "util",
+    "stream": "stream",
+    "string_decoder": "string_decoder"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/forever-agent/index.js": {
+    "util": "util",
+    "http": "http",
+    "net": "net",
+    "tls": "tls",
+    "https": "https"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/form-data/lib/form_data.js": {
+    "combined-stream": "/home/gofrendi/Projects/chimera-framework/node_modules/combined-stream/lib/combined_stream.js",
+    "util": "util",
+    "path": "path",
+    "http": "http",
+    "https": "https",
+    "url": "url",
+    "fs": "fs",
+    "mime-types": "/home/gofrendi/Projects/chimera-framework/node_modules/mime-types/index.js",
+    "asynckit": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/index.js",
+    "./populate.js": "/home/gofrendi/Projects/chimera-framework/node_modules/form-data/lib/populate.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/combined-stream/lib/combined_stream.js": {
+    "util": "util",
+    "stream": "stream",
+    "delayed-stream": "/home/gofrendi/Projects/chimera-framework/node_modules/delayed-stream/lib/delayed_stream.js",
+    "./defer.js": "/home/gofrendi/Projects/chimera-framework/node_modules/combined-stream/lib/defer.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/delayed-stream/lib/delayed_stream.js": {
+    "stream": "stream",
+    "util": "util"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/index.js": {
+    "./parallel.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/parallel.js",
+    "./serial.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/serial.js",
+    "./serialOrdered.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/serialOrdered.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/parallel.js": {
+    "./lib/iterate.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/iterate.js",
+    "./lib/state.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/state.js",
+    "./lib/terminator.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/terminator.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/iterate.js": {
+    "./async.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/async.js",
+    "./abort.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/abort.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/async.js": {
+    "./defer.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/defer.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/terminator.js": {
+    "./abort.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/abort.js",
+    "./async.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/async.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/serial.js": {
+    "./serialOrdered.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/serialOrdered.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/serialOrdered.js": {
+    "./lib/iterate.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/iterate.js",
+    "./lib/state.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/state.js",
+    "./lib/terminator.js": "/home/gofrendi/Projects/chimera-framework/node_modules/asynckit/lib/terminator.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/isstream/isstream.js": {
+    "stream": "stream"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/querystring.js": {
+    "qs": "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/index.js",
+    "querystring": "querystring"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/index.js": {
+    "./stringify": "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/stringify.js",
+    "./parse": "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/parse.js",
+    "./formats": "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/formats.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/stringify.js": {
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/utils.js",
+    "./formats": "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/formats.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/parse.js": {
+    "./utils": "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/utils.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/har.js": {
+    "fs": "fs",
+    "querystring": "querystring",
+    "har-validator": "/home/gofrendi/Projects/chimera-framework/node_modules/har-validator/lib/promise.js",
+    "extend": "/home/gofrendi/Projects/chimera-framework/node_modules/extend/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/har-validator/lib/promise.js": {
+    "ajv": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/ajv.js",
+    "./error": "/home/gofrendi/Projects/chimera-framework/node_modules/har-validator/lib/error.js",
+    "har-schema": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/ajv.js": {
+    "./compile": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/index.js",
+    "./compile/resolve": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/resolve.js",
+    "./cache": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/cache.js",
+    "./compile/schema_obj": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/schema_obj.js",
+    "fast-json-stable-stringify": "/home/gofrendi/Projects/chimera-framework/node_modules/fast-json-stable-stringify/index.js",
+    "./compile/formats": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/formats.js",
+    "./compile/rules": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/rules.js",
+    "./$data": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/$data.js",
+    "./patternGroups": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/patternGroups.js",
+    "./compile/util": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/util.js",
+    "co": "/home/gofrendi/Projects/chimera-framework/node_modules/co/index.js",
+    "./compile/async": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/async.js",
+    "./keyword": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/keyword.js",
+    "./compile/error_classes": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/error_classes.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/index.js": {
+    "./resolve": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/resolve.js",
+    "./util": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/util.js",
+    "./error_classes": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/error_classes.js",
+    "fast-json-stable-stringify": "/home/gofrendi/Projects/chimera-framework/node_modules/fast-json-stable-stringify/index.js",
+    "../dotjs/validate": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/validate.js",
+    "co": "/home/gofrendi/Projects/chimera-framework/node_modules/co/index.js",
+    "fast-deep-equal": "/home/gofrendi/Projects/chimera-framework/node_modules/fast-deep-equal/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/resolve.js": {
+    "url": "url",
+    "fast-deep-equal": "/home/gofrendi/Projects/chimera-framework/node_modules/fast-deep-equal/index.js",
+    "./util": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/util.js",
+    "./schema_obj": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/schema_obj.js",
+    "json-schema-traverse": "/home/gofrendi/Projects/chimera-framework/node_modules/json-schema-traverse/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/util.js": {
+    "fast-deep-equal": "/home/gofrendi/Projects/chimera-framework/node_modules/fast-deep-equal/index.js",
+    "./ucs2length": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/ucs2length.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/schema_obj.js": {
+    "./util": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/util.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/error_classes.js": {
+    "./resolve": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/resolve.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/formats.js": {
+    "./util": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/util.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/rules.js": {
+    "./_rules": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/_rules.js",
+    "./util": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/util.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/_rules.js": {
+    "../dotjs/ref": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/ref.js",
+    "../dotjs/allOf": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/allOf.js",
+    "../dotjs/anyOf": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/anyOf.js",
+    "../dotjs/const": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/const.js",
+    "../dotjs/contains": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/contains.js",
+    "../dotjs/dependencies": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/dependencies.js",
+    "../dotjs/enum": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/enum.js",
+    "../dotjs/format": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/format.js",
+    "../dotjs/items": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/items.js",
+    "../dotjs/_limit": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/_limit.js",
+    "../dotjs/_limitItems": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/_limitItems.js",
+    "../dotjs/_limitLength": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/_limitLength.js",
+    "../dotjs/_limitProperties": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/_limitProperties.js",
+    "../dotjs/multipleOf": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/multipleOf.js",
+    "../dotjs/not": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/not.js",
+    "../dotjs/oneOf": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/oneOf.js",
+    "../dotjs/pattern": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/pattern.js",
+    "../dotjs/properties": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/properties.js",
+    "../dotjs/propertyNames": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/propertyNames.js",
+    "../dotjs/required": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/required.js",
+    "../dotjs/uniqueItems": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/uniqueItems.js",
+    "../dotjs/validate": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/validate.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/async.js": {
+    "./error_classes": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/compile/error_classes.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/keyword.js": {
+    "./dotjs/custom": "/home/gofrendi/Projects/chimera-framework/node_modules/ajv/lib/dotjs/custom.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/index.js": {
+    "./afterRequest.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/afterRequest.json",
+    "./beforeRequest.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/beforeRequest.json",
+    "./browser.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/browser.json",
+    "./cache.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/cache.json",
+    "./content.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/content.json",
+    "./cookie.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/cookie.json",
+    "./creator.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/creator.json",
+    "./entry.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/entry.json",
+    "./har.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/har.json",
+    "./header.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/header.json",
+    "./log.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/log.json",
+    "./page.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/page.json",
+    "./pageTimings.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/pageTimings.json",
+    "./postData.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/postData.json",
+    "./query.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/query.json",
+    "./request.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/request.json",
+    "./response.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/response.json",
+    "./timings.json": "/home/gofrendi/Projects/chimera-framework/node_modules/har-schema/lib/timings.json"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/auth.js": {
+    "caseless": "/home/gofrendi/Projects/chimera-framework/node_modules/caseless/index.js",
+    "uuid": "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/index.js",
+    "./helpers": "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/helpers.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/index.js": {
+    "./v1": "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/v1.js",
+    "./v4": "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/v4.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/v1.js": {
+    "./lib/rng": "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/lib/rng.js",
+    "./lib/bytesToUuid": "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/lib/bytesToUuid.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/lib/rng.js": {
+    "crypto": "crypto"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/v4.js": {
+    "./lib/rng": "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/lib/rng.js",
+    "./lib/bytesToUuid": "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/lib/bytesToUuid.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/oauth.js": {
+    "url": "url",
+    "qs": "/home/gofrendi/Projects/chimera-framework/node_modules/qs/lib/index.js",
+    "caseless": "/home/gofrendi/Projects/chimera-framework/node_modules/caseless/index.js",
+    "uuid": "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/index.js",
+    "oauth-sign": "/home/gofrendi/Projects/chimera-framework/node_modules/oauth-sign/index.js",
+    "crypto": "crypto",
+    "safe-buffer": "/home/gofrendi/Projects/chimera-framework/node_modules/safe-buffer/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/oauth-sign/index.js": {
+    "crypto": "crypto",
+    "querystring": "querystring"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/multipart.js": {
+    "uuid": "/home/gofrendi/Projects/chimera-framework/node_modules/uuid/index.js",
+    "combined-stream": "/home/gofrendi/Projects/chimera-framework/node_modules/combined-stream/lib/combined_stream.js",
+    "isstream": "/home/gofrendi/Projects/chimera-framework/node_modules/isstream/isstream.js",
+    "safe-buffer": "/home/gofrendi/Projects/chimera-framework/node_modules/safe-buffer/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/redirect.js": {
+    "url": "url"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/request/lib/tunnel.js": {
+    "url": "url",
+    "tunnel-agent": "/home/gofrendi/Projects/chimera-framework/node_modules/tunnel-agent/index.js"
+  },
+  "/home/gofrendi/Projects/chimera-framework/node_modules/tunnel-agent/index.js": {
+    "net": "net",
+    "tls": "tls",
+    "http": "http",
+    "https": "https",
+    "events": "events",
+    "assert": "assert",
+    "util": "util",
+    "safe-buffer": "/home/gofrendi/Projects/chimera-framework/node_modules/safe-buffer/index.js"
+  },
+  "/home/gofrendi/Projects/jurnal-chiml/benchmark/index.js": {
+    "body-parser": "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/index.js"
+  },
+  "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/lib/types/urlencoded.js": {
+    "qs": "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/node_modules/qs/lib/index.js"
+  },
+  "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/node_modules/qs/lib/index.js": {
+    "./stringify": "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/node_modules/qs/lib/stringify.js",
+    "./parse": "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/node_modules/qs/lib/parse.js",
+    "./formats": "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/node_modules/qs/lib/formats.js"
+  },
+  "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/node_modules/qs/lib/stringify.js": {
+    "./utils": "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/node_modules/qs/lib/utils.js",
+    "./formats": "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/node_modules/qs/lib/formats.js"
+  },
+  "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/node_modules/qs/lib/parse.js": {
+    "./utils": "/home/gofrendi/Projects/jurnal-chiml/benchmark/node_modules/body-parser/node_modules/qs/lib/utils.js"
+  }
+}

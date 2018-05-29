@@ -1,0 +1,17 @@
+out: genres
+do:
+  - |('http://localhost:3000/genres') -> [$.httpRequestBody] -> genres
+  - map: genres
+    into: genres
+    ins: raw
+    out: result
+    do: 
+      - |('http://localhost:3000/books?genreId=' + raw.id) -> [$.httpRequestBody] -> books
+      - map: books
+        into: books
+        ins: raw
+        out: result
+        do:
+          - |('http://localhost:3000/authors?id=' + raw.authorId) -> [$.httpRequestBody] -> authors
+          - |({title: raw.title, author: authors[0].name}) --> result
+      - |({genre: raw.name, books}) --> result

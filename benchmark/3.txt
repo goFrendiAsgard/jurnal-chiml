@@ -1,0 +1,45 @@
+GBA NODE
+
+real	0m0.240s
+user	0m0.231s
+sys	0m0.021s
+GBA PYTHON3
+
+real	0m0.106s
+user	0m0.084s
+sys	0m0.019s
+GBA CHIMERA
+
+real	0m0.300s
+user	0m0.294s
+sys	0m0.019s
+GB NODE
+
+real	0m0.216s
+user	0m0.202s
+sys	0m0.027s
+GB PYTHON3
+
+real	0m0.100s
+user	0m0.094s
+sys	0m0.004s
+GB CHIMERA
+
+real	0m0.322s
+user	0m0.302s
+sys	0m0.025s
+G NODE
+
+real	0m0.222s
+user	0m0.217s
+sys	0m0.020s
+G PYTHON3
+
+real	0m0.096s
+user	0m0.076s
+sys	0m0.020s
+G CHIMERA
+
+real	0m0.277s
+user	0m0.276s
+sys	0m0.016s
