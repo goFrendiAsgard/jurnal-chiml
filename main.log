@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.4)  30 MAY 2018 10:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.4)  30 MAY 2018 16:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -356,56 +356,57 @@ e
 ))
 \c@lstlisting=\count141
 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
 ! Undefined control sequence.
-l.90 {\lt
-          CHIML} is a superset of `YAML`. So, any valid `YAML` is also a val...
+l.111 {\lt
+           CHIML} is a superset of `YAML`. So, any valid `YAML` is also a va...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 95.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 116.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
-LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 95.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 102.
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 116.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 124.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 102.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-<benchmark/benchmark.png, id=13, 548.5293pt x 533.3526pt>
-File: benchmark/benchmark.png Graphic file (type png)
-<use benchmark/benchmark.png>
-Package pdftex.def Info: benchmark/benchmark.png  used on input line 246.
-(pdftex.def)             Requested size: 157.23152pt x 152.87785pt.
-<benchmark/readability.png, id=15, 735.7086pt x 713.3049pt>
-File: benchmark/readability.png Graphic file (type png)
-<use benchmark/readability.png>
-Package pdftex.def Info: benchmark/readability.png  used on input line 255.
-(pdftex.def)             Requested size: 157.23152pt x 152.4433pt.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 124.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `tbp') on input line 230.
+
+
+Overfull \hbox (1.21185pt too wide) in paragraph at lines 234--249
+ [][] 
+ []
+
+<benchmark/benchmark.png, id=16, 548.5293pt x 533.3526pt>
+File: benchmark/benchmark.png Graphic file (type png)
+<use benchmark/benchmark.png>
+Package pdftex.def Info: benchmark/benchmark.png  used on input line 255.
+(pdftex.def)             Requested size: 157.23152pt x 152.87785pt.
+<benchmark/readability.png, id=18, 735.7086pt x 713.3049pt>
+File: benchmark/readability.png Graphic file (type png)
+<use benchmark/readability.png>
+Package pdftex.def Info: benchmark/readability.png  used on input line 264.
+(pdftex.def)             Requested size: 157.23152pt x 152.4433pt.
 (./main.bbl)
 
 ** Conference Paper **
@@ -418,26 +419,24 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3
-
- <./benchmark/benchmark.png> <./benchmark/readability.png>] (./main.aux) ) 
+[3 <./benchmark/benchmark.png> <./benchmark/readability.png>] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4513 strings out of 494847
- 66931 string characters out of 6179081
- 542735 words of memory out of 5000000
- 7767 multiletter control sequences out of 15000+600000
- 36814 words of font info for 73 fonts, out of 8000000 for 9000
+ 4359 strings out of 494847
+ 64966 string characters out of 6179081
+ 262005 words of memory out of 5000000
+ 7618 multiletter control sequences out of 15000+600000
+ 38536 words of font info for 75 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 41i,6n,51p,774b,1595s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr
-/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
-w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a
-.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 153917 bytes).
+ 41i,8n,32p,774b,1450s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/u
+sr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (3 pages, 145005 bytes).
 PDF statistics:
  48 PDF objects out of 1000 (max. 8388607)
  31 compressed objects within 1 object stream
