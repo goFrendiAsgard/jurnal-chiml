@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.4)  30 MAY 2018 16:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.30)  30 MAY 2018 21:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
 LaTeX2e <2017-04-15>
-Babel <3.18> and hyphenation patterns for 7 language(s) loaded.
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
 (./IEEEtran.cls
 Document Class: IEEEtran 2012/11/21 V1.8c by Harald Hanche-Olsen and Anders Chr
 istensen
@@ -359,55 +359,116 @@ e
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
+] [2]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 155.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 164.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
+File: omlptm.fd 
+)
+LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 164.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 172.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
 ! Undefined control sequence.
-l.111 {\lt
-           CHIML} is a superset of `YAML`. So, any valid `YAML` is also a va...
+l.329 ...t, providing prebuilt utilities like {\lt
+                                                   \$.httpRequestBody} and {...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 116.
+! Undefined control sequence.
+l.329 ...es like {\lt \$.httpRequestBody} and {\lt
+                                                   \$.join}.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
-File: omlptm.fd 
+[4]
+Underfull \hbox (badness 4832) in paragraph at lines 379--381
+[]\OT1/ptm/m/n/10 The last prob-lem named \OT1/ptm/m/it/10 gba \OT1/ptm/m/n/10 
+. It is very sim-i-
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 379--381
+\OT1/ptm/m/n/10 lar to \OT1/ptm/m/it/10 gb  \OT1/ptm/m/n/10 prob-lem, but in th
+is case we should also
+ []
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 116.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 124.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 124.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 230.
+               Default added (so using `tbp') on input line 423.
 
 
-Overfull \hbox (1.21185pt too wide) in paragraph at lines 234--249
+Overfull \hbox (1.21185pt too wide) in paragraph at lines 427--442
  [][] 
  []
 
-<benchmark/benchmark.png, id=16, 548.5293pt x 533.3526pt>
+<benchmark/benchmark.png, id=24, 548.5293pt x 533.3526pt>
 File: benchmark/benchmark.png Graphic file (type png)
 <use benchmark/benchmark.png>
-Package pdftex.def Info: benchmark/benchmark.png  used on input line 255.
-(pdftex.def)             Requested size: 157.23152pt x 152.87785pt.
-<benchmark/readability.png, id=18, 735.7086pt x 713.3049pt>
+Package pdftex.def Info: benchmark/benchmark.png  used on input line 447.
+(pdftex.def)             Requested size: 262.04987pt x 254.81pt.
+<benchmark/readability.png, id=26, 735.7086pt x 713.3049pt>
 File: benchmark/readability.png Graphic file (type png)
 <use benchmark/readability.png>
-Package pdftex.def Info: benchmark/readability.png  used on input line 264.
-(pdftex.def)             Requested size: 157.23152pt x 152.4433pt.
-(./main.bbl)
+Package pdftex.def Info: benchmark/readability.png  used on input line 455.
+(pdftex.def)             Requested size: 366.86821pt x 355.70465pt.
+[5] [6 <./benchmark/benchmark.png> <./benchmark/readability.png>] (./main.bbl
+Underfull \hbox (badness 1603) in paragraph at lines 25--29
+\OT1/ptm/m/n/8 pli-ca-tions ac-cord-ing to the model-view-controller (mvc) pat-
+tern.''
+ []
+
+
+Underfull \hbox (badness 4144) in paragraph at lines 35--37
+[]\OT1/ptm/m/n/8 T. Otwell, ``Lar-avel - the php frame-work for web ar-ti-sans,
+''
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
+[]\OT1/ptm/m/n/8 M. Lit-tle, ``Soa ver-sus mi-croser-vices?''
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--47
+\OT1/ptm/m/n/8 https://www.infoq.com/news/2015/12/soa-v-microservices, ac-cesse
+d:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+[]\OT1/ptm/m/n/8 J. Spacey, ``Or-ches-tra-tion vs chore-og-ra-phy,''
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--52
+\OT1/ptm/m/n/8 https://simplicable.com/new/orchestration-vs-choreography, ac-ce
+ssed:
+ []
+
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -419,27 +480,28 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[3 <./benchmark/benchmark.png> <./benchmark/readability.png>] (./main.aux) ) 
+[7] (./main.aux) ) 
 Here is how much of TeX's memory you used:
- 4359 strings out of 494847
- 64966 string characters out of 6179081
- 262005 words of memory out of 5000000
- 7618 multiletter control sequences out of 15000+600000
- 38536 words of font info for 75 fonts, out of 8000000 for 9000
- 62 hyphenation exceptions out of 8191
- 41i,8n,32p,774b,1450s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/u
-sr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi
+ 4601 strings out of 492982
+ 67854 string characters out of 6134896
+ 282897 words of memory out of 5000000
+ 8093 multiletter control sequences out of 15000+600000
+ 42421 words of font info for 79 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 41i,8n,42p,973b,1448s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 145005 bytes).
+Output written on main.pdf (7 pages, 179314 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 31 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 47 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
