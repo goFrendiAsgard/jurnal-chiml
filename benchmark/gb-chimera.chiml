@@ -1,0 +1,13 @@
+out: genres
+do:
+    - ('http://localhost:3000/genres') -> [sys.httpRequest] -> genres
+    - map: genres
+      into: genres
+      ins: raw
+      out: result
+      do: 
+        - |('http://localhost:3000/books?genreId=' + raw.id) -> [sys.httpRequest] -> books
+        - map: books
+          into: books
+          do: (book) -> (x) => x.title -> book
+        - ({genre: raw.name, books}) --> result

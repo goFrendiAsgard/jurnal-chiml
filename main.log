@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.5.30)  30 MAY 2018 21:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.8.20)  3 SEP 2018 01:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -359,82 +359,96 @@ e
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-] [2]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 155.
+]
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+[]\OT1/ptm/m/n/10 Compared to the ex-ist-ing mech-a-nisms, Chimera-
+ []
 
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+Underfull \hbox (badness 2293) in paragraph at lines 83--84
+\OT1/ptm/m/n/10 Framework fo-cused on how to let de-vel-oper ef-fort as
+ []
+
+
+Underfull \hbox (badness 4168) in paragraph at lines 83--84
+\OT1/ptm/m/n/10 min-i-mal as pos-si-ble. The or-ches-tra-tion com-po-nents in
+ []
+
+
+Underfull \hbox (badness 1629) in paragraph at lines 90--91
+[]\OT1/ptm/m/n/10 CHIML is slow be-cause the frame-work in-vokes
+ []
+
+[2]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 182.
+
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
-LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 164.
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 182.
 
+Underfull \hbox (badness 2005) in paragraph at lines 204--205
+[]\OT1/ptm/m/n/10 In or-der to sup-port both, programming-in-large, and
+ []
+
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 223.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <8> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 164.
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 172.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 223.
  [3]
-! Undefined control sequence.
-l.329 ...t, providing prebuilt utilities like {\lt
-                                                   \$.httpRequestBody} and {...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-l.329 ...es like {\lt \$.httpRequestBody} and {\lt
-                                                   \$.join}.
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[4]
-Underfull \hbox (badness 4832) in paragraph at lines 379--381
+Underfull \hbox (badness 4832) in paragraph at lines 301--303
 []\OT1/ptm/m/n/10 The last prob-lem named \OT1/ptm/m/it/10 gba \OT1/ptm/m/n/10 
 . It is very sim-i-
  []
 
 
-Underfull \hbox (badness 1881) in paragraph at lines 379--381
+Underfull \hbox (badness 1881) in paragraph at lines 301--303
 \OT1/ptm/m/n/10 lar to \OT1/ptm/m/it/10 gb  \OT1/ptm/m/n/10 prob-lem, but in th
 is case we should also
  []
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
+) [4]
+<benchmark/benchmark.png, id=22, 556.479pt x 533.3526pt>
+File: benchmark/benchmark.png Graphic file (type png)
+<use benchmark/benchmark.png>
+Package pdftex.def Info: benchmark/benchmark.png  used on input line 347.
+(pdftex.def)             Requested size: 209.63669pt x 200.92635pt.
+<benchmark/readability.png, id=24, 542.025pt x 533.3526pt>
+File: benchmark/readability.png Graphic file (type png)
+<use benchmark/readability.png>
+Package pdftex.def Info: benchmark/readability.png  used on input line 354.
+(pdftex.def)             Requested size: 209.63669pt x 206.28136pt.
+<benchmark/size.png, id=25, 379.4175pt x 352.6776pt>
+File: benchmark/size.png Graphic file (type png)
+<use benchmark/size.png>
+Package pdftex.def Info: benchmark/size.png  used on input line 361.
+(pdftex.def)             Requested size: 209.63669pt x 194.86658pt.
+
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 423.
+               Default added (so using `tbp') on input line 366.
+
+! Extra alignment tab has been changed to \cr.
+<template> ...egin \relax \d@llarend \endtemplate 
+                                                  
+l.388 ...  &        &     &      &       &       &
+                                                          \\ \midrule
+You have given more \span or & marks than there were
+in the preamble to the \halign or \valign now in progress.
+So I'll assume that you meant to type \cr instead.
 
 
-Overfull \hbox (1.21185pt too wide) in paragraph at lines 427--442
+Overfull \hbox (10.3542pt too wide) in paragraph at lines 370--390
  [][] 
  []
 
-<benchmark/benchmark.png, id=24, 548.5293pt x 533.3526pt>
-File: benchmark/benchmark.png Graphic file (type png)
-<use benchmark/benchmark.png>
-Package pdftex.def Info: benchmark/benchmark.png  used on input line 447.
-(pdftex.def)             Requested size: 262.04987pt x 254.81pt.
-<benchmark/readability.png, id=26, 735.7086pt x 713.3049pt>
-File: benchmark/readability.png Graphic file (type png)
-<use benchmark/readability.png>
-Package pdftex.def Info: benchmark/readability.png  used on input line 455.
-(pdftex.def)             Requested size: 366.86821pt x 355.70465pt.
-[5] [6 <./benchmark/benchmark.png> <./benchmark/readability.png>] (./main.bbl
+(./main.bbl
 Underfull \hbox (badness 1603) in paragraph at lines 25--29
 \OT1/ptm/m/n/8 pli-ca-tions ac-cord-ing to the model-view-controller (mvc) pat-
 tern.''
@@ -468,6 +482,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--52
 ssed:
  []
 
+[5] [6 <./benchmark/benchmark.png> <./benchmark/readability.png> <./benchmark/s
+ize.png>]
+Missing character: There is no â in font ptmri7t!
+Missing character: There is no € in font ptmri7t!
+Missing character: There is no “ in font ptmri7t!
 )
 
 ** Conference Paper **
@@ -480,28 +499,28 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[7] (./main.aux) ) 
+[7
+
+] (./main.aux) ) 
 Here is how much of TeX's memory you used:
  4601 strings out of 492982
- 67854 string characters out of 6134896
- 282897 words of memory out of 5000000
- 8093 multiletter control sequences out of 15000+600000
- 42421 words of font info for 79 fonts, out of 8000000 for 9000
+ 67916 string characters out of 6134896
+ 251419 words of memory out of 5000000
+ 8095 multiletter control sequences out of 15000+600000
+ 40779 words of font info for 77 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 41i,8n,42p,973b,1448s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr
-8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (7 pages, 179314 bytes).
+ 41i,8n,42p,774b,1649s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
+utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (7 pages, 171113 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 64 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

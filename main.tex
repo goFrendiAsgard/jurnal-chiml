@@ -46,7 +46,7 @@ Email: subari@stiki.ac.id}}
 %\boldmath
 Component Based Software Engineering (CBSE) has been proven to be quite effective to deal with software complexity. Nowadays developers prefer to build micro-services rather than single monolithic application. Several SOA (Service Oriented Architecture) approaches like HTTP/REST API, CORBA, and BPEL are commonly used by developers. Some of those solutions are built under assumptions that the developers are either building the services from scratch or able to create abstraction layer for the pre-existing services. In most cases the assumptions are true. However there are cases when developers prefer to keep the architecture as simple as possible without any need to build additional abstraction layers. For example, when they work with mini-embeded system.
 
-Previously, a YAML based orchestration language was developed for Chimera-Framework (A language agnostic framework for stand-alone and distributed computing). In this paper, we refine the orchestration language in order to let developers accessing pre-existing services without any need to build another abstraction layer.
+Previously, a YAML based orchestration language was developed for Chimera-Framework (A language agnostic framework for stand-alone and distributed computing). However, we observe some weak points in the language. In this paper, we refine the orchestration language in order to let developers accessing pre-existing services without any need to build another abstraction layer.
 \end{abstract}
 
 % Note that keywords are not normally used for peerreview papers.
@@ -78,20 +78,31 @@ Beside Unix Pipe and RPC Several other implementations were introduced by indepe
 
 Compared to the monolithic frameworks like Rails and Django, these orchestration mechanism are more scalable and technology agnostic. This mean that the developers can choose the best technology stack to build their components/services.
 
-Among those orchestration mechanisms, Unix pipe and Chimera-Framework are the only ones that are agnostic to the architecture and messaging protocol. To implement CORBA or BPEL, the developers has to specify IDL or WSDL. In DEF, the similar mechanism named DEF-WS also has to be created. These specifications also assuming that components are HTTP aware. Consequently, the developers need to consider this behavior before creating a new service/component. It doesn't mean that pre-existing components cannot be used for orchestration. However the components are either need refactoring or additional broker. This make the deployment process more complex.
+Among those orchestration mechanisms, Unix pipe and Chimera-Framework are the only ones that are supporting but not limited to network protocol. Typically, Service Oriented Architectures (like CORBA, BPEL, or DEF) are correlated to distributed architecture, but this is not always the case. For example, a developer might only need to pass data from {\it R } to {\it Python } in the same machine.
 
-Chimera-Framework in the other hand focusing on how to make the effort minimal. The orchestration components in Chimera-Framework don't have to be HTTP aware. Even an old UNIX utility like {\it date} or {\it cat} can serve as components \cite{gunawan2017chimera}.
+Compared to the existing mechanisms, Chimera-Framework focused on how to let developer effort as minimal as possible. The orchestration components in Chimera-Framework don't have to be HTTP aware. Even an old UNIX utility like {\it date} or {\it cat} can serve as components \cite{gunawan2017chimera}. But in case of distributed architecture is required, the same components are still going to be usable.
 
-In this research we are focusing in improving the orchestration mechanism in Chimera-Framework. The orchestration language is named CHIML (Chimera Markup Language) which is a superset of YAML \cite{yaml}. CHIML is designed to be readable, compact, and intuitive.
+In this research we are focusing in improving the orchestration mechanism in Chimera-Framework. The orchestration language is named CHIML (Chimera Markup Language) which is a superset of YAML \cite{yaml}.
 
+CHIML is designed to be readable, compact, and intuitive, yet it has several weaknesses:
+
+\begin{itemize}
+    \item CHIML is slow because the framework invokes {\it vm.runInNewContext } for every statements.
+    \item CHIML support for parallel computing is limited, especially if the parallelization is data oriented.
+    \item CHIML use it's own HTTP protocol for network communication, which is uncommon.
+\end{itemize}
+
+In this research, we are going to solve this two problem by redesigning CHIML.
 
 \section{Research Question}
 
-In order to have a clear direction in our research, we are focusing in these two questions:
+In order to have a clear direction in our research, we are focusing in these four questions:
 
 \begin{itemize}
-    \item How to make a readable, compact, and intuitive orchestration language for Chimera-Framework.
-    \item How the orchestration language compared to other possible solutions.
+    \item How to improve CHIML execution speed.
+    \item How to make CHIML supporting data-oriented parallelization.
+    \item How to implement a more common protocol for network communication.
+    \item How to keep CHIML readable, compact, and intuitive.
 \end{itemize}
 
 
@@ -115,26 +126,6 @@ HTTP API is a quite common protocol. The architecture is also relatively simple.
 
 On the other hand, REST (Representation State Transfer) is a more strict implementation of HTTP API. It was introduced and defined in 2000 by Roy Fielding in his doctoral thesis \cite{Fielding:2000:PDM:337180.337228}. Fielding focusing on how a URI should represent an object, while HTTP verb serve as it's method. If the endpoint is fully adapting REST specification, it is called {\it RESTful web service}.
 
-\subsection{SOAP}
-
-SOAP (Simple Object Access Protocol) is a standard XML format for sending and receiving message \cite{soap}. In SOAP, every message has to be wrapped in an envelope element. Inside an evelope, developer can write header and body. Header should contains application specific information, while body should contains the message itself.
-
-SOAP containing many standards that are not specified in HTTP/REST API. However, this also mean that SOAP is more verbose and eat more bandwidth than HTTP/REST API.
-
-Nowadays, SOAP is still used and supported by many system.
-
-\subsection{CORBA, BPEL, and EJB}
-
-CORBA (Common Object Request Broker) is a specification created by OMG (Object Management Group). It was published in 1991, and it's last version was released on November 2012. CORBA supporting a lot of programming languages including C and Java \cite{corba}.
-
-BPEL (Business Process Execution Language) is another specification published by OASIS. I was published in 2003. BPEL is usually used by enterprise. Unlike CORBA, BPEL is more language agnostic. That means that the components can be written in any language.
-
-EJB (Enterprise Java Beans) is another specification for microservice. compared to CORBA and BPEL, EJB is less language agnostic. in EJB, the orchestration component has to be written in Java.
-
-CORBA, BPEL, and EJB are more strict compared to HTTP API. The server and the client should be agree on the data format. This agreement is usually written in IDL (Interface Definition Language). Since the server and the client has already agree on the data format, server response can be shorter than HTTP/REST API.
-
-We conclude that although CORBA, BPEL, and EJB are more difficult to set up compared to HTTP/REST API and SOAP, it might benefit the system for the long run.
-
 \subsection{JSON-RPC, XML-RPC, and GRPC}
 
 RPC stands for Remote Procedure Call. The focus of RPC is to let developer invoke procedures in remote computer as easy as they are a local procedure. JSON-RPC and XML-RPC works in a same manner, only the data exchange format is different. As the names implied, JSON-RPC use JSON \cite{jsonrpc}, while XML-RPC use XML \cite{xmlrpc}. First the client send a request to the server. The request contains the name of the method and the parameters. The server then replied with the return value.
@@ -143,127 +134,76 @@ As XML is more verbose than JSON, XML-RPC is also need more bandwidth compared t
 
 To overcome the need to encode data into text format, Google create another protocol named GRPC (Google Remote Procedure Call). GRPC supporting several programming languages including Python, Javascript, Java, and PHP. In order to use GRPC \cite{grpc}, developers have to create stub skeleton (similar to IDL in CORBA, BPEL, or EJB).
 
-
 \section{CHIML}
 
-CHIML (Chimera Markup Language) is a language used in Chimera-Framework. CHIML is an orchestration language. In term of language agnosticism and simplicity, Chimera-Framework is comparable to HTTP API. However, unlike HTTP API, Chimera-Framework doesn't even require HTTP protocol. Any valid command line executable can serve as component. In this research, our goal is to make CHIML as readable as possible.
+\subsection{Improving Speed}
 
-\subsection{Design}
+After doing several investigations, we find that there are two reasons why CHIML is slow:
 
-We build {\it CHIML} as a superset of {\it YAML}. So, any valid {\it YAML} is also a valid {\it CHIML}. And as {\it YAML} itself is a superset of {\it JSON}, any valid {\it JSON} is also a valid {\it CHIML}
+\begin{itemize}
+    \item CHIML invoke {\it vm.runInNewContext} for every statements.
+    \item Node.Js need to check all corresponding directories in order to resolve imported module path.
+\end{itemize}
 
-Unlike {\it YAML}, in {\it CHIML} is the developers are allowed to write string after block delimiter ({\it \textbar} and {\it $>$}) without changing the line.
+In order to solve the first problem, we rewrite CHIML interpreter, and build a transpiler instead. So, rather than invoking {\it vm.runInNewContext} for every statements, we translate the whole CHIML script into valid Javascript. Thus, we only need to call {\it vm.runInNewContext once}. This approach let us explore another possibility, like really build a runnable Javascript that theoritically is runnable and decoupled from Chimera-Framework.
 
-The {\it CHIML script} should contain a single {\it [program]}.
+As for the second problem, many developers had try to overcome the problem by overriding Node.Js native {\it require} and build cached to speed up {\it module-resolve} process.
 
-\subsection{Semantic (Backus Naur Form)}
+\subsection{Supporting Data-Oriented Parallelization}
 
-The brief overview of CHIML semantic is presented at Listing \ref{chimlSemantic}
+In the previous version, CHIML already supporting parallelization by using {\it parallel} keyword. However, this mechanism works with assumption that the developers already know how many parallel process is needed. Since sometime, the parallelization is based on user inputs/fetched data, this mechanism becomes unusable in those cases.
 
-\begin{lstlisting}[caption=CHIML Semantic, label=chimlSemantic, basicstyle=\footnotesize, breaklines=true]
-<program> ::= 
- <completeVars>
- <completeVerbose>
- <command>
- <completeCatch>
- <completeThrow>
+To solve this problem, we decide to support {\it map, filter, and reduce}. These concepts are pretty common in {\it functional programming}, and it is pretty usable to transform array. Behind the scene, we translate {\it map, filter, and reduce} into {\it Promise.all()} to make it truly parallel.
 
-<command> ::=
- | <completeCommand>
- | <shortCommand>
+\subsection{More Common Network Protocol}
 
-<completeCommand> ::= 
- | <completeIns>
-   <completeOut>
-   <completeIf>
-   "do: "<process><newLine>
-   <completeWhile>
+In the last years, many new protocols like GraphQL emerged. Some argue that GraphQL would be the new standard protocol replacing REST-API. However, this is not true. GraphQL is just another wrapper layer encapsulating several REST endpoints.
 
- | <completeIns>
-   <completeOut>
-   <completeIf>
-   "parallel: "<process><newLine>
-   <completeWhile>
+Furthermore, we think REST is basically a single endpoint that encapsulate several RPCs into a single resource. Thus, we can say that the building block of network-based communication is RPC.
 
- | <completeIns>
-   <completeOut>
-   <completeIf>
-   "do: "<commandList>
-   <completeWhile>
+Since CHIML is based on JavaScript, and JavaScript is close to JSON, we decide to use JSON-RPC for exchanging data over network. Beside JSON-RPC, the plain HTTP-Request is also supported.
 
- | <completeIns>
-   <completeOut>
-   <completeIf>
-   "parallel: "<commandList>
-   <completeWhile>
+By using those protocols, we believe Chimera will be more usable since it can talk to different systems seamlessly.
 
- | "map: "<variableName>
-   "into: "<variableName>
-   <completeCommand>
+\subsection{Readable Language}
 
- | "filter: "<variableName>
-   "into: "<variableName>
-   <completeCommand>
+There are several metrics to measure readability. In 1975, Kincaid introduce a formula to measure text readability \cite{kincaid1975}. Eventhough the formula is commonly used for measuring text readability, some people argue that programming language should has different kind of metrics.
 
-<shortCommand> ::= 
- | "|("<ins>") -> " <process> " -> " <out><newLine>
- | "|("<ins>") -> " <process> "<newLine>
- | "|"<process> " -> " <out><newLine>
- | "|("<ins>") --> " <out><newLine>
- | "|"<out> " <-- ("<ins>")"<newLine>
+On 2010, Buse and his team introduced a new metric to measure the readability of programming language \cite{buse2010}. The metric is basically a modified version of Kincaid's formula.
 
-<commandList> ::= 
- | "- "<command>
- | <commandList><commandList>
+We try to use these metrics in order to compare CHIML with {\it Python} and {\it Javascript}.
 
-<completeCatch> ::= 
- | "" 
- | "catch: "<condition><newLine>
+\subsection{Semantic Design}
 
-<completeThrow> ::=
- | ""
- | "throw: "<string><newLine>
+The brief overview of CHIML semantic is presented at Listing \ref{chimlSemantic} as Typescript interface.
 
-<completeVars> ::=
- | ""
- | "vars: "<variableList><newLine>
+\begin{lstlisting}[caption=CHIML Semantic Design, label=chimlSemantic, basicstyle=\footnotesize, breaklines=true]
+// Structure of a `command`
+interface CommandObject{
+  ins : string | string[],
+  out: string,
+  vars: {[key: string]: any},
 
-<completeVerbose> ::=
- | ""
- | "verbose: "<verbosity><newLine>
+  if: string = "true",
 
-<completeIns> ::=
- | ""
- | "ins: "<ins><newLine>
+  map: string,
+  filter: string,
+  reduce: string,
 
-<completeOut> ::= 
- | ""
- | "out: "<out><newLine>
+  into: string,
 
-<completeIf> ::= 
- | ""
- | "if: "<condition><newLine>
+  accumulator: string,
 
-<completeWhile> ::=
- | ""
- | "While: "<condition><newLine>
+  do: command | command[],
+  parallel: command[],
 
-<ins> ::= <variableList>
-
-<out> ::= <variableName>
-
-<process> ::= 
- | <cliCommand>
- | <jsArrowFunction>
- | "{"<jsNormalFunction>"}"
- | "["<jsFunctionWithCallback>"]"
- | "<"<jsPromise>">"
-
-<variableList> ::= 
- | <variableName>
- | <variableName>","<variableList>
-
+  while: string = "false",
+};
 \end{lstlisting}
+
+In order to support both, programming-in-large, and programming-in-small, we put branch and loop control in the semantic ({\it if} and {\it while}). 
+
+{\it Map, filter, and reduce} are mutually exclusive. Developer can only use one of the them, along with {\it into} key. {\it Accumulator} is only use for {\it reduce} operation.
 
 Since we are focusing on how to make the language more compact, we also support several short-hands so that a single process can be written in a single line.
 
@@ -280,16 +220,14 @@ do: cal
 \end{lstlisting}
 
 \begin{lstlisting}[caption=CHIML Program Example (Short), label=chimlShortExample, basicstyle=\footnotesize, breaklines=true]
-|(month, year) -> cal -> calendar
+(month, year) -> cal -> calendar
 \end{lstlisting}
 
 \begin{lstlisting}[caption=CHIML Program Example (Short-Reversed), label=chimlReversedExample, basicstyle=\footnotesize, breaklines=true]
-|calendar <- cal <- (month, year)
+calendar <- cal <- (month, year)
 \end{lstlisting}
 
-Despite of it's nature as orchestration language, CHIML also support several control structures like {\it if}, {\it else}, and {\it while}. It is useful for prototyping since the developers doesn't have to deploy intermediary components for control structure.
-
-For example, to get the content of page-1 to page-10 of a website, the developer can do the iteration as displayed in Listing \ref{chimlIteration}
+The nature of CHIML that can be used for programming-in-large and programming-in-small allows developer to quickly create prototypes. For example, to get the content of page-1 to page-10 of a website, the developer can do the iteration as displayed in Listing \ref{chimlIteration}
 
 \begin{lstlisting}[caption=CHIML Iteration, label=chimlIteration, basicstyle=\footnotesize, breaklines=true]
 ins: url
@@ -298,12 +236,12 @@ do:
   - i <-- 1
   - while: i < 11
     do:
-      - |(url + '?page=' + i) -> curl -> htmlFragment
-      - |(html + htmlFragment) --> html
-      - |i <-- (i+1)
+      - (url + '?page=' + i) -> curl -> htmlFragment
+      - (html + htmlFragment) --> html
+      - i <-- (i+1)
 \end{lstlisting}
 
-We also take further analysis and conclude that for similar cases, it is better to do the task in parallel, so that the first request doesn't block the later requests. Since most modern programming language supporting {\it map} and {\it filter}, we also take a similar approach. For the previous example, we can build a more efficient solution as shown in Listing \ref{chimlMap}:
+We also take further analysis and conclude that for similar cases, it is better to do the task in parallel, so that the first request doesn't block the later requests. This can be perfectly achieved by using {\it map} mechanism as shown in Listing \ref{chimlMap}:
 
 \begin{lstlisting}[caption=CHIML Map Feature, label=chimlMap, basicstyle=\footnotesize, breaklines=true]
 ins: url
@@ -311,35 +249,19 @@ out: html
 vars:
   indexes: [1,2,3,4,5,6,7,8,9,10]
 do:
-  - ins: indexes 
-    out: responses
-    map: index
-    into: response
-    do: |(url + '?page=' + index) -> curl -> response
+  - map: indexes
+    into: responses
+    ins: index
+    do: 
+        - (url + '?page=' + index) -> curl -> response
 
-  - |(responses, '') -> {\$.join} -> html
+  - |(responses, '') -> {(array) => array.join("")} -> html
 \end{lstlisting}
 
 Map is more efficient since under the hood, each iteration will be done in a non-blocking manner.
 
-\subsection{Default Variables}
-There are some default variables in every CHIML script:
-
-\begin{itemize}
-  \item {\it\$}: Object, providing prebuilt utilities like {\lt \$.httpRequestBody} and {\lt \$.join}.
-  \item {\it\_chain\_cwd}: String, current working directory of CHIML script physical location.
-  \item {\it\_process\_cwd}: String, current working directory of CHIML script invocation location.
-  \item {\it\_error}: Boolean, error status.
-  \item {\it\_error\_message}: String, error message.
-  \item {\it\_verbose}: Integer, verbosity level, default to {\it0}.
-  \item {\it\_ans}: Default output variable.
-  \item {\it\_runChain (chain, ...ins, callback)}: function to run other chain.
-  \item {\it\_maps (list, chain, callback)}: function to map an array into a new array. Under the hood, this will process each element in parallel.
-  \item {\it\_filter (list, chain, callback)}: function to filter an array into a new array. Under the hood, this will process each element in parallel.
-\end{itemize}
-
 \subsection{Implementation}
-In order to parse and execute CHIML script, we have build a parser to evaluate the script and execute it on the fly. The javascript statements inside CHIML script are evaluated by using builtin Node.Js {\it vm} module. The global control flow is handled by using {\it neo-async}, a faster version of {\it async} module.
+In order to parse and execute CHIML script, we have build a parser to evaluate the script and execute it on the fly.
 
 \section{Experiment}
 
@@ -351,9 +273,9 @@ To select all the data from each end-point, the user can send GET request to {\i
 
 The response from those API will be in JSON format containing array of object. Each element of the array is correlated to table's row.
 
-The table structure is as follow Listing \ref{tableStructure}:
+The table structure is presented at Listing \ref{tableStructure}:
 
-\begin{lstlisting}[caption=Table Structure, label=tableStructure, basicstyle=\footnotesize, breaklines=true]
+\begin{lstlisting}[caption=Testcase Table Structure, label=tableStructure, basicstyle=\footnotesize, breaklines=true]
 TABLE: genres
 FIELDS:
   - id
@@ -411,14 +333,35 @@ print(json.dumps(result))
 \begin{lstlisting}[caption=CHIML Solution for problem-g, label=chimlSolution, basicstyle=\footnotesize, breaklines=true]
 out: genres
 do:
-  - |('http://localhost:3000/genres') -> [\$.httpRequestBody] -> genres
+  - ('http://localhost:3000/genres') -> [sys.httpRequest] -> genres
   - map: genres
     into: genres
-    do: |(genre) -> (x) => x.name -> genre
+    do: (genre) -> (x) => x.name -> genre
 \end{lstlisting}
 
 
 \section{Result and Discussion}
+
+\begin{figure*}
+	\includegraphics[width=0.4\textwidth]
+		{benchmark/benchmark.png}
+	\caption{Performance Comparison}
+	\label{fig:performanceComparison}
+\end{figure*}
+
+\begin{figure*}
+	\includegraphics[width=0.4\textwidth]
+		{benchmark/readability.png}
+	\caption{Readability Comparison}
+	\label{fig:readabilityComparison}
+\end{figure*}
+
+\begin{figure*}
+	\includegraphics[width=0.4\textwidth]
+		{benchmark/size.png}
+	\caption{Size Comparison}
+	\label{fig:sizeComparison}
+\end{figure*}
 
 \begin{table}[]
 \centering
@@ -426,40 +369,29 @@ do:
 \label{tbl:comparison}
 \begin{tabular}{@{}rrrrrrrrr@{}}
 \toprule
-  b\_real & b\_sys  & b\_user &   fkgl &     fre &  loc & problem  & size &  solution \\
-          &         &         &        &         &      &          &      &           \\ \midrule 
-  0.246   & 0.022   & 0.236   &  8.390 &  42.035 &  30  &   gba    & 978  &     js    \\
-  0.113   & 0.010   & 0.098   & 18.128 & -28.851 &  15  &   gba    & 662  &     py    \\
-  0.317   & 0.025   & 0.304   &  7.103 &  50.217 &  17  &   gba    & 554  &  chiml    \\
-  0.230   & 0.018   & 0.226   & 11.044 &  22.670 &  16  &    gb    & 540  &     js    \\
-  0.101   & 0.013   & 0.087   & 15.674 & -11.228 &  12  &    gb    & 471  &     py    \\
-  0.310   & 0.026   & 0.294   &  4.516 &  68.987 &  13  &    gb    & 381  &  chiml    \\
-  0.221   & 0.021   & 0.214   & 19.039 & -35.587 &   7  &     g    & 250  &     js    \\
-  0.095   & 0.010   & 0.084   & 17.319 & -23.463 &   6  &     g    & 217  &     py    \\
-  0.293   & 0.020   & 0.287   &  4.613 &  68.522 &   6  &     g    & 163  &  chiml    \\
-          &         &         &        &         &      &          &      &           \\ \midrule 
+    b\_real & b\_sys & b\_user &  fkgl &    fre & loc &   rbr &  size & solution/case \\
+            &        &         &       &        &     &       &       &               \\ \midrule 
+      0.509 &  0.028 & 0.503   & 6.571 & 64.934 &  30 & 0.000 &   978 &       js, gba \\
+      0.114 &  0.011 & 0.096   & 8.492 & 57.214 &  15 & 0.002 &   662 &       py, gba \\
+      0.827 &  0.054 & 0.829   & 5.795 & 73.210 &  17 & 0.018 &   576 &     chie, gba \\
+      0.799 &  0.054 & 0.798   & 7.606 & 64.371 & 334 & 0.000 & 21955 &     chic, gba \\
+            &        &         &       &        &     &       &       &               \\ \midrule 
+      0.486 &  0.034 & 0.477   & 6.895 & 63.440 &  16 & 0.007 &   540 &       js, gb  \\
+      0.104 &  0.009 & 0.092   & 7.871 & 59.853 &  12 & 0.006 &   471 &       py, gb  \\
+      0.802 &  0.057 & 0.798   & 5.219 & 76.690 &  13 & 0.081 &   396 &     chie, gb  \\
+      0.801 &  0.049 & 0.806   & 7.639 & 64.218 & 254 & 0.000 & 15048 &     chic, gb  \\
+            &        &         &       &        &     &       &       &               \\ \midrule 
+      0.476 &  0.028 & 0.474   & 7.551 & 59.499 &   7 & 0.307 &   250 &       js, g   \\
+      0.096 &  0.014 & 0.081   & 7.422 & 60.549 &   6 & 0.160 &   217 &       py, g   \\
+      0.798 &  0.051 & 0.807   & 5.518 & 74.796 &   6 & 0.147 &   167 &     chie, g   \\
+      0.768 &  0.053 & 0.770   & 7.715 & 63.576 & 133 & 0.000 &  6498 &     chic, g   \\
+            &        &         &       &        &     &      &       &       &        \\ \midrule 
 \end{tabular}
 \end{table}
 
-\begin{figure*}
-	\centering
-	\includegraphics[width=0.5\textwidth]
-		{benchmark/benchmark.png}
-	\caption{Performance Comparison}
-	\label{fig:performanceComparison}
-\end{figure*}
-
-\begin{figure*}
-	\centering
-	\includegraphics[width=0.7\textwidth]
-		{benchmark/readability.png}
-	\caption{Readability Comparison}
-	\label{fig:readabilityComparison}
-\end{figure*}
-
 After building the solutions, we compare the performance by using UNIX {\it time} command. This benchmark providing 3 numbers, {\it sys}, {\it user}, and {\it real}. {\it Sys} is the amount of CPU time spent within kernel. {\it User} is the amount of CPU time spent outside the kernel but within the process. And {\it real} is the clock time from start to finish the call. {\it Real} also include time spent for IO process. We named these performance {\it b\_sys}, {\it b\_real}, and {\it b\_user} respectively.
 
-Beside comparing the performance, we also calculate the file size in byte ({\it size}), number of lines in code ({\it loc}), Flesch reading ease ({\it fre}), and Flesh-Kincaid grade level ({\it fkgl}).
+Beside comparing the performance, we also calculate the file size in byte ({\it size}), number of lines in code ({\it loc}), Flesch reading ease ({\it fre}), Flesh-Kincaid grade level ({\it fkgl}), and Raymond Buse's measurement ({\it rbr}).
 
 For {\it b\_sys}, {\it b\_real}, and {\it b\_user}, smaller number means better performance. For {\it size} and {\it loc}, smaller number is also means better. For {\it fre}, greater numbers means that the program is more readable. However, for {\it fkgl}, smaller number means smaller years of education required. This means that {\it fkgl} and {\it fre} should has negative correlation.
 
@@ -469,22 +401,15 @@ As shown in figure ~\ref{fig:performanceComparison}, we can conclude that Python
 
 Also, {\it b\_user} and {\it b\_real} is strongly corelated to each other. This is make sense since the majority CPU time is spent in {\it user} mode.
 
-In term of performance, CHIML solution is the slowest. This is also make sense, since under the hood, CHIML will be translated into JavaScript. 
+In term of performance, CHIML solution is still the slowest. This is also make sense, since under the hood, CHIML will be translated into JavaScript. 
 
-In terms of {\it size}, CHIML outperforming Python and JavaScript. The same is also true for {\it fkgl} and {\it fre}. Thus, we can conclude that according to Flesch-Kincaid readability test, CHIML is more readable from Python and JavaScript.
-
-CHIML is unexpectedly slow when performing map or filter. It seems to be related to it's internal mechanism in translating map/filter. In CHIML, map and filter is translated into starting another subchain-execution.
-
-We also realize that starting another external process (like UNIX tool) from CHIML is sometime take less time than running JavaScript expression inside CHIML (i.e: we use JavaScript to evaluate control structure). We are still trying to analyze this trait, but there are some possibilities that we have to consider. The first possibility is related to Chimera-Framework mechanism in evaluating JavaScript expression. Since internally we use {\it script.runInNewContext(context)}, the interpreter will always copy global variables and creating new context everytime. When the content of global variables increases, this can drag down the performance. The second possibility is related to Node.Js single thread nature. Eventough internally Node.Js can use more than one processor in a single thread, this will not work for our local code. In some cases, especially when the code doesn't involve IO process, everything will be executed sequentially.
-
-So, for the sake of improving performance, we should refine CHIML parser and interpreter. Either by switching to a more concurrent language like {\it golang}, or by optimizing the current parser and interpreter. One of the possible solutions is using {\it child\_process.fork} that allow us to run the sub-process in other thread.
-
+In terms of {\it size}, CHIML outperforming Python and JavaScript. The same is also true for {\it fkgl} and {\it fre}. Thus, we can conclude that according to Flesch-Kincaid readability test, CHIML is more readable from Python and JavaScript. As for {\it rbr}, we see that CHIML has best values in {\it gba} case and wors values for {\it g} case. Thus, for a very simple cases, Python/Javascript could be a better alternative.
 
 \section{Conclusion}
 
 CHIML serve well as orchestration language. However for control structure, the existance of intermediary components can help to boost performance. The best trait of CHIML is it's support for programming-in-large and programming-in-small. Eventough the control structure is still suffering for speed and performance, it serves well as prototyping tool. In term of flexibility, CHIML is comparable to Python or JavaScript. In most cases, it even has smallest size and LOC than both, Python and JavaScript. This mean that the developer can start orchestration solution in CHIML, and gradually do optimization as needed.
 
-Despite of it's advantage, CHIML interpreter has to be refactored and optimized in order to make it usable for real-world use-cases.
+Despite of it's advantage, CHIML interpreter is still has to be refactored and optimized in order to make it usable for real-world use-cases.
 
 %\appendices
 %\section{Proof of the First Zonklar Equation}

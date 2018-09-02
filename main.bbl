@@ -98,11 +98,14 @@ R.~T. Fielding and R.~N. Taylor, ``Principled design of the modern web
   \url{http://doi.acm.org/10.1145/337180.337228}
 \BIBentrySTDinterwordspacing
 
-\bibitem{soap}
-W.~X. P.~W. Group, ``Soap version 1.2,'' \url{https://www.w3.org/TR/soap12},
-  accessed: 2018-04-30.
+\bibitem{kincaid1975}
+F.~R. R. R. C.~B. Kincaid, J.P., ``Derivation of new readability formulas
+  (automated readability index, fog count, and flesch reading ease formula) for
+  navy enlisted personnel,'' \emph{Research Branch Report 8–75}, 1975.
 
-\bibitem{corba}
-O.~M. Group, ``Corba,'' \url{http://www.corba.org/}, accessed: 2018-04-30.
+\bibitem{buse2010}
+R.~P.~L. Buse and W.~R. Weimer, ``Learning a metric for code readability,''
+  \emph{IEEE Transactions on Software Engineering}, vol.~36, no.~4, pp.
+  546--558, July 2010.
 
 \end{thebibliography}

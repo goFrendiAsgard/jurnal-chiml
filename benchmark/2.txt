@@ -1,45 +1,60 @@
 GBA NODE
 
-real	0m0.240s
-user	0m0.241s
-sys	0m0.012s
+real	0m0.501s
+user	0m0.493s
+sys	0m0.032s
 GBA PYTHON3
 
-real	0m0.106s
-user	0m0.090s
-sys	0m0.012s
+real	0m0.136s
+user	0m0.112s
+sys	0m0.017s
 GBA CHIMERA
 
-real	0m0.296s
-user	0m0.287s
-sys	0m0.020s
+real	0m0.822s
+user	0m0.818s
+sys	0m0.056s
+GBA CHIMERA-COMPILED
+
+real	0m0.765s
+user	0m0.764s
+sys	0m0.052s
 GB NODE
 
-real	0m0.236s
-user	0m0.235s
-sys	0m0.012s
+real	0m0.457s
+user	0m0.456s
+sys	0m0.024s
 GB PYTHON3
 
-real	0m0.121s
-user	0m0.106s
-sys	0m0.013s
+real	0m0.109s
+user	0m0.097s
+sys	0m0.008s
 GB CHIMERA
 
-real	0m0.293s
-user	0m0.268s
-sys	0m0.038s
+real	0m0.808s
+user	0m0.800s
+sys	0m0.065s
+GB CHIMERA-COMPILED
+
+real	0m0.794s
+user	0m0.787s
+sys	0m0.060s
 G NODE
 
-real	0m0.210s
-user	0m0.197s
-sys	0m0.027s
+real	0m0.471s
+user	0m0.475s
+sys	0m0.021s
 G PYTHON3
 
-real	0m0.092s
-user	0m0.074s
-sys	0m0.017s
+real	0m0.089s
+user	0m0.072s
+sys	0m0.016s
 G CHIMERA
 
-real	0m0.289s
-user	0m0.284s
-sys	0m0.017s
+real	0m0.798s
+user	0m0.812s
+sys	0m0.044s
+G CHIMERA-COMPILED
+
+real	0m0.746s
+user	0m0.754s
+sys	0m0.048s

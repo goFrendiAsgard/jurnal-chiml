@@ -1,0 +1,6 @@
+out: genres
+do:
+    - ('http://localhost:3000/genres') -> [sys.httpRequest] -> genres
+    - map: genres
+      into: genres
+      do: (genre) -> (x) => x.name -> genre

@@ -1,6 +1,0 @@
-out: genres
-do:
-  - |('http://localhost:3000/genres') -> [$.httpRequestBody] -> genres
-  - map: genres
-    into: genres
-    do: |(genre) -> (x) => x.name -> genre

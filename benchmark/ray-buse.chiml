@@ -1,0 +1,6 @@
+ins: filename
+out: score
+do:
+    - filename -> {require('fs').readFileSync} -> content
+    - (content) -> java -jar readability.jar -> output
+    - (output) -> (lst) => lst.split('\\n').pop() -> score
