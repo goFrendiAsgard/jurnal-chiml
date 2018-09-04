@@ -44,7 +44,7 @@ Email: subari@stiki.ac.id}}
 
 \begin{abstract}
 %\boldmath
-Component Based Software Engineering (CBSE) has been proven to be quite effective to deal with software complexity. Nowadays developers prefer to build micro-services rather than single monolithic application. Several SOA (Service Oriented Architecture) approaches like HTTP/REST API, CORBA, and BPEL are commonly used by developers. Some of those solutions are built under assumptions that the developers are either building the services from scratch or able to create abstraction layer for the pre-existing services. In most cases the assumptions are true. However there are cases when developers prefer to keep the architecture as simple as possible without any need to build additional abstraction layers. For example, when they work with mini-embeded system.
+Component-Based Software Engineering (CBSE) has been proven to be quite effective to deal with software complexity. Nowadays developers prefer to build micro-services rather than a single monolithic application. Several SOA (Service Oriented Architecture) approaches like HTTP/REST API, CORBA, and BPEL are commonly used by developers. Some of those solutions are built under assumptions that the developers are either building the services from scratch or able to create abstraction layer for the pre-existing services. In most cases the assumptions are true. However, there are cases when developers prefer to keep the architecture as simple as possible without any need to build additional abstraction layers. For example, when they work with the mini-embeded system.
 
 Previously, a YAML based orchestration language was developed for Chimera-Framework (A language agnostic framework for stand-alone and distributed computing). However, we observe some weak points in the language. In this paper, we refine the orchestration language in order to let developers accessing pre-existing services without any need to build another abstraction layer.
 \end{abstract}
@@ -58,31 +58,31 @@ Chimera, CBSE, Orchestration Language
 
 \section{Introduction}
 
-Software development is a very interesting topic. The way people developing softwares is changing as new paradigms emerged. In turns, software development also affecting the culture. It change how people interact to each others as well as how they interact with computers.
+Software development is a very interesting topic. The way people developing softwares is changing as new paradigms emerged. In turns, software development also affecting the culture. It changes how people interact with each other as well as how they interact with computers.
 
-As software become more and more complex, building and maintaining softwares is also become harder. Various approaches have been attempted in order to make the processes easier.
+As software becomes more and more complex, building and maintaining software is also become harder. Various approaches have been attempted in order to make the processes easier.
 
 Several frameworks like Rails \cite{rails}, Django \cite{django}, Laravel \cite{laravel}, etc are focusing on how to make codes clean, separated, and reusable. In turn, this make software development and maintenance easier. These frameworks quickly gained popularity among software developers.
 
-However, despite on the clear advantage of those frameworks, they also have several disadvantages. Since the frameworks were built on top of specific programming language, integration to different programming languages is quite challenging. For example, in order to build software by using Rails, developers should code in Ruby. The same is also true for Django, which is built on top of Python, and Laravel which is built on top of PHP. This situation is known as vendor-lock-in \cite{vendorlock}. And in some cases it can affect maintainability as well as further development in a bad way.
+However, despite on the clear advantage of those frameworks, they also have several disadvantages. Since the frameworks were built on top of specific programming language, integration to different programming languages is quite challenging. For example, in order to build software by using Rails, developers should code in Ruby. The same is also true for Django, which is built on top of Python, and Laravel which is built on top of PHP. This situation is known as vendor-lock-in \cite{vendorlock}. And in some cases, it can affect maintainability as well as further development in a bad way.
 
-Thus, a more technology agnostic approach is needed in order to overcome vendor-lock-in problem. Recently, SOA and micro-services are gaining popularity. Those approaches let developers to focus on small components known as services rather than complex monolithic software. A service usually represent single resource or business process. The services can be independent to each other or aware to each others. Despite of the advantages and popularity, SOA and micro-services are prone to concurrency problem \cite{soavsmicroservice}.
+Thus, a more technology agnostic approach is needed in order to overcome a vendor-lock-in problem. Recently, SOA and micro-services are gaining popularity. Those approaches let developers to focus on small components known as services rather than complex monolithic software. A service usually represents a single resource or business process. The services can be independent of each other or aware of each other. Despite of the advantages and popularity, SOA and micro-services are prone to concurrency problem \cite{soavsmicroservice}.
 
-One important aspect in SOA/micro-services is how a developer can compose independent services to work together. There are two common approach to compose services. The process to compose several services that are independent to each others is named orchestration, while the process to compose several services that aware to each others is named choreography. Orchestration require one central controller in order to manage the services \cite{orchestrationvschoreography}.
+One important aspect in SOA/micro-services is how a developer can compose independent services to work together. There are two common approaches to compose services. The process to compose several services that are independent of each others is named orchestration, while the process to compose several services that aware of each other is named choreography. Orchestration require one central controller in order to manage the services \cite{orchestrationvschoreography}.
 
 Orchestration has a very long history. The earliest implementation of orchestration was Unix Pipe mechanism \cite{mcilroy1968mass}. This mechanism is still relevant and used by Unix/Linux users.
 
-Unix Pipe mechanism is not the only implementation of software orchestration. Remote Procedure Call (RPC) is also used for bigger projects. The commonly used RPCs are JSON-RPC \cite{jsonrpc} and XML-RPC \cite{xmlrpc}. On 2015, Google also introduce GRPC \cite{grpc}.
+Unix Pipe mechanism is not the only implementation of software orchestration. Remote Procedure Call (RPC) is also used for bigger projects. The commonly used RPCs are JSON-RPC \cite{jsonrpc} and XML-RPC \cite{xmlrpc}. In 2015, Google also introduces GRPC \cite{grpc}.
 
-Beside Unix Pipe and RPC Several other implementations were introduced by independent companies and consortiums. OMG introduced CORBA on 1991, while OASIS intoduced BPEL on 2001. Some developers also implement their own HTTP/REST API implementation. On 2016, Feilhauer and Sobotka creating a framework named DEF which is focusing on parallel execution \cite{feilhauer2016def}. On 2017, we also conduct a research to develop another language agnostic framework named Chimera-Framework \cite{gunawan2017chimera}.
+Beside Unix Pipe and RPC, several other implementations were introduced by independent companies and consortiums. OMG introduced CORBA on 1991, while OASIS introduced BPEL in 2001. Some developers also implement their own HTTP/REST API implementation. In 2016, Feilhauer and Sobotka creating a framework named DEF which is focusing on parallel execution \cite{feilhauer2016def}. In 2017, we also conduct a research to develop another language agnostic framework named Chimera-Framework \cite{gunawan2017chimera}.
 
-Compared to the monolithic frameworks like Rails and Django, these orchestration mechanism are more scalable and technology agnostic. This mean that the developers can choose the best technology stack to build their components/services.
+Compared to the monolithic frameworks like Rails and Django, these orchestration mechanisms are more scalable and technology agnostic. This means that the developers can choose the best technology stack to build their components/services.
 
-Among those orchestration mechanisms, Unix pipe and Chimera-Framework are the only ones that are supporting but not limited to network protocol. Typically, Service Oriented Architectures (like CORBA, BPEL, or DEF) are correlated to distributed architecture, but this is not always the case. For example, a developer might only need to pass data from {\it R } to {\it Python } in the same machine.
+Among those orchestration mechanisms, Unix pipe and Chimera-Framework are the only ones that are supporting but not limited to network protocol. Typically, Service Oriented Architectures (like CORBA, BPEL, or DEF) are correlated to a distributed architecture, but this is not always the case. For example, a developer might only need to pass data from {\it R } to {\it Python } on the same machine.
 
-Compared to the existing mechanisms, Chimera-Framework focused on how to let developer effort as minimal as possible. The orchestration components in Chimera-Framework don't have to be HTTP aware. Even an old UNIX utility like {\it date} or {\it cat} can serve as components \cite{gunawan2017chimera}. But in case of distributed architecture is required, the same components are still going to be usable.
+Compared to the existing mechanisms, Chimera-Framework focused on how to let developer effort as minimal as possible. The orchestration components in Chimera-Framework don't have to be HTTP aware. Even an old UNIX utility like {\it date} or {\it cat} can serve as components \cite{gunawan2017chimera}. But in the case of distributed architecture is required, the same components are still going to be usable.
 
-In this research we are focusing in improving the orchestration mechanism in Chimera-Framework. The orchestration language is named CHIML (Chimera Markup Language) which is a superset of YAML \cite{yaml}.
+In this research, we are focusing on improving the orchestration mechanism in Chimera-Framework. The orchestration language is named CHIML (Chimera Markup Language) which is a superset of YAML \cite{yaml}.
 
 CHIML is designed to be readable, compact, and intuitive, yet it has several weaknesses:
 
@@ -96,7 +96,7 @@ In this research, we are going to solve this two problem by redesigning CHIML.
 
 \section{Research Question}
 
-In order to have a clear direction in our research, we are focusing in these four questions:
+In order to have a clear direction in our research, we are focusing on these four questions:
 
 \begin{itemize}
     \item How to improve CHIML execution speed.
@@ -112,23 +112,23 @@ In order to have a clear direction in our research, we are focusing in these fou
 
 In 1975, Frank DeRemer and Hans Kron wrote a paper about programming-in-large and programming-in-small. Programming-in-large is a concept to write a software that consists of various modules that are possibly written by different people \cite{DeRemer:1975:PLV:390016.808431}.
 
-The concept of programming-in-large is tightly coupled to orchestration and choreography. In orchestration, the components are controlled by a single controller, while in choreography, the components are aware of each others. In some cases, orchestration and choreography can be used together. Developer might create a choreography of components where the components are orchestration of smaller components \cite{orchestrationvschoreography}. 
+The concept of programming-in-large is tightly coupled to orchestration and choreography. In orchestration, the components are controlled by a single controller, while in choreography, the components are aware of each other. In some cases, orchestration and choreography can be used together. Developer might create a choreography of components where the components are the orchestration of smaller components \cite{orchestrationvschoreography}. 
 
 \subsection{SOA and Micro-service}
 
-SOA and micro-service are similar architecture concept. The core philosophy of these two paradigms are to split big problem into small problems. The term SOA is usually being used when people talk in a bigger scope, while micro-service is usually refer to smaller scope. When services are composed and used internally it is micro-service. But when the services exposed to external system, it is SOA. Although the distinction can be unclear, people usually agree that SOA might contains of micro-services \cite{soavsmicroservice}.
+SOA and micro-service are similar architecture concept. The core philosophy of these two paradigms is to split the big problem into small problems. The term SOA is usually being used when people talk in a bigger scope, while micro-service is usually referred to a smaller scope. When services are composed and used internally it is micro-service. But when the services exposed to external system, it is SOA. Although the distinction can be unclear, people usually agree that SOA might contain micro-services \cite{soavsmicroservice}.
 
 From the technical point of view, SOA and micro-service might involve either orchestration or choreography. And no matter which one is being used, a protocol for passing message among services is required.
 
 \subsection{HTTP/REST API}
 
-HTTP API is a quite common protocol. The architecture is also relatively simple. There are web services and a clients. The client send a request to the web service, and the web service reply with a response. The response data is usually in JSON/XML format. SOA components are commonly exposing HTTP API endpoint. OMDB for example, provide an API to search for movie database.
+HTTP API is a quite common protocol. The architecture is also relatively simple. There are web services and a clients. The client sends a request to the web service and the web service reply with a response. The response data is usually in JSON/XML format. SOA components are commonly exposing HTTP API endpoint. OMDB for example, provide an API to search for movie database.
 
 On the other hand, REST (Representation State Transfer) is a more strict implementation of HTTP API. It was introduced and defined in 2000 by Roy Fielding in his doctoral thesis \cite{Fielding:2000:PDM:337180.337228}. Fielding focusing on how a URI should represent an object, while HTTP verb serve as it's method. If the endpoint is fully adapting REST specification, it is called {\it RESTful web service}.
 
 \subsection{JSON-RPC, XML-RPC, and GRPC}
 
-RPC stands for Remote Procedure Call. The focus of RPC is to let developer invoke procedures in remote computer as easy as they are a local procedure. JSON-RPC and XML-RPC works in a same manner, only the data exchange format is different. As the names implied, JSON-RPC use JSON \cite{jsonrpc}, while XML-RPC use XML \cite{xmlrpc}. First the client send a request to the server. The request contains the name of the method and the parameters. The server then replied with the return value.
+RPC stands for Remote Procedure Call. The focus of RPC is to let developer invoke procedures in remote computer as easy as they are a local procedure. JSON-RPC and XML-RPC work in the same manner, only the data exchange format is different. As the names implied, JSON-RPC use JSON \cite{jsonrpc}, while XML-RPC use XML \cite{xmlrpc}. First, the client send a request to the server. The request contains the name of the method and the parameters. The server then replied with the return value.
 
 As XML is more verbose than JSON, XML-RPC is also need more bandwidth compared to JSON-RPC. And as XML and JSON are text format, binary data should also be encoded in text format. For example, an image might need to be encoded in base-64 format.
 
@@ -145,31 +145,31 @@ After doing several investigations, we find that there are two reasons why CHIML
     \item Node.Js need to check all corresponding directories in order to resolve imported module path.
 \end{itemize}
 
-In order to solve the first problem, we rewrite CHIML interpreter, and build a transpiler instead. So, rather than invoking {\it vm.runInNewContext} for every statements, we translate the whole CHIML script into valid Javascript. Thus, we only need to call {\it vm.runInNewContext once}. This approach let us explore another possibility, like really build a runnable Javascript that theoritically is runnable and decoupled from Chimera-Framework.
+In order to solve the first problem, we rewrite CHIML interpreter, and build a transpiler instead. So, rather than invoking {\it vm.runInNewContext} for every statements, we translate the whole CHIML script into valid Javascript. Thus, we only need to call {\it vm.runInNewContext once}. This approach let us explore another possibility like really build a runnable Javascript that theoretically is runnable and decoupled from Chimera-Framework.
 
-As for the second problem, many developers had try to overcome the problem by overriding Node.Js native {\it require} and build cached to speed up {\it module-resolve} process.
+As for the second problem, many developers has tried to overcome the problem by overriding Node.Js native {\it require} and build cached to speed up the {\it module-resolve} process.
 
 \subsection{Supporting Data-Oriented Parallelization}
 
-In the previous version, CHIML already supporting parallelization by using {\it parallel} keyword. However, this mechanism works with assumption that the developers already know how many parallel process is needed. Since sometime, the parallelization is based on user inputs/fetched data, this mechanism becomes unusable in those cases.
+In the previous version, CHIML already supporting parallelization by using {\it parallel} keyword. However, this mechanism works with the assumption that the developers already know how many parallel process is needed. Since some time, the parallelization is based on user inputs/fetched data, this mechanism becomes unusable in those cases.
 
-To solve this problem, we decide to support {\it map, filter, and reduce}. These concepts are pretty common in {\it functional programming}, and it is pretty usable to transform array. Behind the scene, we translate {\it map, filter, and reduce} into {\it Promise.all()} to make it truly parallel.
+To solve this problem, we decide to support {\it map, filter, and reduce}. These concepts are pretty common in {\it functional programming}, and it is pretty useful to transform array. Behind the scene, we translate the {\it map, filter, and reduce} into {\it Promise.all()} to make it truly parallel.
 
-\subsection{More Common Network Protocol}
+\subsection{More Common Network-Based Data-Exchange Protocol}
 
 In the last years, many new protocols like GraphQL emerged. Some argue that GraphQL would be the new standard protocol replacing REST-API. However, this is not true. GraphQL is just another wrapper layer encapsulating several REST endpoints.
 
-Furthermore, we think REST is basically a single endpoint that encapsulate several RPCs into a single resource. Thus, we can say that the building block of network-based communication is RPC.
+Furthermore, we think REST is basically a single endpoint that encapsulates several RPCs into a single resource. Thus, we can say that the building block of network-based data-exchange communication is RPC.
 
-Since CHIML is based on JavaScript, and JavaScript is close to JSON, we decide to use JSON-RPC for exchanging data over network. Beside JSON-RPC, the plain HTTP-Request is also supported.
+Since CHIML is based on JavaScript, and JavaScript is close to JSON, we decide to use JSON-RPC for exchanging data over network. Beside JSON-RPC, the plain HTTP-Request is also supported. Supporting plain HTTP-Request is important, since it allow developers to build their own custom protocols whenever they need to.
 
-By using those protocols, we believe Chimera will be more usable since it can talk to different systems seamlessly.
+By using those protocols, we believe Chimera will be more useful since it can talk to different systems seamlessly.
 
 \subsection{Readable Language}
 
-There are several metrics to measure readability. In 1975, Kincaid introduce a formula to measure text readability \cite{kincaid1975}. Eventhough the formula is commonly used for measuring text readability, some people argue that programming language should has different kind of metrics.
+There are several metrics to measure readability. In 1975, Kincaid introduces a formula to measure text readability \cite{kincaid1975}. Even though the formula is commonly used for measuring text readability, some people argue that programming language should have different kind of metrics.
 
-On 2010, Buse and his team introduced a new metric to measure the readability of programming language \cite{buse2010}. The metric is basically a modified version of Kincaid's formula.
+In 2010, Buse and his team introduced a new metric to measure the readability of programming language \cite{buse2010}. The metric is basically a modified version of Kincaid's formula.
 
 We try to use these metrics in order to compare CHIML with {\it Python} and {\it Javascript}.
 
@@ -203,13 +203,13 @@ interface CommandObject{
 
 In order to support both, programming-in-large, and programming-in-small, we put branch and loop control in the semantic ({\it if} and {\it while}). 
 
-{\it Map, filter, and reduce} are mutually exclusive. Developer can only use one of the them, along with {\it into} key. {\it Accumulator} is only use for {\it reduce} operation.
+{\it Map, filter, and reduce} are mutually exclusive. Developer can only use one of them, along with {\it into} key. {\it Accumulator} is only used in {\it reduce} operation.
 
 Since we are focusing on how to make the language more compact, we also support several short-hands so that a single process can be written in a single line.
 
 For example, the process in Listing \ref{chimlLongExample} can also be written as in Listing \ref{chimlShortExample}
 
-Furthermore, since developers might used to write left hand assignment in mainstream programming languages (i.e: {\it result = function(param1, param2)}), we think reverse arrow in CHIML can make it more intuitive. Thus, Listing \ref{chimlShortExample} can also be written as \ref{chimlReversedExample}.
+Furthermore, since developers might use to write left-hand assignment in mainstream programming languages (i.e: {\it result = function(param1, param2)}), we think reverse arrow in CHIML can make it more intuitive. Thus, Listing \ref{chimlShortExample} can also be written as \ref{chimlReversedExample}.
 
 \begin{lstlisting}[caption=CHIML Program Example, label=chimlLongExample, basicstyle=\footnotesize, breaklines=true]
 ins:
@@ -227,7 +227,7 @@ do: cal
 calendar <- cal <- (month, year)
 \end{lstlisting}
 
-The nature of CHIML that can be used for programming-in-large and programming-in-small allows developer to quickly create prototypes. For example, to get the content of page-1 to page-10 of a website, the developer can do the iteration as displayed in Listing \ref{chimlIteration}
+The nature of CHIML that can be used for programming-in-large and programming-in-small allows the developer to quickly create prototypes. For example, to get the content of page-1 to page-10 of a website, the developer can do the iteration as displayed in Listing \ref{chimlIteration}
 
 \begin{lstlisting}[caption=CHIML Iteration, label=chimlIteration, basicstyle=\footnotesize, breaklines=true]
 ins: url
@@ -261,13 +261,13 @@ do:
 Map is more efficient since under the hood, each iteration will be done in a non-blocking manner.
 
 \subsection{Implementation}
-In order to parse and execute CHIML script, we have build a parser to evaluate the script and execute it on the fly.
+In order to parse and execute CHIML script, we have already build a parser to evaluate the script and execute it on the fly.
 
 \section{Experiment}
 
 \subsection{Problem}
 
-For the test-case, we provide three HTTP API endpoint exposing three tables, {\it genres}, {\it books}, and {\it authors}. These HTTP end points are assumed as a black-box system. The only way to interact with those APIs is by sending HTTP GET request.
+For the test-case, we provide three HTTP API endpoint exposing three tables, {\it genres}, {\it books}, and {\it authors}. These HTTP endpoints are assumed as a black-box system. The only way to interact with those APIs is by sending HTTP GET request.
 
 To select all the data from each end-point, the user can send GET request to {\it http://localhost:3000/[table-name]}. The user can also filter the data by adding {\it field-name} and {\it value} as GET parameter. For example, if the user want to select all books written that have genreId = 5, the user should access this url: {\it http://localhost:3000/books?genreId=5}.
 
@@ -294,7 +294,7 @@ FIELDS:
   - name
 \end{lstlisting}
 
-Using these API end points, we provide three problems. The first problem is named {\it g} problem. In order to solve {\it g} problem, we should transform HTTP API endpoint's response into array of genre's name (i.e: {\it ["fiction","history","science"]}). In {\it g} problem, only one endpoint is involved.
+Using these API endpoints, we provide three problems. The first problem is named {\it g} problem. In order to solve {\it g} problem, we should transform HTTP API endpoint's response into array of genre's name (i.e: {\it ["fiction","history","science"]}). In {\it g} problem, only one endpoint is involved.
 
 The second problem is named {\it gb } problem. In {\it gb } problem we should fetch book titles for each genres and present it in the following manner: {\it [{"name":"fiction","books":["Rise of the Rebels","A New Dawn"]},{"name":"history","books":["John Adams","1776"]},... ]}. This problem is more difficult than the first problem, since we have to deal with two endpoints (genres and books).
 
@@ -339,29 +339,31 @@ do:
     do: (genre) -> (x) => x.name -> genre
 \end{lstlisting}
 
-
 \section{Result and Discussion}
 
-\begin{figure*}
-	\includegraphics[width=0.4\textwidth]
+\begin{figure}
+  \centering
+	\includegraphics[width=0.5\textwidth]
 		{benchmark/benchmark.png}
 	\caption{Performance Comparison}
 	\label{fig:performanceComparison}
-\end{figure*}
+\end{figure}
 
-\begin{figure*}
-	\includegraphics[width=0.4\textwidth]
-		{benchmark/readability.png}
-	\caption{Readability Comparison}
-	\label{fig:readabilityComparison}
-\end{figure*}
-
-\begin{figure*}
-	\includegraphics[width=0.4\textwidth]
+\begin{figure}
+  \centering
+	\includegraphics[width=0.5\textwidth]
 		{benchmark/size.png}
 	\caption{Size Comparison}
 	\label{fig:sizeComparison}
-\end{figure*}
+\end{figure}
+
+\begin{figure}
+  \centering
+	\includegraphics[width=0.5\textwidth]
+		{benchmark/readability.png}
+	\caption{Readability Comparison}
+	\label{fig:readabilityComparison}
+\end{figure}
 
 \begin{table}[]
 \centering
@@ -391,25 +393,31 @@ do:
 
 After building the solutions, we compare the performance by using UNIX {\it time} command. This benchmark providing 3 numbers, {\it sys}, {\it user}, and {\it real}. {\it Sys} is the amount of CPU time spent within kernel. {\it User} is the amount of CPU time spent outside the kernel but within the process. And {\it real} is the clock time from start to finish the call. {\it Real} also include time spent for IO process. We named these performance {\it b\_sys}, {\it b\_real}, and {\it b\_user} respectively.
 
-Beside comparing the performance, we also calculate the file size in byte ({\it size}), number of lines in code ({\it loc}), Flesch reading ease ({\it fre}), Flesh-Kincaid grade level ({\it fkgl}), and Raymond Buse's measurement ({\it rbr}).
+Besides comparing the performance, we also calculate the file size in byte ({\it size}), number of lines in code ({\it loc}), Flesch reading ease ({\it fre}), Flesh-Kincaid grade level ({\it fkgl}), and Raymond Buse's measurement ({\it rbr}).
 
-For {\it b\_sys}, {\it b\_real}, and {\it b\_user}, smaller number means better performance. For {\it size} and {\it loc}, smaller number is also means better. For {\it fre}, greater numbers means that the program is more readable. However, for {\it fkgl}, smaller number means smaller years of education required. This means that {\it fkgl} and {\it fre} should has negative correlation.
+For {\it b\_sys}, {\it b\_real}, and {\it b\_user}, smaller number means better performance. For {\it size} and {\it loc}, smaller number also means better. For {\it fre}, greater numbers mean that the program is more readable. However, for {\it fkgl}, smaller number mean smaller years of education required. This means that {\it fkgl} and {\it fre} should has negative correlation.
 
-The result is presented in the table ~\ref{tbl:comparison}.
+The result is presented in the table ~\ref{tbl:comparison}. In the table, there are two CHIML solutions for each cases. For the first solution  {\it chie }, we executed the solution directly, while for the second solution {\it chic } we transpiled it first into JavaScript.
 
-As shown in figure ~\ref{fig:performanceComparison}, we can conclude that Python solution is unexpectedly outperforming Javascript and CHIML. This is interesting, since in our solutions we didn't use multithread strategy. Python was expected to be slower because it has no non-blocking mechanism by default. However, the experiment show different result.
+As shown in figure ~\ref{fig:performanceComparison}, we can conclude that Python solution is unexpectedly outperforming Javascript and CHIML. This is interesting, since in our solutions we didn't use multithread strategy. Python was expected to be slower because it has no non-blocking mechanism by default. However, the experiment shows different result.
 
-Also, {\it b\_user} and {\it b\_real} is strongly corelated to each other. This is make sense since the majority CPU time is spent in {\it user} mode.
+Also, {\it b\_user} and {\it b\_real} is strongly correlated to each other. This makes sense since the majority CPU time is spent in {\it user} mode.
 
-In term of performance, CHIML solution is still the slowest. This is also make sense, since under the hood, CHIML will be translated into JavaScript. 
+In term of performance, CHIML solution is still the slowest. This also make sense, since under the hood, CHIML will be translated into JavaScript. However, we observe that for {\it chie } and {\it chic }, the execution speed are quite close to each other. Hence we conclude that the transpilation doesn't greatly improve the performance. It means that {\it vm.runInNewContext} is fast enough, and doesn't severely reduce the performance. Furtherly, we observe that the {\it module-resolve} mechanism take take almost 400 ms, thus severely reduces the execution-speed.
 
-In terms of {\it size}, CHIML outperforming Python and JavaScript. The same is also true for {\it fkgl} and {\it fre}. Thus, we can conclude that according to Flesch-Kincaid readability test, CHIML is more readable from Python and JavaScript. As for {\it rbr}, we see that CHIML has best values in {\it gba} case and wors values for {\it g} case. Thus, for a very simple cases, Python/Javascript could be a better alternative.
+In terms of {\it size}, as shown in figure ~\ref{fig:sizeComparison}, CHIML outperforming Python and JavaScript. The same is also true for {\it fkgl} and {\it fre} (as shown in figure ~\ref{fig:readabilityComparison}). Thus, we can conclude that according to Flesch-Kincaid readability test, CHIML is more readable from Python and JavaScript. As for {\it rbr} (Raymond Buse Readability Metrics), we see that CHIML has best values in {\it gba} case and wors values for {\it g} case. Thus, for a very simple cases, Python/Javascript could be a better alternative.
 
 \section{Conclusion}
 
-CHIML serve well as orchestration language. However for control structure, the existance of intermediary components can help to boost performance. The best trait of CHIML is it's support for programming-in-large and programming-in-small. Eventough the control structure is still suffering for speed and performance, it serves well as prototyping tool. In term of flexibility, CHIML is comparable to Python or JavaScript. In most cases, it even has smallest size and LOC than both, Python and JavaScript. This mean that the developer can start orchestration solution in CHIML, and gradually do optimization as needed.
+CHIML serve well as orchestration language. However, for controlling structure, the existence of intermediary components can help to boost performance. The best trait of CHIML is it's support for programming-in-large and programming-in-small. Even tough the control structure is still suffering for speed and performance, it serves well as a prototyping tool. In term of flexibility, CHIML is comparable to Python or JavaScript. In most cases, it even has smallest size and LOC than both, Python and JavaScript. This mean that the developer can start orchestration solution in CHIML, and gradually do optimization as needed.
 
-Despite of it's advantage, CHIML interpreter is still has to be refactored and optimized in order to make it usable for real-world use-cases.
+Despite its advantage, CHIML interpreter still has to be refactored and optimized in order to make it usable for real-world use-cases.
+
+\section{Future Work}
+
+One big challenge in software development is how to let developer transform a monolithic application into microservices or vice-versa. Monolithic system is a better choice for targetting small market, while, microservices-architecture is a better bet for targeting larger market. Developer can easily choose the best choice once they know the scope of the application. However, in most cases, developers need to consider that as business grow, the application also need to serve a larger market. In this case, the best solution is by building a monolithic application that can easily scaled up and refactored into microservices.
+
+Thus, beside optimize the CHIML interpreter, we will also redesign Chimera-Framework into a platform that focus on how to make a smoother transition between monolithic and microservices-architecture. 
 
 %\appendices
 %\section{Proof of the First Zonklar Equation}
